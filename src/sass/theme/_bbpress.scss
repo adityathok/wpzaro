@@ -1,0 +1,114 @@
+/*
+* Use existing Bootstrap 4/5 classes and
+* variables to extend - override bbpress style
+*/
+
+.bbpress-wrapper {
+
+	input[type=text],
+	input[type=search],
+	input[type=password],
+	input[type=url],
+	input[type=tel],
+	input[type=number],
+	input[type=range],
+	input[type=date],
+	input[type=month],
+	input[type=week],
+	input[type=time],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=color],
+	input[type=email],
+	input[type=file],
+	select,
+	textarea {
+		@extend .form-control;
+		@extend .h-auto;
+	}
+
+	input[type=submit],
+	button[type=submit] {
+		@extend .btn;
+		@extend .btn-success;
+	}
+
+	a.subscription-toggle {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-warning;
+		@extend .mb-2;
+	}
+
+	a.favorite-toggle {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-danger;
+		@extend .mb-2;
+	}
+
+	.bbp-the-content-wrapper,
+	.wp-editor-container {
+		@extend .border-0;
+	}
+
+	.bbp-search-form {
+		input[type=submit] {
+			@extend .mb-2;
+		}
+	}
+
+	.bbp-breadcrumb {
+		@extend .d-none;
+		@extend .d-md-inline-block;
+	}
+
+	.bbp-header {
+		@extend .d-none;
+		@extend .d-md-block;
+
+		.forum-titles {
+			@extend .row;
+			@extend .m-0;
+
+			li {
+				@extend .col-12;
+				@extend .col-md-3;
+				@extend .float-none;
+			}
+		}
+	}
+
+	.bbp-footer {
+		@extend .d-none;
+	}
+
+	.bbp-body {
+		@extend .card;
+		@extend .shadow;
+		@extend .border-0;
+
+		ul {
+			@extend .row;
+			@extend .m-0;
+
+			.bbp-topic-title {
+				@extend .col-12;
+				@extend .col-md-3;
+				@extend .float-none;
+			}
+
+			.bbp-topic-voice-count,
+			.bbp-topic-reply-count,
+			.bbp-topic-freshness {
+				@extend .col-4;
+				@extend .col-md-3;
+				@extend .float-none;
+			}
+		}
+
+		.avatar {
+			@extend .rounded-circle;
+		}
+	}
+}
