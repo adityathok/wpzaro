@@ -13,16 +13,25 @@
 		@extend .rounded;
 
 		ul {
-			@extend .d-block;
+			overflow-x: scroll;
+
+			@extend .d-flex;
 
 			li {
+				@extend .bg-transparent;
 
 				a {
+					white-space: nowrap;
+
 					@extend .px-2;
 					@extend .rounded;
 				}
 			}
 		}
+	}
+
+	.bp-subnavs {
+		@extend .bg-light;
 	}
 
 	.profile-edit {

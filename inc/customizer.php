@@ -104,6 +104,31 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 				)
 			)
 		);
+		
+		$wp_customize->add_setting(
+			'understrap_container_width',
+			array(
+				'default'           => '1200',
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'sanitize_text_field',
+				'capability'        => 'edit_theme_options',
+			)
+		);
+		
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_container_width',
+				array(
+					'label'       => __( 'Container width', 'understrap' ),
+					'description' => __( 'Override Understrap\'s Container.', 'understrap' ),
+					'section'     => 'understrap_theme_layout_options',
+					'settings'    => 'understrap_container_width',
+					'type'        => 'number',
+					'priority'    => 20,
+				)
+			)
+		);
 
 		$wp_customize->add_setting(
 			'understrap_navbar_type',

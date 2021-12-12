@@ -10383,8 +10383,7 @@ fieldset:disabled .bbpress-wrapper button[type=submit],
   display: inline-block !important;
 }
 
-.d-block, .buddypress-wrap .main-navs ul,
-.buddypress-wrap .bp-subnavs ul {
+.d-block {
   display: block !important;
 }
 
@@ -10404,7 +10403,8 @@ fieldset:disabled .bbpress-wrapper button[type=submit],
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, .buddypress-wrap .main-navs ul,
+.buddypress-wrap .bp-subnavs ul {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -11618,7 +11618,7 @@ fieldset:disabled .bbpress-wrapper button[type=submit],
   background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-light, .buddypress-wrap .bp-feedback {
+.bg-light, .buddypress-wrap .bp-feedback, .buddypress-wrap .bp-subnavs {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -11643,7 +11643,8 @@ fieldset:disabled .bbpress-wrapper button[type=submit],
   background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-transparent {
+.bg-transparent, .buddypress-wrap .main-navs ul li,
+.buddypress-wrap .bp-subnavs ul li {
   --bs-bg-opacity: 1;
   background-color: transparent !important;
 }
@@ -16111,6 +16112,14 @@ figure.woocommerce-product-gallery__wrapper {
 * Use existing Bootstrap 4/5 classes and
 * variables to extend - override buddypress style
 */
+.buddypress-wrap .main-navs ul,
+.buddypress-wrap .bp-subnavs ul {
+  overflow-x: scroll;
+}
+.buddypress-wrap .main-navs ul li a,
+.buddypress-wrap .bp-subnavs ul li a {
+  white-space: nowrap;
+}
 /*
 * Use existing Bootstrap 4/5 classes and
 * variables to extend - override bbpress style
