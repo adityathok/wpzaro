@@ -19152,4 +19152,151 @@ figure.woocommerce-product-gallery__wrapper {
   clip: auto;
 }
 
+/*
+* Use existing Bootstrap 4 classes and
+* variables to extend - override Comment form style
+*
+*/
+#comments {
+  margin: 2rem 0;
+}
+#comments .comments-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+#comments .comments-title span {
+  text-transform: none;
+}
+#comments .comment-list {
+  padding: 0;
+  list-style: none;
+}
+#comments .comment-list .comment {
+  margin-top: 2rem;
+  position: relative;
+}
+#comments .comment-list .comment .comment-body .comment-meta {
+  clear: both;
+  margin-bottom: 0.5rem;
+}
+#comments .comment-list .comment .comment-body .comment-meta .comment-author img {
+  float: left;
+  margin: 0 0.75rem 0.75rem 0;
+  border-radius: 0.35rem;
+}
+#comments .comment-list .comment .comment-body .comment-content {
+  clear: both;
+  padding-left: 3.7rem;
+}
+#comments .comment-list .comment .comment-body .comment-content h1, #comments .comment-list .comment .comment-body .comment-content .h1 {
+  font-size: 1.3rem;
+}
+#comments .comment-list .comment .comment-body .reply .comment-reply-link {
+  position: relative;
+  margin-left: 3.7rem;
+}
+#comments .comment-list .comment .comment-body .reply .comment-reply-link:before {
+  content: "\f112";
+  font-family: "FontAwesome";
+  margin-right: 0.3rem;
+}
+#comments .comment-list .comment .comment-body .says {
+  display: none;
+}
+#comments .comment-list .comment .comment-respond {
+  background: #f3f3f3;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+#comments .comment-list .comment .comment-respond .comment-reply-title {
+  font-size: 1.25rem;
+}
+#comments .comment-list .comment .comment-respond .comment-reply-title #cancel-comment-reply-link {
+  margin-left: 1rem;
+  position: relative;
+}
+#comments .comment-list .comment-author-admin {
+  background: #fffcec;
+  padding: 0.3rem;
+  border-left: 2px solid #e4debe;
+}
+#comments .comment-list .comment-author-admin .comment-author .url {
+  position: relative;
+}
+#comments .comment-list .comment-author-admin .comment-author .url:before {
+  content: "\f005";
+  font-family: "FontAwesome";
+  margin-right: 0.3rem;
+}
+#comments ol.children {
+  list-style: none;
+  padding-left: 3.7rem;
+}
+
+blockquote {
+  padding: 1rem;
+  background: #f4f4f4;
+  border-left: 5px solid var(--secondary);
+  font-style: italic;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #primary.content-area {
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+}
+.widget {
+  margin-bottom: 2rem;
+}
+.widget ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.widget_calendar .wp-calendar-table {
+  width: 100%;
+}
+.widget_calendar .wp-calendar-table thead th {
+  text-align: center;
+  background-color: #333333;
+  color: #ffff;
+  padding: 0.5rem;
+}
+.widget_calendar .wp-calendar-table tbody td {
+  text-align: center;
+  border-bottom: 1px solid #dddddd;
+  padding: 0.5rem;
+}
+
+.widget_tag_cloud .tagcloud a {
+  font-size: 90% !important;
+  display: inline-block;
+  background-color: #cecece;
+  padding: 0.4rem 0.5rem;
+  margin: 0 0.3rem 0.3rem 0;
+  text-decoration: none;
+}
+
+.widget_recent_entries ul {
+  padding: 0;
+  list-style-type: none;
+}
+.widget_recent_entries ul li:not(:last-child) {
+  margin-bottom: 0.25em;
+}
+.widget_recent_entries ul a {
+  display: block;
+}
+.widget_recent_entries ul .post-date {
+  font-size: 90%;
+  display: block;
+}
+
 /*# sourceMappingURL=theme.css.map */
