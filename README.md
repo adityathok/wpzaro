@@ -1,1 +1,1 @@
-# my-understrap
+# WPzaro WordPress Theme Starter

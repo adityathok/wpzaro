@@ -22,7 +22,7 @@ if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
 if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
     add_action('wpzaro_header','wpzaro_header_layout_content',21);
     function wpzaro_header_layout_content() {
-        $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
+        $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
         ?>
         <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wpzaro' ); ?></a>
         <?php get_template_part( 'global-templates/navbar', $navbar_type); ?>
