@@ -39,7 +39,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 					if ( ! empty( $curauth->ID ) ) {
 						$alt = sprintf(
 							/* translators: %s: author name */
-							_x( 'Profile picture of %s', 'Avatar alt', 'understrap' ),
+							_x( 'Profile picture of %s', 'Avatar alt', 'wpzaro' ),
 							$curauth->display_name
 						);
 						echo get_avatar( $curauth->ID, 96, '', $alt );
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 						?>
 						<dl>
 							<?php if ( ! empty( $curauth->user_url ) ) : ?>
-								<dt><?php esc_html_e( 'Website', 'understrap' ); ?></dt>
+								<dt><?php esc_html_e( 'Website', 'wpzaro' ); ?></dt>
 								<dd>
 									<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
 								</dd>
@@ -60,7 +60,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 									<?php
 									printf(
 										/* translators: %s: author name */
-										esc_html__( 'About %s', 'understrap' ),
+										esc_html__( 'About %s', 'wpzaro' ),
 										$curauth->display_name
 									);
 									?>
@@ -74,7 +74,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 					if ( have_posts() ) {
 						printf(
 							/* translators: %s: author name */
-							'<h2>' . esc_html__( 'Posts by %s', 'understrap' ) . '</h2>',
+							'<h2>' . esc_html__( 'Posts by %s', 'wpzaro' ) . '</h2>',
 							$curauth->display_name
 						);
 					}

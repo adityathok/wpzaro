@@ -39,9 +39,9 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 		$wp_customize->add_section(
 			'wpzaro_theme_layout_options',
 			array(
-				'title'       => __( 'Theme Layout Settings', 'understrap' ),
+				'title'       => __( 'Theme Layout Settings', 'wpzaro' ),
 				'capability'  => 'edit_theme_options',
-				'description' => __( 'Container width and sidebar defaults', 'understrap' ),
+				'description' => __( 'Container width and sidebar defaults', 'wpzaro' ),
 				'priority'    => apply_filters( 'wpzaro_theme_layout_options_priority', 160 ),
 			)
 		);
@@ -91,14 +91,14 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_container_type',
 				array(
-					'label'       => __( 'Container Width', 'understrap' ),
-					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'understrap' ),
+					'label'       => __( 'Container Width', 'wpzaro' ),
+					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_type',
 					'type'        => 'select',
 					'choices'     => array(
-						'container'       => __( 'Fixed width container', 'understrap' ),
-						'container-fluid' => __( 'Full width container', 'understrap' ),
+						'container'       => __( 'Fixed width container', 'wpzaro' ),
+						'container-fluid' => __( 'Full width container', 'wpzaro' ),
 					),
 					'priority'    => apply_filters( 'wpzaro_container_type_priority', 10 ),
 				)
@@ -120,8 +120,8 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_container_width',
 				array(
-					'label'       => __( 'Container width', 'understrap' ),
-					'description' => __( 'Override Understrap\'s Container.', 'understrap' ),
+					'label'       => __( 'Container width', 'wpzaro' ),
+					'description' => __( 'Override Understrap\'s Container.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_width',
 					'type'        => 'number',
@@ -145,18 +145,18 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_navbar_type',
 				array(
-					'label'             => __( 'Responsive Navigation Type', 'understrap' ),
+					'label'             => __( 'Responsive Navigation Type', 'wpzaro' ),
 					'description'       => __(
 						'Choose between an expanding and collapsing navbar or an offcanvas drawer.',
-						'understrap'
+						'wpzaro'
 					),
 					'section'           => 'wpzaro_theme_layout_options',
 					'settings'          => 'wpzaro_navbar_type',
 					'type'              => 'select',
 					'sanitize_callback' => 'wpzaro_theme_slug_sanitize_select',
 					'choices'           => array(
-						'collapse'  => __( 'Collapse', 'understrap' ),
-						'offcanvas' => __( 'Offcanvas', 'understrap' ),
+						'collapse'  => __( 'Collapse', 'wpzaro' ),
+						'offcanvas' => __( 'Offcanvas', 'wpzaro' ),
 					),
 					'priority'          => apply_filters( 'wpzaro_navbar_type_priority', 20 ),
 				)
@@ -178,20 +178,20 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_sidebar_position',
 				array(
-					'label'             => __( 'Sidebar Positioning', 'understrap' ),
+					'label'             => __( 'Sidebar Positioning', 'wpzaro' ),
 					'description'       => __(
 						'Set sidebar\'s default position. Can either be: right, left, both or none. Note: this can be overridden on individual pages.',
-						'understrap'
+						'wpzaro'
 					),
 					'section'           => 'wpzaro_theme_layout_options',
 					'settings'          => 'wpzaro_sidebar_position',
 					'type'              => 'select',
 					'sanitize_callback' => 'wpzaro_theme_slug_sanitize_select',
 					'choices'           => array(
-						'right' => __( 'Right sidebar', 'understrap' ),
-						'left'  => __( 'Left sidebar', 'understrap' ),
-						'both'  => __( 'Left & Right sidebars', 'understrap' ),
-						'none'  => __( 'No sidebar', 'understrap' ),
+						'right' => __( 'Right sidebar', 'wpzaro' ),
+						'left'  => __( 'Left sidebar', 'wpzaro' ),
+						'both'  => __( 'Left & Right sidebars', 'wpzaro' ),
+						'none'  => __( 'No sidebar', 'wpzaro' ),
 					),
 					'priority'          => apply_filters( 'wpzaro_sidebar_position_priority', 20 ),
 				)
@@ -213,8 +213,8 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_site_info_override',
 				array(
-					'label'       => __( 'Footer Site Info', 'understrap' ),
-					'description' => __( 'Override Understrap\'s site info located at the footer of the page.', 'understrap' ),
+					'label'       => __( 'Footer Site Info', 'wpzaro' ),
+					'description' => __( 'Override Understrap\'s site info located at the footer of the page.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_site_info_override',
 					'type'        => 'textarea',

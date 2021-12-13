@@ -47,29 +47,29 @@ if ( ! function_exists( 'wpzaro_tiny_mce_before_init' ) ) {
 
 		$style_formats = array(
 			array(
-				'title'    => __( 'Lead Paragraph', 'understrap' ),
+				'title'    => __( 'Lead Paragraph', 'wpzaro' ),
 				'selector' => 'p',
 				'classes'  => 'lead',
 				'wrapper'  => true,
 			),
 			array(
-				'title'  => _x( 'Small', 'Font size name', 'understrap' ),
+				'title'  => _x( 'Small', 'Font size name', 'wpzaro' ),
 				'inline' => 'small',
 			),
 			array(
-				'title'   => __( 'Blockquote', 'understrap' ),
+				'title'   => __( 'Blockquote', 'wpzaro' ),
 				'block'   => 'blockquote',
 				'classes' => 'blockquote',
 				'wrapper' => true,
 			),
 			array(
-				'title'   => __( 'Blockquote Footer', 'understrap' ),
+				'title'   => __( 'Blockquote Footer', 'wpzaro' ),
 				'block'   => 'footer',
 				'classes' => 'blockquote-footer',
 				'wrapper' => true,
 			),
 			array(
-				'title'  => __( 'Cite', 'understrap' ),
+				'title'  => __( 'Cite', 'wpzaro' ),
 				'inline' => 'cite',
 			),
 		);

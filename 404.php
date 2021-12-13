@@ -27,13 +27,13 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 
 						<header class="page-header">
 
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'understrap' ); ?></h1>
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wpzaro' ); ?></h1>
 
 						</header><!-- .page-header -->
 
 						<div class="page-content">
 
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'understrap' ); ?></p>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'wpzaro' ); ?></p>
 
 							<?php get_search_form(); ?>
 
@@ -43,7 +43,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 
 								<div class="widget widget_categories">
 
-									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'understrap' ); ?></h2>
+									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'wpzaro' ); ?></h2>
 
 									<ul>
 										<?php
@@ -66,7 +66,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 							<?php
 
 							/* translators: %1$s: smiley */
-							$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'understrap' ), convert_smilies( ':)' ) ) . '</p>';
+							$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'wpzaro' ), convert_smilies( ':)' ) ) . '</p>';
 							the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 							the_widget( 'WP_Widget_Tag_Cloud' );

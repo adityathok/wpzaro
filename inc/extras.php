@@ -284,7 +284,7 @@ if ( ! function_exists( 'wpzaro_all_excerpts_get_more_link' ) ) {
 		if ( ! is_admin() ) {
 			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
 				'Read More...',
-				'understrap'
+				'wpzaro'
 			) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';
 		}
 		return $post_excerpt;

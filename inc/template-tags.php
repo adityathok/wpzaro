@@ -30,7 +30,7 @@ if ( ! function_exists( 'wpzaro_posted_on' ) ) {
 			'wpzaro_posted_on',
 			sprintf(
 				'<span class="posted-on">%1$s <a href="%2$s" rel="bookmark">%3$s</a></span>',
-				esc_html_x( 'Posted on', 'post date', 'understrap' ),
+				esc_html_x( 'Posted on', 'post date', 'wpzaro' ),
 				esc_url( get_permalink() ),
 				apply_filters( 'wpzaro_posted_on_time', $time_string )
 			)
@@ -39,7 +39,7 @@ if ( ! function_exists( 'wpzaro_posted_on' ) ) {
 			'wpzaro_posted_by',
 			sprintf(
 				'<span class="byline"> %1$s<span class="author vcard"> <a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				$posted_on ? esc_html_x( 'by', 'post author', 'understrap' ) : esc_html_x( 'Posted by', 'post author', 'understrap' ),
+				$posted_on ? esc_html_x( 'by', 'post author', 'wpzaro' ) : esc_html_x( 'Posted by', 'post author', 'wpzaro' ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			)
@@ -56,21 +56,21 @@ if ( ! function_exists( 'wpzaro_entry_footer' ) ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'understrap' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'wpzaro' ) );
 			if ( $categories_list && wpzaro_categorized_blog() ) {
 				/* translators: %s: Categories of current post */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'understrap' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %s', 'wpzaro' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'understrap' ) );
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'wpzaro' ) );
 			if ( $tags_list ) {
 				/* translators: %s: Tags of current post */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'wpzaro' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'understrap' ), esc_html__( '1 Comment', 'understrap' ), esc_html__( '% Comments', 'understrap' ) );
+			comments_popup_link( esc_html__( 'Leave a comment', 'wpzaro' ), esc_html__( '1 Comment', 'wpzaro' ), esc_html__( '% Comments', 'wpzaro' ) );
 			echo '</span>';
 		}
 		wpzaro_edit_post_link();
@@ -164,17 +164,17 @@ if ( ! function_exists( 'wpzaro_comment_navigation' ) ) {
 		?>
 		<nav class="comment-navigation" id="<?php echo esc_attr( $nav_id ); ?>">
 
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'understrap' ); ?></h1>
+			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'wpzaro' ); ?></h1>
 
 			<?php if ( get_previous_comments_link() ) { ?>
 				<div class="nav-previous">
-					<?php previous_comments_link( __( '&larr; Older Comments', 'understrap' ) ); ?>
+					<?php previous_comments_link( __( '&larr; Older Comments', 'wpzaro' ) ); ?>
 				</div>
 			<?php } ?>
 
 			<?php if ( get_next_comments_link() ) { ?>
 				<div class="nav-next">
-					<?php next_comments_link( __( 'Newer Comments &rarr;', 'understrap' ) ); ?>
+					<?php next_comments_link( __( 'Newer Comments &rarr;', 'wpzaro' ) ); ?>
 				</div>
 			<?php } ?>
 
@@ -191,7 +191,7 @@ if ( ! function_exists( 'wpzaro_edit_post_link' ) ) {
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'understrap' ),
+				esc_html__( 'Edit %s', 'wpzaro' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
@@ -213,14 +213,14 @@ if ( ! function_exists( 'wpzaro_post_nav' ) ) {
 		}
 		?>
 		<nav class="container navigation post-navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'understrap' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'wpzaro' ); ?></h2>
 			<div class="d-flex nav-links justify-content-between">
 				<?php
 				if ( get_previous_post_link() ) {
-					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'wpzaro' ) );
 				}
 				if ( get_next_post_link() ) {
-					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
+					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'wpzaro' ) );
 				}
 				?>
 			</div><!-- .nav-links -->
@@ -241,7 +241,7 @@ if ( ! function_exists( 'wpzaro_link_pages' ) ) {
 		$args = apply_filters(
 			'wpzaro_link_pages_args',
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'understrap' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wpzaro' ),
 				'after'  => '</div>',
 			)
 		);

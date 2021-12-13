@@ -77,14 +77,14 @@ if ( ! function_exists( 'wpzaro_slbd_count_widgets' ) ) {
  */
 function deprecated_translations() {
 	array(
-		__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ),
-		__( 'Previous', 'understrap' ),
-		__( 'Next', 'understrap' ),
-		__( 'About:', 'understrap' ),
-		__( 'Profile', 'understrap' ),
-		__( 'Posts by', 'understrap' ),
-		__( 'Permanent Link:', 'understrap' ),
-		__( 'in', 'understrap' ),
-		__( 'Edit', 'understrap' ),
+		__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wpzaro' ),
+		__( 'Previous', 'wpzaro' ),
+		__( 'Next', 'wpzaro' ),
+		__( 'About:', 'wpzaro' ),
+		__( 'Profile', 'wpzaro' ),
+		__( 'Posts by', 'wpzaro' ),
+		__( 'Permanent Link:', 'wpzaro' ),
+		__( 'in', 'wpzaro' ),
+		__( 'Edit', 'wpzaro' ),
 	);
 }
