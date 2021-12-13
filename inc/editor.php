@@ -1,6 +1,6 @@
 <?php
 /**
- * Understrap modify editor
+ * wpzaro modify editor
  *
  * @package wpzaro
  */

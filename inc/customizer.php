@@ -1,6 +1,6 @@
 <?php
 /**
- * Understrap Theme Customizer
+ * wpzaro Theme Customizer
  *
  * @package wpzaro
  */
@@ -121,7 +121,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_container_width',
 				array(
 					'label'       => __( 'Container width', 'wpzaro' ),
-					'description' => __( 'Override Understrap\'s Container.', 'wpzaro' ),
+					'description' => __( 'Override wpzaro Container.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_width',
 					'type'        => 'number',
@@ -214,7 +214,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_site_info_override',
 				array(
 					'label'       => __( 'Footer Site Info', 'wpzaro' ),
-					'description' => __( 'Override Understrap\'s site info located at the footer of the page.', 'wpzaro' ),
+					'description' => __( 'Override wpzaro\'s site info located at the footer of the page.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_site_info_override',
 					'type'        => 'textarea',

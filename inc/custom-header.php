@@ -17,9 +17,9 @@ if ( ! function_exists( 'wpzaro_custom_header_setup' ) ) {
 	function wpzaro_custom_header_setup() {
 
 		/**
-		 * Filter Understrap custom-header support arguments.
+		 * Filter wpzaro custom-header support arguments.
 		 *
-		 * @since Understrap 0.5.2
+		 * @since wpzaro 0.5.2
 		 *
 		 * @param array $args {
 		 *     An array of custom-header support arguments.

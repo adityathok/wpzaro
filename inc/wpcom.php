@@ -44,6 +44,6 @@ if ( ! function_exists( 'wpzaro_wpcom_styles' ) ) {
 	 * WordPress.com-specific styles
 	 */
 	function wpzaro_wpcom_styles() {
-		wp_enqueue_style( 'understrap-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', array(), '20160411' );
+		wp_enqueue_style( 'wpzaro-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', array(), '20160411' );
 	}
 }

@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 				/* translators: 1: Theme name, 2: Theme author */
 				esc_html__( 'Theme: %1$s by %2$s.', 'wpzaro' ),
 				$the_theme->get( 'Name' ),
-				'<a href="' . esc_url( __( 'https://understrap.com', 'wpzaro' ) ) . '">understrap.com</a>'
+				'<a href="' . esc_url( __( 'https://github.com', 'wpzaro' ) ) . '">github.com</a>'
 			),
 			sprintf( // WPCS: XSS ok.
 				/* translators: Theme version */

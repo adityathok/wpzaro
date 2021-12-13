@@ -33,7 +33,7 @@ if ( ! function_exists( 'wpzaro_body_classes' ) ) {
 		// Adds a body class based on the presence of a sidebar.
 		$sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );
 		if ( is_page_template( 'page-templates/fullwidthpage.php' ) ) {
-			$classes[] = 'understrap-no-sidebar';
+			$classes[] = 'wpzaro-no-sidebar';
 		} elseif (
 			is_page_template(
 				array(
@@ -43,11 +43,11 @@ if ( ! function_exists( 'wpzaro_body_classes' ) ) {
 				)
 			)
 		) {
-			$classes[] = 'understrap-has-sidebar';
+			$classes[] = 'wpzaro-has-sidebar';
 		} elseif ( 'none' !== $sidebar_pos ) {
-			$classes[] = 'understrap-has-sidebar';
+			$classes[] = 'wpzaro-has-sidebar';
 		} else {
-			$classes[] = 'understrap-no-sidebar';
+			$classes[] = 'wpzaro-no-sidebar';
 		}
 
 		return $classes;
@@ -282,7 +282,7 @@ if ( ! function_exists( 'wpzaro_all_excerpts_get_more_link' ) ) {
 	 */
 	function wpzaro_all_excerpts_get_more_link( $post_excerpt ) {
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
+			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary wpzaro-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
 				'Read More...',
 				'wpzaro'
 			) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';

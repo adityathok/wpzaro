@@ -47,7 +47,7 @@ bower_components
 node_modules
 /vendor/
 
-# Other UnderStrap specific files and directories
+# Other wpzaro specific files and directories
 phpcs.xml
 dist/
 dist-product/
