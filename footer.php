@@ -10,37 +10,21 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'wpzaro_container_type' );
 ?>
+			<?php wpzaro_content_bottom(); ?>
 
-<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
+	</div><!-- .page-content we need this extra closing tag here -->
 
-<div class="wrapper" id="wrapper-footer">
+	<?php wpzaro_content_after(); ?>
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<?php 
+	wpzaro_footer_before(); 
 
-		<div class="row">
+	wpzaro_footer(); 
 
-			<div class="col-md-12">
-
-				<footer class="site-footer text-center" id="colophon">
-
-					<div class="site-info">
-
-						<?php wpzaro_site_info(); ?>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
-</div><!-- wrapper end -->
-
+	wpzaro_footer_after();
+	?>
+	
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>

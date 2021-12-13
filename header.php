@@ -24,12 +24,16 @@ $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
 <body <?php body_class(); ?> <?php wpzaro_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
+		<?php 
+		wpzaro_header_before(); 
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar">
+		wpzaro_header(); 
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wpzaro' ); ?></a>
+		wpzaro_header_after();
+		?>
 
-		<?php get_template_part( 'global-templates/navbar', $navbar_type); ?>
+			<?php wpzaro_content_before(); ?>
 
-	</header><!-- #wrapper-navbar end -->
+				<div class="site-content" id="page-content">
+
+					<?php wpzaro_content_top(); ?>
