@@ -7,7 +7,7 @@
  
  //opened header layout
 if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
-    add_action('wpzaro_header_before','wpzaro_header_layout_open',21);
+    add_action('wpzaro_header_before','wpzaro_header_layout_open',20);
     function wpzaro_header_layout_open() {
         ?>
 
@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
 
 ///closed header layout
 if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
-    add_action('wpzaro_header','wpzaro_header_layout_content',21);
+    add_action('wpzaro_header','wpzaro_header_layout_content',20);
     function wpzaro_header_layout_content() {
         $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
         ?>
@@ -32,7 +32,7 @@ if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
 
 ///closed header layout
 if ( ! function_exists( 'wpzaro_header_layout_close' ) ) {
-    add_action('wpzaro_header_after','wpzaro_header_layout_close',21);
+    add_action('wpzaro_header_after','wpzaro_header_layout_close',20);
     function wpzaro_header_layout_close() {
         ?>
         </header><!-- #wrapper-navbar end -->
@@ -42,7 +42,7 @@ if ( ! function_exists( 'wpzaro_header_layout_close' ) ) {
 
 //opened footer layout
 if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
-    add_action('wpzaro_footer_before','wpzaro_footer_layout_open',21);
+    add_action('wpzaro_footer_before','wpzaro_footer_layout_open',20);
     function wpzaro_footer_layout_open() {
         $container = get_theme_mod( 'wpzaro_container_type' );
         ?>
@@ -65,7 +65,7 @@ if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
 
 ///closed footer layout
 if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
-    add_action('wpzaro_footer','wpzaro_footer_layout_content',21);
+    add_action('wpzaro_footer','wpzaro_footer_layout_content',20);
     function wpzaro_footer_layout_content() {
         $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
         ?>
@@ -80,7 +80,7 @@ if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
 
 ///closed header layout
 if ( ! function_exists( 'wpzaro_header_layout_close' ) ) {
-    add_action('wpzaro_header_after','wpzaro_header_layout_close',21);
+    add_action('wpzaro_header_after','wpzaro_header_layout_close',20);
     function wpzaro_header_layout_close() {
         ?>
                         </footer>
