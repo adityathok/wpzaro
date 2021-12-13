@@ -2,7 +2,7 @@
 /**
  * Declaring widgets
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

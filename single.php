@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

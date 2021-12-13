@@ -2,7 +2,7 @@
 /**
  * Left sidebar check
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

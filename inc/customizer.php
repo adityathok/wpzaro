@@ -2,7 +2,7 @@
 /**
  * Understrap Theme Customizer
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

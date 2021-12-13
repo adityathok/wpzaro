@@ -4,7 +4,7 @@
  *
  * Learn more: https://codex.wordpress.org/Author_Templates
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

@@ -2,7 +2,7 @@
 /**
  * Sidebar setup for footer full
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

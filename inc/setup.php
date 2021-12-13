@@ -2,7 +2,7 @@
 /**
  * Theme basic setup
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

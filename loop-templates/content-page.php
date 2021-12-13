@@ -2,7 +2,7 @@
 /**
  * Partial template for content in page.php
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

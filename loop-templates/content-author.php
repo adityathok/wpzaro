@@ -2,7 +2,7 @@
 /**
  * Template for displaying posts on the author archive
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

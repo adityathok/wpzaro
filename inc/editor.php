@@ -2,7 +2,7 @@
 /**
  * Understrap modify editor
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

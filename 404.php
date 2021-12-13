@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

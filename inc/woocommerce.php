@@ -2,7 +2,7 @@
 /**
  * Add WooCommerce support
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

@@ -2,7 +2,7 @@
 /**
  * Comment layout
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

@@ -2,7 +2,7 @@
 /**
  * The right sidebar containing the main widget area
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

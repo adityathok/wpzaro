@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

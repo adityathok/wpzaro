@@ -2,7 +2,7 @@
 /**
  * Understrap enqueue scripts
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

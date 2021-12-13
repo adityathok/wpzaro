@@ -2,7 +2,7 @@
 /**
  * UnderStrap functions and definitions
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

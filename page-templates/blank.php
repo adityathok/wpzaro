@@ -4,7 +4,7 @@
  *
  * Template for displaying a blank page.
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.

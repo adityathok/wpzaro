@@ -2,7 +2,7 @@
 /**
  * Custom hooks
  *
- * @package Understrap
+ * @package wpzaro
  */
 
 // Exit if accessed directly.
