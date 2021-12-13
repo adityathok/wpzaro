@@ -67,7 +67,6 @@ if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
 if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
     add_action('wpzaro_footer','wpzaro_footer_layout_content',20);
     function wpzaro_footer_layout_content() {
-        $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
         ?>
             <div class="site-info">
 
