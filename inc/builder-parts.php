@@ -44,11 +44,20 @@ if ( ! function_exists( 'wpzaro_header_layout_close' ) ) {
 if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
     add_action('wpzaro_footer_before','wpzaro_footer_layout_open',21);
     function wpzaro_footer_layout_open() {
+        $container = get_theme_mod( 'wpzaro_container_type' );
         ?>
+        <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
         <!-- ******************* The Footer Area ******************* -->
         <div class="wrapper" id="wrapper-footer">
-	        <footer class="site-footer" id="colophon">
+
+            <div class="<?php echo esc_attr( $container ); ?>">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <footer class="site-footer" id="colophon">
 
         <?php
     }
@@ -74,7 +83,14 @@ if ( ! function_exists( 'wpzaro_header_layout_close' ) ) {
     add_action('wpzaro_header_after','wpzaro_header_layout_close',21);
     function wpzaro_header_layout_close() {
         ?>
-            </footer>
+                        </footer>
+
+                    </div><!--col end -->
+
+                </div><!-- row end -->
+
+            </div><!-- container end -->
+
         </div>  <!-- #wrapper-footer end -->
         <?php
     }
