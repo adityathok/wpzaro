@@ -28,6 +28,7 @@ $wpzaro_includes = array(
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
+	'/builder-parts.php',                   // Load builder layout from hooks.
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
