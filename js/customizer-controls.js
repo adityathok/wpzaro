@@ -8,8 +8,8 @@
  (function() {
 	wp.customize.bind( 'ready', function() {
 		// Only show the navbar type setting when running Bootstrap 5.
-		wp.customize( 'understrap_bootstrap_version', function( setting ) {
-			wp.customize.control( 'understrap_navbar_type', function( control ) {
+		wp.customize( 'wpzaro_bootstrap_version', function( setting ) {
+			wp.customize.control( 'wpzaro_navbar_type', function( control ) {
 				var visibility = function() {
 					if ( 'bootstrap5' === setting.get() ) {
 						control.container.slideDown( 180 );

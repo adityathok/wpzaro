@@ -23,14 +23,14 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_content();
-		understrap_link_pages();
+		wpzaro_link_pages();
 		?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-		<?php understrap_edit_post_link(); ?>
+		<?php wpzaro_edit_post_link(); ?>
 
 	</footer><!-- .entry-footer -->
 

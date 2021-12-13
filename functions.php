@@ -9,10 +9,10 @@
 defined( 'ABSPATH' ) || exit;
 
 // UnderStrap's includes directory.
-$understrap_inc_dir = 'inc';
+$wpzaro_inc_dir = 'inc';
 
 // Array of files to include.
-$understrap_includes = array(
+$wpzaro_includes = array(
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
@@ -31,15 +31,15 @@ $understrap_includes = array(
 
 // Load WooCommerce functions if WooCommerce is activated.
 if ( class_exists( 'WooCommerce' ) ) {
-	$understrap_includes[] = '/woocommerce.php';
+	$wpzaro_includes[] = '/woocommerce.php';
 }
 
 // Load Jetpack compatibility file if Jetpack is activiated.
 if ( class_exists( 'Jetpack' ) ) {
-	$understrap_includes[] = '/jetpack.php';
+	$wpzaro_includes[] = '/jetpack.php';
 }
 
 // Include files.
-foreach ( $understrap_includes as $file ) {
-	require_once get_theme_file_path( $understrap_inc_dir . $file );
+foreach ( $wpzaro_includes as $file ) {
+	require_once get_theme_file_path( $wpzaro_inc_dir . $file );
 }

@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'wpzaro_container_type' );
 
 ?>
 

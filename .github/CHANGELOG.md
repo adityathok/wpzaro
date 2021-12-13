@@ -114,7 +114,7 @@ e6c9552
 Commits on Feb 19, 2019
 Lon Koenig
 Lon Koenig
-Make understrap_mobile_web_app_meta() and understrap_pingback() plug…
+Make wpzaro_mobile_web_app_meta() and wpzaro_pingback() plug…
 6fcf1e9
 
 Commits on Feb 22, 2019

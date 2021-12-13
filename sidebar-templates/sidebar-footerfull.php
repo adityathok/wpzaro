@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'wpzaro_container_type' );
 
 ?>
 

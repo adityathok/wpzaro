@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( 'post' === get_post_type() ) : ?>
 
 			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
+				<?php wpzaro_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
@@ -36,14 +36,14 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_excerpt();
-		understrap_link_pages();
+		wpzaro_link_pages();
 		?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php wpzaro_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

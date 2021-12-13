@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod( 'wpzaro_container_type' );
 ?>
 
 <div class="wrapper" id="error-404-wrapper">
@@ -39,7 +39,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-							<?php if ( understrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+							<?php if ( wpzaro_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 
 								<div class="widget widget_categories">
 

@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
+$navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,7 +21,7 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
+<body <?php body_class(); ?> <?php wpzaro_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 

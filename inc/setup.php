@@ -13,9 +13,9 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-add_action( 'after_setup_theme', 'understrap_setup' );
+add_action( 'after_setup_theme', 'wpzaro_setup' );
 
-if ( ! function_exists( 'understrap_setup' ) ) {
+if ( ! function_exists( 'wpzaro_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -23,7 +23,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function understrap_setup() {
+	function wpzaro_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -96,7 +96,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'understrap_custom_background_args',
+				'wpzaro_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -111,7 +111,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		add_theme_support( 'responsive-embeds' );
 
 		// Check and setup theme default settings.
-		understrap_setup_theme_default_settings();
+		wpzaro_setup_theme_default_settings();
 
 	}
 }

@@ -8,21 +8,21 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'understrap_site_info' ) ) {
+if ( ! function_exists( 'wpzaro_site_info' ) ) {
 	/**
 	 * Add site info hook to WP hook library.
 	 */
-	function understrap_site_info() {
-		do_action( 'understrap_site_info' );
+	function wpzaro_site_info() {
+		do_action( 'wpzaro_site_info' );
 	}
 }
 
-add_action( 'understrap_site_info', 'understrap_add_site_info' );
-if ( ! function_exists( 'understrap_add_site_info' ) ) {
+add_action( 'wpzaro_site_info', 'wpzaro_add_site_info' );
+if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 	/**
 	 * Add site info content.
 	 */
-	function understrap_add_site_info() {
+	function wpzaro_add_site_info() {
 		$the_theme = wp_get_theme();
 
 		$site_info = sprintf(
@@ -47,11 +47,11 @@ if ( ! function_exists( 'understrap_add_site_info' ) ) {
 		);
 
 		// Check if customizer site info has value.
-		if ( get_theme_mod( 'understrap_site_info_override' ) ) {
-			$site_info = get_theme_mod( 'understrap_site_info_override' );
+		if ( get_theme_mod( 'wpzaro_site_info_override' ) ) {
+			$site_info = get_theme_mod( 'wpzaro_site_info_override' );
 		}
 
-		echo apply_filters( 'understrap_site_info_content', $site_info ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo apply_filters( 'wpzaro_site_info_content', $site_info ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 }

@@ -8,13 +8,13 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'after_setup_theme', 'understrap_custom_header_setup' );
+add_action( 'after_setup_theme', 'wpzaro_custom_header_setup' );
 
-if ( ! function_exists( 'understrap_custom_header_setup' ) ) {
+if ( ! function_exists( 'wpzaro_custom_header_setup' ) ) {
 	/**
 	 * Set up custom header feature.
 	 */
-	function understrap_custom_header_setup() {
+	function wpzaro_custom_header_setup() {
 
 		/**
 		 * Filter Understrap custom-header support arguments.
@@ -36,7 +36,7 @@ if ( ! function_exists( 'understrap_custom_header_setup' ) ) {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'understrap_custom_header_args',
+				'wpzaro_custom_header_args',
 				array(
 					'default-image' => get_parent_theme_file_uri( '/img/header.jpg' ),
 					'width'         => 2000,
