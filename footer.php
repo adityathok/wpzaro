@@ -11,11 +11,11 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-			<?php wpzaro_content_bottom(); ?>
+				<?php wpzaro_content_bottom(); ?>
 
-	</div><!-- .page-content we need this extra closing tag here -->
+			</div><!-- #page-content we need this extra closing tag here -->
 
-	<?php wpzaro_content_after(); ?>
+		<?php wpzaro_content_after(); ?>
 
 	<?php 
 	wpzaro_footer_before(); 
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 	wpzaro_footer_after();
 	?>
 	
-</div><!-- #page we need this extra closing tag here -->
+</div><!-- #page .site closing div -->
 
 <?php wp_footer(); ?>
 

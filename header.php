@@ -23,7 +23,9 @@ $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
 
 <body <?php body_class(); ?> <?php wpzaro_body_attributes(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
+
 <div class="site" id="page">
+	
 		<?php 
 		wpzaro_header_before(); 
 
