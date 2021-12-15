@@ -32,6 +32,25 @@ if ( ! function_exists( 'wpzaro_scripts' ) ) {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+		wp_localize_script(
+			'wpzaro-scripts',
+			'themepath',
+			array(
+				'homeUrl'        => get_home_url(),
+				'ajaxUrl'        => admin_url('admin-ajax.php'),
+				'ajaxPost'       => admin_url('admin-post.php'),
+				'restUrl'        => rest_url(),
+				'restUrlProduct' => rest_url('wp/v2/product'),
+				'shopName'       => sanitize_title_with_dashes(sanitize_title_with_dashes(get_bloginfo('name'))),
+				'inWishlist'     => esc_html__("Already in wishlist","wpzaro"),
+				'removeWishlist' => esc_html__("Remove from wishlist","wpzaro"),
+				'buttonText'     => esc_html__("Details","wpzaro"),
+				'error'          => esc_html__("Something went wrong, could not add to wishlist","wpzaro"),
+				'noWishlist'     => esc_html__("No wishlist found","wpzaro"),
+			)
+		);
+
 	}
 } // End of if function_exists( 'wpzaro_scripts' ).
 
