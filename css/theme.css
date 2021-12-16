@@ -18755,8 +18755,11 @@ figure.woocommerce-product-gallery__wrapper {
 * Use existing Bootstrap 4/5 classes and
 * variables to extend - override buddypress style
 */
-.buddypress-wrap .main-navs ul,
-.buddypress-wrap .bp-subnavs ul {
+.buddypress-wrap .main-navs ul {
+  overflow-x: auto;
+}
+
+.buddypress-wrap .bp-subnavs {
   overflow-x: auto;
 }
 
