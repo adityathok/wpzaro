@@ -20,7 +20,11 @@ defined( 'ABSPATH' ) || exit;
 	<?php 
 	wpzaro_footer_before(); 
 
+	wpzaro_footer_open();
+
 	wpzaro_footer(); 
+
+	wpzaro_footer_close();
 
 	wpzaro_footer_after();
 	?>

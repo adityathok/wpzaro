@@ -29,7 +29,11 @@ $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
 		<?php 
 		wpzaro_header_before(); 
 
+		wpzaro_header_open(); 
+
 		wpzaro_header(); 
+
+		wpzaro_header_close();
 
 		wpzaro_header_after();
 		?>

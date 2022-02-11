@@ -16,10 +16,24 @@ function wpzaro_header_before() {
 }
 
  /**
+ * Site Open Header
+ */
+function wpzaro_header_open() {
+	do_action( 'wpzaro_header_open' );
+}
+
+ /**
  * Site Header
  */
 function wpzaro_header() {
 	do_action( 'wpzaro_header' );
+} 
+
+/**
+* Site Close Header
+*/
+function wpzaro_header_close() {
+   do_action( 'wpzaro_header_close' );
 }
 
 /**
@@ -64,11 +78,25 @@ function wpzaro_content_bottom() {
 	do_action( 'wpzaro_footer_before' );
 }
 
+/**
+ * Site Open Footer
+ */
+function wpzaro_footer_open() {
+	do_action( 'wpzaro_footer_open' );
+}
+
  /**
  * Site Footer
  */
 function wpzaro_footer() {
 	do_action( 'wpzaro_footer' );
+}
+
+/**
+ * Site Close Footer
+ */
+function wpzaro_footer_close() {
+	do_action( 'wpzaro_footer_close' );
 }
 
 /**

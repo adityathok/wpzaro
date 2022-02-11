@@ -115,3 +115,15 @@ if ( ! function_exists( 'wpzaro_setup' ) ) {
 
 	}
 }
+
+add_action( 'after_setup_theme', 'wpzaro_beaver_builder_support' );
+
+if ( ! function_exists( 'wpzaro_beaver_builder_support' ) ) {
+	/**
+	 * Add Themer support to theme
+	 */
+	function wpzaro_beaver_builder_support() {
+	add_theme_support( 'fl-theme-builder-headers' );
+	add_theme_support( 'fl-theme-builder-footers' );
+	}
+}
