@@ -127,3 +127,15 @@ if ( ! function_exists( 'wpzaro_beaver_builder_support' ) ) {
 	add_theme_support( 'fl-theme-builder-footers' );
 	}
 }
+
+if ( function_exists( 'register_block_style' ) ) {
+    register_block_style(
+        'core/quote',
+        array(
+            'name'         => 'link-button',
+            'label'        => __( 'Link Button', 'textdomain' ),
+            'is_default'   => true,
+            'inline_style' => '.is-style-link-button a { color: #ffffff !important; background-color: #333333; padding: 0.5rem 1rem; border-radius: 0.25rem;} .is-style-link-button a:hover {background-color: #101010;}',
+        )
+    );
+}
