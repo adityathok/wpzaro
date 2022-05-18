@@ -84,11 +84,11 @@ if ( ! function_exists( 'wpzaro_footer_layout_close' ) ) {
     }
 }
 
-add_action( 'wp', 'wpzaro_header_footer_bbrender' );
-if ( ! function_exists( 'wpzaro_header_footer_bbrender' ) ) {
+if ( ! function_exists( 'wpzaro_header_footer_bbrender' ) && class_exists('FLThemeBuilderLayoutData') ) {
 	/**
 	 * Render Header or Footer Beaver Builder Themer
 	 */
+    add_action( 'wp', 'wpzaro_header_footer_bbrender' );
 	function wpzaro_header_footer_bbrender() {
 		// Get the header ID.
 		$header_ids = FLThemeBuilderLayoutData::get_current_page_header_ids();
