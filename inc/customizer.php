@@ -92,7 +92,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_container_type',
 				array(
 					'label'       => __( 'Container Width', 'wpzaro' ),
-					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'wpzaro' ),
+					'description' => __( 'Choose between Theme container and container-fluid', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_type',
 					'type'        => 'select',
@@ -121,7 +121,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_container_width',
 				array(
 					'label'       => __( 'Container width', 'wpzaro' ),
-					'description' => __( 'Override wpzaro Container.', 'wpzaro' ),
+					'description' => __( 'Override Theme Container.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_width',
 					'type'        => 'number',
@@ -214,7 +214,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_site_info_override',
 				array(
 					'label'       => __( 'Footer Site Info', 'wpzaro' ),
-					'description' => __( 'Override wpzaro\'s site info located at the footer of the page.', 'wpzaro' ),
+					'description' => __( 'Override theme site info located at the footer of the page.', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_site_info_override',
 					'type'        => 'textarea',
@@ -266,7 +266,6 @@ if ( ! function_exists( 'wpzaro_customize_controls_js' ) ) {
 add_action( 'customize_controls_enqueue_scripts', 'wpzaro_customize_controls_js' );
 
 
-
 if ( ! function_exists( 'wpzaro_default_navbar_type' ) ) {
 	/**
 	 * Overrides the responsive navbar type for Bootstrap 4
@@ -284,3 +283,58 @@ if ( ! function_exists( 'wpzaro_default_navbar_type' ) ) {
 	}
 }
 add_filter( 'theme_mod_wpzaro_navbar_type', 'wpzaro_default_navbar_type', 20 );
+
+
+if ( ! function_exists( 'wpzaro_customize_generate_css' ) ) {
+	/**
+	* This will generate a line of CSS for use in header output. If the setting
+	* ($mod_name) has no defined value, the CSS will not be output.
+	* 
+	* @uses get_theme_mod()
+	* @param string $selector CSS selector
+	* @param string $style The name of the CSS *property* to modify
+	* @param string $mod_name The name of the 'theme_mod' option to fetch
+	* @param string $prefix Optional. Anything that needs to be output before the CSS property
+	* @param string $postfix Optional. Anything that needs to be output after the CSS property
+	* @param bool $echo Optional. Whether to print directly to the page (default: true).
+	* @return string Returns a single line of CSS with selectors and a property.
+	* @since WPzaro 1.0
+	*/
+	function wpzaro_customize_generate_css( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true ) {
+		$return = '';
+		$mod = get_theme_mod($mod_name);
+		if ( ! empty( $mod ) ) {
+			$return = sprintf('%s { %s:%s; }',
+			$selector,
+			$style,
+			$prefix.$mod.$postfix
+			);
+			if ( $echo ) {
+				echo $return;
+			}
+		}
+		return $return;
+	}
+}
+
+
+if ( ! function_exists( 'wpzaro_customize_header_output' ) ) {
+	function wpzaro_customize_header_output() {
+		/**
+		* This will output the custom WordPress settings to the live theme's WP head.
+		* 
+		* Used by hook: 'wp_head'
+		* 
+		* @see add_action('wp_head',$func)
+		* @since MyTheme 1.0
+		*/
+		?>
+		<!--wpzaro Customizer CSS--> 
+		<style type="text/css">
+			 <?php wpzaro_customize_generate_css('.container', 'max-width', 'wpzaro_container_width','','px'); ?>
+		</style> 
+		<!--/wpzaro Customizer CSS-->
+		<?php
+	}
+	add_action( 'wp_head' , 'wpzaro_customize_header_output');
+}
