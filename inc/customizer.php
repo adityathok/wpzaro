@@ -45,6 +45,17 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'priority'    => apply_filters( 'wpzaro_theme_layout_options_priority', 160 ),
 			)
 		);
+		
+		// Theme typography settings.
+		$wp_customize->add_section(
+			'wpzaro_theme_typography_options',
+			array(
+				'title'       => __( 'Typography Settings', 'wpzaro' ),
+				'capability'  => 'edit_theme_options',
+				'description' => __( 'Setting Global font', 'wpzaro' ),
+				'priority'    => apply_filters( 'wpzaro_theme_layout_options_priority', 160 ),
+			)
+		);
 
 		/**
 		 * Select sanitization function
@@ -223,6 +234,54 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'wpzaro_google_font_link_embed',
+			array(
+				'default'           => "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap",
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'wp_kses_post',
+				'capability'        => 'edit_theme_options',
+			)
+		);		
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'wpzaro_google_font_link_embed',
+				array(
+					'label'       => __( 'Google font link', 'wpzaro' ),
+					'description' => __( 'Add link embed google font', 'wpzaro' ),
+					'section'     => 'wpzaro_theme_typography_options',
+					'settings'    => 'wpzaro_google_font_link_embed',
+					'type'        => 'textarea',
+					'priority'    => 20,
+				)
+			)
+		);
+		$wp_customize->add_setting(
+			'wpzaro_google_font_body_css_rule',
+			array(
+				'default'           => "font-family: 'Open Sans', sans-serif;",
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'sanitize_text_field',
+				'capability'        => 'edit_theme_options',
+			)
+		);		
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'wpzaro_google_font_body_css_rule',
+				array(
+					'label'       => __( 'Body CSS rules', 'wpzaro' ),
+					'description' => __( 'Add CSS rules font family to body.', 'wpzaro' ),
+					'section'     => 'wpzaro_theme_typography_options',
+					'settings'    => 'wpzaro_google_font_body_css_rule',
+					'type'        => 'text',
+					'priority'    => 20,
+				)
+			)
+		);
+
+
 	}
 } // End of if function_exists( 'wpzaro_theme_customize_register' ).
 add_action( 'customize_register', 'wpzaro_theme_customize_register' );
@@ -328,10 +387,21 @@ if ( ! function_exists( 'wpzaro_customize_header_output' ) ) {
 		* @see add_action('wp_head',$func)
 		* @since MyTheme 1.0
 		*/
+
+		$gfont_link		= get_theme_mod( 'wpzaro_google_font_link_embed' );
+		$gfont_css_rule	= get_theme_mod( 'wpzaro_google_font_body_css_rule' );
+		if($gfont_link) {
+			echo '
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="'.$gfont_link.'" rel="stylesheet">
+			';
+		}
 		?>
 		<!--wpzaro Customizer CSS--> 
 		<style type="text/css">
 			 <?php wpzaro_customize_generate_css('.container', 'max-width', 'wpzaro_container_width','','px'); ?>
+			 <?php if($gfont_link && $gfont_css_rule) { echo 'body {'.$gfont_css_rule.'}'; } ?>
 		</style> 
 		<!--/wpzaro Customizer CSS-->
 		<?php
