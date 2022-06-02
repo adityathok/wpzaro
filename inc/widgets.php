@@ -124,42 +124,6 @@ if ( ! function_exists( 'wpzaro_widgets_init' ) ) {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Hero Slider', 'wpzaro' ),
-				'id'            => 'hero',
-				'description'   => __( 'Hero slider area. Place two or more widgets here and they will slide!', 'wpzaro' ),
-				'before_widget' => '<div class="carousel-item">',
-				'after_widget'  => '</div>',
-				'before_title'  => '',
-				'after_title'   => '',
-			)
-		);
-
-		register_sidebar(
-			array(
-				'name'          => __( 'Hero Canvas', 'wpzaro' ),
-				'id'            => 'herocanvas',
-				'description'   => __( 'Full size canvas hero area for Bootstrap and other custom HTML markup', 'wpzaro' ),
-				'before_widget' => '',
-				'after_widget'  => '',
-				'before_title'  => '',
-				'after_title'   => '',
-			)
-		);
-
-		register_sidebar(
-			array(
-				'name'          => __( 'Top Full', 'wpzaro' ),
-				'id'            => 'statichero',
-				'description'   => __( 'Full top widget with dynamic grid', 'wpzaro' ),
-				'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s dynamic-classes">',
-				'after_widget'  => '</div><!-- .static-hero-widget -->',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
-			)
-		);
-
-		register_sidebar(
-			array(
 				'name'          => __( 'Footer Full', 'wpzaro' ),
 				'id'            => 'footerfull',
 				'description'   => __( 'Full sized footer widget with dynamic grid', 'wpzaro' ),

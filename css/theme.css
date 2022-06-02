@@ -4083,7 +4083,7 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 .form-check-input[type=checkbox] {
@@ -21992,6 +21992,14 @@ blockquote p:last-child {
 .widget_recent_entries ul .post-date {
   font-size: 90%;
   display: block;
+}
+
+/*
+* add class for beaver builder
+*
+*/
+.mfp-container .fl-search-form-input-wrap .fl-form-field input[type=search] {
+  width: 100%;
 }
 
 /*# sourceMappingURL=theme.css.map */
