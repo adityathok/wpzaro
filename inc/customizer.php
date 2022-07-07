@@ -8,6 +8,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+if (class_exists('Kirki'))
+return false;
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *

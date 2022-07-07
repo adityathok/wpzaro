@@ -23,6 +23,7 @@ $wpzaro_includes = array(
 	'/hooks.php',                           // Custom hooks.
 	'/extras.php',                          // Custom functions that act independently of the theme templates.
 	'/customizer.php',                      // Customizer additions.
+	'/kirki.php',                      		// Customizer additions use Kirki.
 	'/custom-comments.php',                 // Custom Comments file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/editor.php',                          // Load Editor functions.
