@@ -105,7 +105,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				$wp_customize,
 				'wpzaro_container_type',
 				array(
-					'label'       => __( 'Container Width', 'wpzaro' ),
+					'label'       => __( 'Container Type', 'wpzaro' ),
 					'description' => __( 'Choose between Theme container and container-fluid', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_container_type',
