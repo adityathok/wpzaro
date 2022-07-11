@@ -21995,6 +21995,17 @@ blockquote p:last-child {
 }
 
 /*
+* modify style bootstrap 5 for theme
+*
+*/
+body.admin-bar .offcanvas-header {
+  padding-top: 4rem;
+}
+body.admin-bar .sticky-top {
+  top: 32px;
+}
+
+/*
 * add class for beaver builder
 *
 */

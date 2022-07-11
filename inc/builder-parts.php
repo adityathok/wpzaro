@@ -9,10 +9,11 @@
 if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
     add_action('wpzaro_header_open','wpzaro_header_layout_open');
     function wpzaro_header_layout_open() {
+        $sticky_type    = get_theme_mod( 'wpzaro_navbar_sticky', 'sticky-none' );
         ?>
 
         <!-- ******************* The Navbar Area ******************* -->
-	    <header id="wrapper-navbar">
+	    <header id="wrapper-navbar" class="<?php echo $sticky_type; ?>">
 
         <?php
     }
@@ -22,10 +23,9 @@ if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
 if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
     add_action('wpzaro_header','wpzaro_header_layout_content');
     function wpzaro_header_layout_content() {
-        $navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
         ?>
         <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wpzaro' ); ?></a>
-        <?php get_template_part( 'global-templates/navbar', $navbar_type); ?>
+        <?php get_template_part( 'global-templates/navbar'); ?>
         <?php
     }
 }

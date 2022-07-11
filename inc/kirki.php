@@ -85,6 +85,36 @@ if (class_exists('Kirki')) {
                     ],
                 ]
             );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_shadow',
+                    'label'       => esc_html__( 'Navigation Shadow', 'wpzaro' ),
+                    'section'     => 'section_navigation',
+                    'default'     => 'shadow-sm',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose style shadow for navigation bar.', 'wpzaro' ),
+                    'choices'     => [
+                        'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
+                        'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
+                        'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
+                        'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
+                    ],
+                ]
+            );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_sticky',
+                    'label'       => esc_html__( 'Sticky Navbar', 'wpzaro' ),
+                    'section'     => 'section_navigation',
+                    'default'     => 'sticky-none',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose sticky for navigation bar.', 'wpzaro' ),
+                    'choices'     => [
+                        'sticky-none'   => esc_html__( 'No', 'wpzaro' ),
+                        'sticky-top'    => esc_html__( 'Yes', 'wpzaro' ),
+                    ],
+                ]
+            );
         //Sidebar Section
         new \Kirki\Section(
             'section_sidebar',
