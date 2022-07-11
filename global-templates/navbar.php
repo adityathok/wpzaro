@@ -8,7 +8,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container      = get_theme_mod( 'wpzaro_container_type' );
+$maincontainer  = get_theme_mod( 'wpzaro_container_type' );
+$container      = get_theme_mod( 'wpzaro_navbar_container_type', 'default' );
+$container      = $container=='default' ? $maincontainer : $container;
 $navbar_type    = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
 $shadow_type    = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
 ?>

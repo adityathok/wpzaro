@@ -87,6 +87,28 @@ if (class_exists('Kirki')) {
                     ],
                 ]
             );
+            new \Kirki\Field\Slider(
+                [
+                    'settings'    => 'wpzaro_sidebar_width',
+                    'label'       => esc_html__( 'Sidebar Width', 'wpzaro' ),
+                    'section'     => 'section_sidebar',
+                    'default'     => 30,
+                    'transport'   => 'auto',
+                    'choices'     => [
+                        'min'  => 10,
+                        'max'  => 60,
+                        'step' => 1,
+                    ],
+                    'output' => [
+                        [
+                            'element'  => '.widget-area',
+                            'property' => 'max-width',
+                            'units'    => '%',
+                            'media_query' => '@media (min-width: 768px)',
+                        ],
+                    ],
+                ]
+            );
 
     //Navigation Panel
     new \Kirki\Panel(
@@ -107,6 +129,21 @@ if (class_exists('Kirki')) {
                 'priority'    => 160,
             ]
         );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_container_type',
+                    'label'       => esc_html__( 'Container Type', 'wpzaro' ),
+                    'section'     => 'section_layout_navbar',
+                    'default'     => 'default',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose between Theme container and container-fluid, or default', 'wpzaro' ),
+                    'choices'     => [
+                        'default'         => esc_html__( 'Default', 'wpzaro' ),
+                        'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
+                        'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                    ],
+                ]
+            );
             new \Kirki\Field\Select(
                 [
                     'settings'    => 'wpzaro_navbar_type',
