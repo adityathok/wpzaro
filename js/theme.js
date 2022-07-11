@@ -9313,3 +9313,27 @@
 
 }));
 //# sourceMappingURL=theme.js.map
+
+
+/*!
+* additional js for theme wpzaro
+*/
+//add class when navbar sticky scrolled
+jQuery(document).ready(function($) {
+
+	if ( $(".wrapper-navbar-sticky").length ) {
+		const WrapperNavbar		= $('#wrapper-navbar');
+		var WrapperNavbarTop	= WrapperNavbar.height();
+		if ( $("#wpadminbar").length ) {
+			WrapperNavbarTop = WrapperNavbarTop + $("#wpadminbar").height();
+		}
+		$(window).bind('scroll', function() {
+			if ($(window).scrollTop() > WrapperNavbarTop) {
+				WrapperNavbar.addClass('wrapper-navbar-scrolled');
+			} else {
+				WrapperNavbar.removeClass('wrapper-navbar-scrolled');
+			}
+		});
+	}
+
+});

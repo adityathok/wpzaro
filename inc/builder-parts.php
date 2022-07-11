@@ -10,10 +10,11 @@ if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
     add_action('wpzaro_header_open','wpzaro_header_layout_open');
     function wpzaro_header_layout_open() {
         $sticky_type    = get_theme_mod( 'wpzaro_navbar_sticky', 'sticky-none' );
+        $sticky_class   = $sticky_type==='sticky-none'?$sticky_type:$sticky_type.' wrapper-navbar-sticky';
         ?>
 
         <!-- ******************* The Navbar Area ******************* -->
-	    <header id="wrapper-navbar" class="<?php echo $sticky_type; ?>">
+	    <header id="wrapper-navbar" class="<?php echo $sticky_class; ?>">
 
         <?php
     }
