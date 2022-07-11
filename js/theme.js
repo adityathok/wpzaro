@@ -9329,8 +9329,10 @@ jQuery(document).ready(function($) {
 		}
 		$(window).bind('scroll', function() {
 			if ($(window).scrollTop() > WrapperNavbarTop) {
+				$('body').addClass('body-navbar-scrolled');
 				WrapperNavbar.addClass('wrapper-navbar-scrolled');
 			} else {
+				$('body').removeClass('body-navbar-scrolled');
 				WrapperNavbar.removeClass('wrapper-navbar-scrolled');
 			}
 		});
