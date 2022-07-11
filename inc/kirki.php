@@ -61,60 +61,6 @@ if (class_exists('Kirki')) {
                     ],
                 ]
             );
-        //Navigation Section
-        new \Kirki\Section(
-            'section_navigation',
-            [
-                'title'       => esc_html__( 'Navigation', 'wpzaro' ),
-                'description' => esc_html__( 'Navigation settings.', 'wpzaro' ),
-                'panel'       => 'layout_id',
-                'priority'    => 160,
-            ]
-        );
-            new \Kirki\Field\Select(
-                [
-                    'settings'    => 'wpzaro_navbar_type',
-                    'label'       => esc_html__( 'Responsive Navigation Type', 'wpzaro' ),
-                    'section'     => 'section_navigation',
-                    'default'     => 'collapse',
-                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                    'description' => esc_html__( 'Choose between an expanding and collapsing navbar or an offcanvas drawer.', 'wpzaro' ),
-                    'choices'     => [
-                        'collapse'  => esc_html__( 'Collapse', 'wpzaro' ),
-                        'offcanvas' => esc_html__( 'Offcanvas', 'wpzaro' ),
-                    ],
-                ]
-            );
-            new \Kirki\Field\Select(
-                [
-                    'settings'    => 'wpzaro_navbar_shadow',
-                    'label'       => esc_html__( 'Navigation Shadow', 'wpzaro' ),
-                    'section'     => 'section_navigation',
-                    'default'     => 'shadow-sm',
-                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                    'description' => esc_html__( 'Choose style shadow for navigation bar.', 'wpzaro' ),
-                    'choices'     => [
-                        'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
-                        'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
-                        'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
-                        'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
-                    ],
-                ]
-            );
-            new \Kirki\Field\Select(
-                [
-                    'settings'    => 'wpzaro_navbar_sticky',
-                    'label'       => esc_html__( 'Sticky Navbar', 'wpzaro' ),
-                    'section'     => 'section_navigation',
-                    'default'     => 'sticky-none',
-                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                    'description' => esc_html__( 'Choose sticky for navigation bar.', 'wpzaro' ),
-                    'choices'     => [
-                        'sticky-none'   => esc_html__( 'No', 'wpzaro' ),
-                        'sticky-top'    => esc_html__( 'Yes', 'wpzaro' ),
-                    ],
-                ]
-            );
         //Sidebar Section
         new \Kirki\Section(
             'section_sidebar',
@@ -138,6 +84,80 @@ if (class_exists('Kirki')) {
                         'left'  => esc_html__( 'Left sidebar', 'wpzaro' ),
                         'both'  => esc_html__( 'Left & Right sidebars', 'wpzaro' ),
                         'none'  => esc_html__( 'No sidebar', 'wpzaro' ),
+                    ],
+                ]
+            );
+
+    //Navigation Panel
+    new \Kirki\Panel(
+        'navigation_id',
+        [
+            'priority'    => 10,
+            'title'       => esc_html__( 'Navigation Settings', 'wpzaro' ),
+            'description' => esc_html__( 'Theme setting navigation bar.', 'wpzaro' ),
+        ]
+    ); 
+        //Navbar layout Section
+        new \Kirki\Section(
+            'section_layout_navbar',
+            [
+                'title'       => esc_html__( 'Layout', 'wpzaro' ),
+                'description' => esc_html__( 'Navigation layout settings.', 'wpzaro' ),
+                'panel'       => 'navigation_id',
+                'priority'    => 160,
+            ]
+        );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_type',
+                    'label'       => esc_html__( 'Responsive Navigation Type', 'wpzaro' ),
+                    'section'     => 'section_layout_navbar',
+                    'default'     => 'collapse',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose between an expanding and collapsing navbar or an offcanvas drawer.', 'wpzaro' ),
+                    'choices'     => [
+                        'collapse'  => esc_html__( 'Collapse', 'wpzaro' ),
+                        'offcanvas' => esc_html__( 'Offcanvas', 'wpzaro' ),
+                    ],
+                ]
+            );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_sticky',
+                    'label'       => esc_html__( 'Sticky Navbar', 'wpzaro' ),
+                    'section'     => 'section_layout_navbar',
+                    'default'     => 'sticky-none',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose sticky for navigation bar.', 'wpzaro' ),
+                    'choices'     => [
+                        'sticky-none'   => esc_html__( 'No', 'wpzaro' ),
+                        'sticky-top'    => esc_html__( 'Yes', 'wpzaro' ),
+                    ],
+                ]
+            );
+        //Navbar Style Section
+        new \Kirki\Section(
+            'section_style_navbar',
+            [
+                'title'       => esc_html__( 'Style', 'wpzaro' ),
+                'description' => esc_html__( 'Navigation style settings.', 'wpzaro' ),
+                'panel'       => 'navigation_id',
+                'priority'    => 160,
+            ]
+        );
+            new \Kirki\Field\Select(
+                [
+                    'settings'    => 'wpzaro_navbar_shadow',
+                    'label'       => esc_html__( 'Navigation Shadow', 'wpzaro' ),
+                    'section'     => 'section_style_navbar',
+                    'default'     => 'shadow-sm',
+                    'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                    'description' => esc_html__( 'Choose style shadow for navigation bar.', 'wpzaro' ),
+                    'choices'     => [
+                        'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
+                        'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
+                        'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
+                        'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
                     ],
                 ]
             );
