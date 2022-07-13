@@ -1364,6 +1364,13 @@ figure.wp-block-image figcaption {
     width: 16.66666667%;
   }
 
+  .col-md-20 {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 20%;
+  }
+
   .col-md-3,
   .bbpress-wrapper .bbp-body ul .bbp-topic-voice-count,
   .bbpress-wrapper .bbp-body ul .bbp-topic-reply-count,

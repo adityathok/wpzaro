@@ -71,6 +71,9 @@ if ( ! function_exists( 'wpzaro_widget_classes' ) ) {
 			} elseif ( 6 === $widget_count ) {
 				// If exactly six widgets are published.
 				$widget_classes .= ' col-md-2';
+			} elseif ( 5 === $widget_count ) {
+				// If five widgets are published.
+				$widget_classes .= ' col-md-20';
 			} elseif ( $widget_count >= 3 ) {
 				// Three widgets per row if there's three or more widgets.
 				$widget_classes .= ' col-md-4';
