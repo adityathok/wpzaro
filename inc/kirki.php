@@ -220,6 +220,20 @@ new \Kirki\Panel(
                 ],
             ]
         );
+        new \Kirki\Field\Sortable(
+            [
+                'settings' => 'wpzaro_navbar_sortable_layout',
+                'label'    => __( 'Sortable Layout', 'kirki' ),
+                'section'  => 'section_layout_navbar',
+                'default'  => [ 'logo', 'menu' ],
+                'priority' => 10,
+                'choices'  => [
+                    'logo'      => esc_html__( 'Logo', 'kirki' ),
+                    'menu'      => esc_html__( 'Menu', 'kirki' ),
+                    'search'    => esc_html__( 'Search', 'kirki' ),
+                ],
+            ]
+        );
     //Navbar Style Section
     new \Kirki\Section(
         'section_style_navbar',
@@ -244,5 +258,23 @@ new \Kirki\Panel(
                     'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
                     'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
                 ],
+            ]
+        );
+        new \Kirki\Field\Dimension(
+            [
+                'settings'    => 'wpzaro_header_logo_width',
+                'label'       => esc_html__( 'Logo Width', 'wpzaro' ),
+                'description' => esc_html__( 'Max width logo default (px)', 'wpzaro' ),
+                'section'     => 'section_style_navbar',
+                'default'     => '180px',
+                'choices'     => [
+                    'accept_unitless' => true,
+                ],
+                'output' => array(
+                    array(
+                        'element'  => '.navbar-brand img',
+                        'property' => 'max-width',
+                    ),
+                ),
             ]
         );
