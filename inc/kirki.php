@@ -13,11 +13,11 @@ return false;
 
 //Layout Panel
 new \Kirki\Panel(
-    'layout_id',
+    'general_id',
     [
         'priority'    => 10,
-        'title'       => esc_html__( 'Layout Settings', 'wpzaro' ),
-        'description' => esc_html__( 'Theme setting layout.', 'wpzaro' ),
+        'title'       => esc_html__( 'General', 'wpzaro' ),
+        'description' => esc_html__( 'General theme settings.', 'wpzaro' ),
     ]
 ); 
     //Container Section
@@ -26,7 +26,7 @@ new \Kirki\Panel(
         [
             'title'       => esc_html__( 'Container', 'wpzaro' ),
             'description' => esc_html__( 'Container settings.', 'wpzaro' ),
-            'panel'       => 'layout_id',
+            'panel'       => 'general_id',
             'priority'    => 160,
         ]
     );
@@ -68,7 +68,7 @@ new \Kirki\Panel(
         [
             'title'       => esc_html__( 'Typography', 'wpzaro' ),
             'description' => esc_html__( 'Typography global settings.', 'wpzaro' ),
-            'panel'       => 'layout_id',
+            'panel'       => 'general_id',
             'priority'    => 160,
         ]
     );
@@ -105,7 +105,7 @@ new \Kirki\Panel(
         [
             'title'       => esc_html__( 'Sidebar', 'wpzaro' ),
             'description' => esc_html__( 'Sidebar settings.', 'wpzaro' ),
-            'panel'       => 'layout_id',
+            'panel'       => 'general_id',
             'priority'    => 160,
         ]
     );
@@ -148,13 +148,13 @@ new \Kirki\Panel(
             ]
         );
 
-//Navigation Panel
+//Header Panel
 new \Kirki\Panel(
-    'navigation_id',
+    'header_id',
     [
         'priority'    => 10,
-        'title'       => esc_html__( 'Navigation Settings', 'wpzaro' ),
-        'description' => esc_html__( 'Theme setting navigation bar.', 'wpzaro' ),
+        'title'       => esc_html__( 'Header', 'wpzaro' ),
+        'description' => esc_html__( 'Theme head layout setting.', 'wpzaro' ),
     ]
 ); 
     //Navbar Site Identity
@@ -163,7 +163,7 @@ new \Kirki\Panel(
         [
             'title'       => esc_html__( 'Site Identity', 'wpzaro' ),
             'description' => esc_html__( 'Site Identity settings.', 'wpzaro' ),
-            'panel'       => 'navigation_id',
+            'panel'       => 'header_id',
             'priority'    => 160,
         ]
     );
@@ -172,8 +172,8 @@ new \Kirki\Panel(
         'section_layout_navbar',
         [
             'title'       => esc_html__( 'Layout', 'wpzaro' ),
-            'description' => esc_html__( 'Navigation layout settings.', 'wpzaro' ),
-            'panel'       => 'navigation_id',
+            'description' => esc_html__( 'Header layout settings.', 'wpzaro' ),
+            'panel'       => 'header_id',
             'priority'    => 160,
         ]
     );
@@ -195,7 +195,7 @@ new \Kirki\Panel(
         new \Kirki\Field\Select(
             [
                 'settings'    => 'wpzaro_navbar_type',
-                'label'       => esc_html__( 'Responsive Navigation Type', 'wpzaro' ),
+                'label'       => esc_html__( 'Responsive Header Menu Type', 'wpzaro' ),
                 'section'     => 'section_layout_navbar',
                 'default'     => 'collapse',
                 'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
@@ -213,7 +213,7 @@ new \Kirki\Panel(
                 'section'     => 'section_layout_navbar',
                 'default'     => 'sticky-none',
                 'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                'description' => esc_html__( 'Choose sticky for navigation bar.', 'wpzaro' ),
+                'description' => esc_html__( 'Choose sticky for header.', 'wpzaro' ),
                 'choices'     => [
                     'sticky-none'   => esc_html__( 'No', 'wpzaro' ),
                     'sticky-top'    => esc_html__( 'Yes', 'wpzaro' ),
@@ -225,19 +225,19 @@ new \Kirki\Panel(
         'section_style_navbar',
         [
             'title'       => esc_html__( 'Style', 'wpzaro' ),
-            'description' => esc_html__( 'Navigation style settings.', 'wpzaro' ),
-            'panel'       => 'navigation_id',
+            'description' => esc_html__( 'Header style settings.', 'wpzaro' ),
+            'panel'       => 'header_id',
             'priority'    => 160,
         ]
     );
         new \Kirki\Field\Select(
             [
                 'settings'    => 'wpzaro_navbar_shadow',
-                'label'       => esc_html__( 'Navigation Shadow', 'wpzaro' ),
+                'label'       => esc_html__( 'Header Shadow', 'wpzaro' ),
                 'section'     => 'section_style_navbar',
                 'default'     => 'shadow-sm',
                 'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                'description' => esc_html__( 'Choose style shadow for navigation bar.', 'wpzaro' ),
+                'description' => esc_html__( 'Choose style shadow for header.', 'wpzaro' ),
                 'choices'     => [
                     'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
                     'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
