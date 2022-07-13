@@ -12,6 +12,30 @@ if (class_exists('Kirki'))
 return false;
 
 /**
+ * Add support after_setup_theme for Customizer custom-background.
+ */
+add_action( 'after_setup_theme', 'wpzaro_setup_custom_background' );
+
+if ( ! function_exists( 'wpzaro_setup_custom_background' ) ) {
+
+	function wpzaro_setup_custom_background() {
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'wpzaro_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+
+	}
+}
+
+/**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.

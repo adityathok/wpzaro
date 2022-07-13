@@ -92,18 +92,6 @@ if ( ! function_exists( 'wpzaro_setup' ) ) {
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'wpzaro_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support editor-styles
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'css/theme.min.css' );
@@ -128,7 +116,7 @@ if ( ! function_exists( 'wpzaro_beaver_builder_support' ) ) {
 	 * Add Themer support to theme
 	 */
 	function wpzaro_beaver_builder_support() {
-	add_theme_support( 'fl-theme-builder-headers' );
-	add_theme_support( 'fl-theme-builder-footers' );
+		add_theme_support( 'fl-theme-builder-headers' );
+		add_theme_support( 'fl-theme-builder-footers' );
 	}
 }
