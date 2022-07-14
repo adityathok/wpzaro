@@ -21828,7 +21828,7 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 /*
-* Use existing Bootstrap 4 classes and
+* Use existing Bootstrap 5 classes and
 * variables to extend - override Comment form style
 *
 */
@@ -21927,6 +21927,13 @@ figure.woocommerce-product-gallery__wrapper {
 #comments ol.children {
   list-style: none;
   padding-left: 3.7rem;
+}
+
+code {
+  background-color: var(--bs-gray-100);
+  display: block;
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
 }
 
 blockquote {
