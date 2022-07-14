@@ -223,14 +223,14 @@ new \Kirki\Panel(
         new \Kirki\Field\Sortable(
             [
                 'settings' => 'wpzaro_navbar_sortable_layout',
-                'label'    => __( 'Sortable Layout', 'kirki' ),
+                'label'    => __( 'Sortable Layout', 'wpzaro' ),
                 'section'  => 'section_layout_navbar',
                 'default'  => [ 'logo', 'menu' ],
                 'priority' => 10,
                 'choices'  => [
-                    'logo'      => esc_html__( 'Logo', 'kirki' ),
-                    'menu'      => esc_html__( 'Menu', 'kirki' ),
-                    'search'    => esc_html__( 'Search', 'kirki' ),
+                    'logo'      => esc_html__( 'Logo', 'wpzaro' ),
+                    'menu'      => esc_html__( 'Menu', 'wpzaro' ),
+                    'search'    => esc_html__( 'Search', 'wpzaro' ),
                 ],
             ]
         );
