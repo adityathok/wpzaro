@@ -61,7 +61,7 @@ if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
         $container = get_theme_mod( 'wpzaro_container_type' );
         ?>
 
-            <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
+            <?php get_template_part( 'templates-sidebar/sidebar', 'footerfull' ); ?>
 
             <div class="wrapper" id="wrapper-footer-site-info" role="footer">
 
