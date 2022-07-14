@@ -58,12 +58,14 @@ if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
 if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
     add_action('wpzaro_footer','wpzaro_footer_layout_content');
     function wpzaro_footer_layout_content() {
-        $container = get_theme_mod( 'wpzaro_container_type' );
+        $maincontainer  = get_theme_mod( 'wpzaro_container_type' );
+        $container      = get_theme_mod( 'wpzaro_footersiteinfo_container_type', 'default' );
+        $container      = $container=='default' ? $maincontainer : $container;
         ?>
 
             <?php get_template_part( 'templates-sidebar/sidebar', 'footerfull' ); ?>
 
-            <div class="wrapper bg-dark text-white" id="wrapper-footer-site-info" role="footer">
+            <div class="wrapper" id="wrapper-footer-site-info" role="footer">
 
                 <div class="<?php echo esc_attr( $container ); ?>">
 

@@ -330,9 +330,71 @@ new \Kirki\Panel(
         'description' => esc_html__( 'Theme footer layout setting.', 'wpzaro' ),
     ]
 ); 
-    //Navbar Site Identity
+    //Footer full
     new \Kirki\Section(
-        'footerinfo_section',
+        'section_footerfull',
+        [
+            'title'       => esc_html__( 'Footer full', 'wpzaro' ),
+            'description' => esc_html__( 'Footer full settings.', 'wpzaro' ),
+            'panel'       => 'footer_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'wpzaro_footerfull_container_type',
+                'label'       => esc_html__( 'Container Type', 'wpzaro' ),
+                'section'     => 'section_footerfull',
+                'default'     => 'default',
+                'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                'description' => esc_html__( 'Choose between Theme container and container-fluid, or default', 'wpzaro' ),
+                'choices'     => [
+                    'default'         => esc_html__( 'Default', 'wpzaro' ),
+                    'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
+                    'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                ],
+            ]
+        );
+        new \Kirki\Field\Typography(
+            [
+                'settings'    => 'wpzaro_typography_footerfull',
+                'label'       => esc_html__( 'Typography', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_footerfull',
+                'priority'    => 10,
+                'transport'   => 'auto',
+                'default'     => [
+                    'font-size'     => '14px',
+                    'color'         => '#686868',
+                    'text-align'    => 'left',
+                ],
+                'output'      => [
+                    [
+                        'element' => '#wrapper-footer-full',
+                    ],
+                ],
+            ]
+        );
+        new \Kirki\Field\Background(
+            [
+                'settings'    => 'wpzaro_background_footerfull',
+                'label'       => __( 'Background Color', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_footerfull',
+                'default'     => [
+                    'background-color'  => '#e9ecef',
+                ],
+                'transport'   => 'auto',
+                'output'      => [
+                    [
+                        'element' => '#wrapper-footer-full',
+                    ],
+                ],
+            ]
+        );
+    //Footer site info
+    new \Kirki\Section(
+        'section_footerinfo',
         [
             'title'       => esc_html__( 'Footer site info', 'wpzaro' ),
             'description' => esc_html__( 'Footer site info settings.', 'wpzaro' ),
@@ -340,12 +402,64 @@ new \Kirki\Panel(
             'priority'    => 160,
         ]
     );
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'wpzaro_footersiteinfo_container_type',
+                'label'       => esc_html__( 'Container Type', 'wpzaro' ),
+                'section'     => 'section_footerinfo',
+                'default'     => 'default',
+                'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                'description' => esc_html__( 'Choose between Theme container and container-fluid, or default', 'wpzaro' ),
+                'choices'     => [
+                    'default'         => esc_html__( 'Default', 'wpzaro' ),
+                    'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
+                    'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                ],
+            ]
+        );
         new \Kirki\Field\Textarea(
             [
                 'settings'    => 'wpzaro_site_info_override',
                 'label'       => esc_html__( 'Footer Site Info', 'wpzaro' ),
-                'section'     => 'footerinfo_section',
+                'section'     => 'section_footerinfo',
                 'default'     => esc_html__( 'Copyright © {year} {site_title}. All rights reserved.', 'wpzaro' ),
                 'description' => esc_html__( 'Override theme site info located at the footer of the page.use {year} {site_title}', 'wpzaro' ),
+            ]
+        );
+        new \Kirki\Field\Typography(
+            [
+                'settings'    => 'wpzaro_typography_site_info',
+                'label'       => esc_html__( 'Typography', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_footerinfo',
+                'priority'    => 10,
+                'transport'   => 'auto',
+                'default'     => [
+                    'font-size'     => '14px',
+                    'color'         => '#ffffff',
+                    'text-align'    => 'left',
+                ],
+                'output'      => [
+                    [
+                        'element' => '#wrapper-footer-site-info',
+                    ],
+                ],
+            ]
+        );
+        new \Kirki\Field\Background(
+            [
+                'settings'    => 'wpzaro_background_site_info',
+                'label'       => __( 'Background Color', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_footerinfo',
+                'default'     => [
+                    'background-color'  => '#212529',
+                ],
+                'transport'   => 'auto',
+                'output'      => [
+                    [
+                        'element' => '#wrapper-footer-site-info',
+                    ],
+                ],
             ]
         );
