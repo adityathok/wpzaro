@@ -84,7 +84,6 @@ new \Kirki\Panel(
                     'font-family'     => 'Roboto',
                     'variant'         => 'regular',
                     'font-style'      => 'normal',
-                    'color'           => '#333333',
                     'font-size'       => '14px',
                     'line-height'     => '1.5',
                     'letter-spacing'  => '0',
@@ -95,6 +94,49 @@ new \Kirki\Panel(
                 'output'      => [
                     [
                         'element' => 'body,.is-root-container',
+                    ],
+                ],
+            ]
+        );
+        new \Kirki\Field\Multicolor(
+            [
+                'settings'  => 'wpzaro_typography_color_global',
+                'label'     => esc_html__( 'Typography Color', 'wpzaro' ),
+                'section'   => 'section_typography',
+                'priority'  => 10,
+                'choices'   => [
+                    'color'    => esc_html__( 'Color', 'wpzaro' ),
+                    'link'     => esc_html__( 'Link', 'wpzaro' ),
+                    'hover'    => esc_html__( 'Hover', 'wpzaro' ),
+                    'active'   => esc_html__( 'Active', 'wpzaro' ),
+                ],
+                'alpha'     => true,
+                'default'   => [
+                    'link'   => '#333333',
+                    'link'   => '#0063b1',
+                    'hover'  => '#333333',
+                    'active' => '#0063b1',
+                ],
+                'output'    => [
+                    [
+                        'choice'    => 'color',
+                        'element'   => 'body,.is-root-container',
+                        'property'  => 'color',
+                    ],
+                    [
+                        'choice'    => 'link',
+                        'element'   => 'a',
+                        'property'  => 'color',
+                    ],
+                    [
+                        'choice'    => 'hover',
+                        'element'   => 'a:hover',
+                        'property'  => 'color',
+                    ],
+                    [
+                        'choice'    => 'active',
+                        'element'   => 'a:active',
+                        'property'  => 'color',
                     ],
                 ],
             ]
@@ -223,14 +265,14 @@ new \Kirki\Panel(
         new \Kirki\Field\Sortable(
             [
                 'settings' => 'wpzaro_navbar_sortable_layout',
-                'label'    => __( 'Sortable Layout', 'kirki' ),
+                'label'    => __( 'Sortable Layout', 'wpzaro' ),
                 'section'  => 'section_layout_navbar',
                 'default'  => [ 'logo', 'menu' ],
                 'priority' => 10,
                 'choices'  => [
-                    'logo'      => esc_html__( 'Logo', 'kirki' ),
-                    'menu'      => esc_html__( 'Menu', 'kirki' ),
-                    'search'    => esc_html__( 'Search', 'kirki' ),
+                    'logo'      => esc_html__( 'Logo', 'wpzaro' ),
+                    'menu'      => esc_html__( 'Menu', 'wpzaro' ),
+                    'search'    => esc_html__( 'Search', 'wpzaro' ),
                 ],
             ]
         );
