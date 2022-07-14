@@ -239,7 +239,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 		$wp_customize->add_setting(
 			'wpzaro_site_info_override',
 			array(
-				'default'           => '',
+				'default'           => 'Copyright © {year} {site_title}. All rights reserved.',
 				'type'              => 'theme_mod',
 				'sanitize_callback' => 'wp_kses_post',
 				'capability'        => 'edit_theme_options',
@@ -252,7 +252,7 @@ if ( ! function_exists( 'wpzaro_theme_customize_register' ) ) {
 				'wpzaro_site_info_override',
 				array(
 					'label'       => __( 'Footer Site Info', 'wpzaro' ),
-					'description' => __( 'Override theme site info located at the footer of the page.', 'wpzaro' ),
+					'description' => __( 'Override theme site info located at the footer of the page.use {year} {site_title}', 'wpzaro' ),
 					'section'     => 'wpzaro_theme_layout_options',
 					'settings'    => 'wpzaro_site_info_override',
 					'type'        => 'textarea',

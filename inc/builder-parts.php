@@ -63,7 +63,7 @@ if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
 
             <?php get_template_part( 'templates-sidebar/sidebar', 'footerfull' ); ?>
 
-            <div class="wrapper" id="wrapper-footer-site-info" role="footer">
+            <div class="wrapper bg-dark text-white" id="wrapper-footer-site-info" role="footer">
 
                 <div class="<?php echo esc_attr( $container ); ?>">
 

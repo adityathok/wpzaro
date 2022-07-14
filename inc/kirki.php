@@ -320,3 +320,32 @@ new \Kirki\Panel(
                 ),
             ]
         );
+
+//Footer Panel
+new \Kirki\Panel(
+    'footer_id',
+    [
+        'priority'    => 10,
+        'title'       => esc_html__( 'Footer', 'wpzaro' ),
+        'description' => esc_html__( 'Theme footer layout setting.', 'wpzaro' ),
+    ]
+); 
+    //Navbar Site Identity
+    new \Kirki\Section(
+        'footerinfo_section',
+        [
+            'title'       => esc_html__( 'Footer site info', 'wpzaro' ),
+            'description' => esc_html__( 'Footer site info settings.', 'wpzaro' ),
+            'panel'       => 'footer_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Textarea(
+            [
+                'settings'    => 'wpzaro_site_info_override',
+                'label'       => esc_html__( 'Footer Site Info', 'wpzaro' ),
+                'section'     => 'footerinfo_section',
+                'default'     => esc_html__( 'Copyright © {year} {site_title}. All rights reserved.', 'wpzaro' ),
+                'description' => esc_html__( 'Override theme site info located at the footer of the page.use {year} {site_title}', 'wpzaro' ),
+            ]
+        );

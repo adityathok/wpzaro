@@ -23,7 +23,7 @@ if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 	 * Add site info content.
 	 */
 	function wpzaro_add_site_info() {
-		$the_theme = wp_get_theme();
+		$the_theme	= wp_get_theme();
 
 		$site_info = sprintf(
 			'<a href="%1$s">%2$s</a><span class="sep"> | </span>%3$s(%4$s)',
@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 				/* translators: 1: Theme name, 2: Theme author */
 				esc_html__( 'Theme: %1$s by %2$s.', 'wpzaro' ),
 				$the_theme->get( 'Name' ),
-				'<a href="' . esc_url( __( 'https://github.com', 'wpzaro' ) ) . '">github.com</a>'
+				'<a href="' . esc_url( __( 'https://github.com/adityathok/wpzaro', 'wpzaro' ) ) . '">adityathok</a>'
 			),
 			sprintf( // WPCS: XSS ok.
 				/* translators: Theme version */
@@ -48,7 +48,9 @@ if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 
 		// Check if customizer site info has value.
 		if ( get_theme_mod( 'wpzaro_site_info_override' ) ) {
-			$site_info = get_theme_mod( 'wpzaro_site_info_override' );
+			$site_info	= get_theme_mod( 'wpzaro_site_info_override' );
+			$site_info	= str_replace( '{year}', date_i18n ('Y'), $site_info );
+			$site_info	= str_replace( '{site_title}', get_bloginfo( 'name' ), $site_info );
 		}
 
 		echo apply_filters( 'wpzaro_site_info_content', $site_info ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
