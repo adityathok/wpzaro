@@ -54,14 +54,6 @@ if ( ! function_exists( 'wpzaro_body_classes' ) ) {
 	}
 }
 
-if ( function_exists( 'wpzaro_adjust_body_class' ) ) {
-	/*
-	 * wpzaro_adjust_body_class() deprecated in v0.9.4. We keep adding the
-	 * filter for child themes which use their own wpzaro_adjust_body_class.
-	 */
-	add_filter( 'body_class', 'wpzaro_adjust_body_class' );
-}
-
 // Filter custom logo with correct classes.
 add_filter( 'get_custom_logo', 'wpzaro_change_logo_class' );
 
