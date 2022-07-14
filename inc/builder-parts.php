@@ -26,7 +26,7 @@ if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
     function wpzaro_header_layout_content() {
         ?>
         <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wpzaro' ); ?></a>
-        <?php get_template_part( 'global-templates/navbar'); ?>
+        <?php get_template_part( 'templates-part/navbar'); ?>
         <?php
     }
 }

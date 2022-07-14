@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-</div><!-- #closing the primary container from /global-templates/left-sidebar-check.php -->
+</div><!-- #closing the primary container from /templates-part/left-sidebar-check.php -->
 
 <?php
 $sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );

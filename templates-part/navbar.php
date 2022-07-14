@@ -27,7 +27,7 @@ $shadow_type        = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
             
             foreach( $sortable_layout as $layout): 
             
-                get_template_part( 'global-templates/navbar-'.$layout);
+                get_template_part( 'templates-part/navbar-'.$layout);
             
             endforeach; 
 
