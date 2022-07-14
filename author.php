@@ -87,10 +87,10 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 				if ( have_posts() ) {
 					while ( have_posts() ) {
 						the_post();
-						get_template_part( 'loop-templates/content', 'author' );
+						get_template_part( 'templates-loop/content', 'author' );
 					}
 				} else {
-					get_template_part( 'loop-templates/content', 'none' );
+					get_template_part( 'templates-loop/content', 'none' );
 				}
 				?>
 				<!-- End Loop -->
