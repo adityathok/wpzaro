@@ -112,7 +112,7 @@ new \Kirki\Panel(
                 ],
                 'alpha'     => true,
                 'default'   => [
-                    'link'   => '#333333',
+                    'color'  => '#333333',
                     'link'   => '#0063b1',
                     'hover'  => '#333333',
                     'active' => '#0063b1',
@@ -287,22 +287,6 @@ new \Kirki\Panel(
             'priority'    => 160,
         ]
     );
-        new \Kirki\Field\Select(
-            [
-                'settings'    => 'wpzaro_navbar_shadow',
-                'label'       => esc_html__( 'Header Shadow', 'wpzaro' ),
-                'section'     => 'section_style_navbar',
-                'default'     => 'shadow-sm',
-                'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
-                'description' => esc_html__( 'Choose style shadow for header.', 'wpzaro' ),
-                'choices'     => [
-                    'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
-                    'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
-                    'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
-                    'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
-                ],
-            ]
-        );
         new \Kirki\Field\Dimension(
             [
                 'settings'    => 'wpzaro_header_logo_width',
@@ -319,6 +303,110 @@ new \Kirki\Panel(
                         'property' => 'max-width',
                     ),
                 ),
+            ]
+        );
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'wpzaro_navbar_shadow',
+                'label'       => esc_html__( 'Header Shadow', 'wpzaro' ),
+                'section'     => 'section_style_navbar',
+                'default'     => 'shadow-sm',
+                'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                'description' => esc_html__( 'Choose style shadow for header.', 'wpzaro' ),
+                'choices'     => [
+                    'shadow-none'   => esc_html__( 'None', 'wpzaro' ),
+                    'shadow-sm'     => esc_html__( 'Small', 'wpzaro' ),
+                    'shadow'        => esc_html__( 'Regular', 'wpzaro' ),
+                    'shadow-lg'     => esc_html__( 'Larger', 'wpzaro' ),
+                ],
+            ]
+        );
+        new \Kirki\Field\Background(
+            [
+                'settings'    => 'wpzaro_header_background',
+                'label'       => __( 'Background Color', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_style_navbar',
+                'default'     => [
+                    'background-color'  => '#ffffff',
+                ],
+                'transport'   => 'auto',
+                'output'      => [
+                    [
+                        'element' => '#main-nav',
+                    ],
+                ],
+            ]
+        );
+    //Navbar Menu Section
+    new \Kirki\Section(
+        'section_menu_navbar',
+        [
+            'title'       => esc_html__( 'Menu', 'wpzaro' ),
+            'description' => esc_html__( 'Header menu settings.', 'wpzaro' ),
+            'panel'       => 'header_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Typography(
+            [
+                'settings'    => 'wpzaro_menu_header_typography',
+                'label'       => esc_html__( 'Typography', 'wpzaro' ),
+                'description' => esc_html__( '', 'wpzaro' ),
+                'section'     => 'section_menu_navbar',
+                'priority'    => 10,
+                'transport'   => 'auto',
+                'default'     => [
+                    'variant'         => 'regular',
+                    'font-style'      => 'normal',
+                    'font-size'       => '14px',
+                    'line-height'     => '1.5',
+                    'letter-spacing'  => '0',
+                    'text-transform'  => 'none',
+                    'text-decoration' => 'none',
+                    'text-align'      => 'left',
+                ],
+                'output'      => [
+                    [
+                        'element' => '#main-nav .navbar-nav .nav-link',
+                    ],
+                ],
+            ]
+        );        
+        new \Kirki\Field\Multicolor(
+            [
+                'settings'  => 'wpzaro_menu_header_link_color',
+                'label'     => esc_html__( 'Link Color', 'wpzaro' ),
+                'section'   => 'section_menu_navbar',
+                'priority'  => 10,
+                'choices'   => [
+                    'color'    => esc_html__( 'Color', 'wpzaro' ),
+                    'hover'    => esc_html__( 'Hover', 'wpzaro' ),
+                    'active'   => esc_html__( 'Active', 'wpzaro' ),
+                ],
+                'alpha'     => true,
+                'default'   => [
+                    'color'  => '#333333',
+                    'hover'  => '#9d9a9a',
+                    'active' => '#333333',
+                ],
+                'output'    => [
+                    [
+                        'choice'    => 'color',
+                        'element'   => '#main-nav .navbar-nav .nav-link',
+                        'property'  => 'color',
+                    ],
+                    [
+                        'choice'    => 'hover',
+                        'element'   => '#main-nav .navbar-nav .nav-link:hover',
+                        'property'  => 'color',
+                    ],
+                    [
+                        'choice'    => 'active',
+                        'element'   => '#main-nav .navbar-nav .nav-link:active',
+                        'property'  => 'color',
+                    ],
+                ],
             ]
         );
 
