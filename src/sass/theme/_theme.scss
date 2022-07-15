@@ -1,6 +1,42 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+code {
+    background-color: var(--bs-gray-100);
+    display: block;
+    padding: 1rem 1.5rem;
+    margin-top: 0.5rem;
+}
 
-.button-custom {
-    @extend .btn;
-    @extend .btn-outline-primary;
+blockquote {
+    padding: 1rem;
+    background: #f4f4f4;
+    border-left: 5px solid var(--secondary);
+    font-style: italic;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    #primary.content-area {
+        -webkit-order: -1;
+        -ms-flex-order: -1;
+        order: -1;
+    }
+}
+
+//modify bootstrap for theme
+body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
+    padding-top: 4rem;
+}
+@media (min-width: 768px) {    
+    .col-md-20 {
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 20%;
+    }
+    body.admin-bar .sticky-top {
+      top: 32px;
+    }
 }
