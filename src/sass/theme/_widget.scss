@@ -10,20 +10,11 @@
 // widget calendar
 .widget_calendar {
     .wp-calendar-table {
-        width: 100%;
+        @extend .table;   
         thead {
+            @extend .table-dark;
             th {
-                text-align: center;
-                background-color: #333333;
-                color: #ffff;
-                padding: 0.5rem;
-            }
-        }
-        tbody {
-            td {
-                text-align: center;
-                border-bottom: 1px solid #dddddd;
-                padding: 0.5rem;
+                @extend .border-dark;
             }
         }
     }
@@ -32,8 +23,7 @@
 //widget recent posts
 .widget_recent_entries {
     ul {
-        padding: 0;
-        list-style-type: none;
+        @extend .list-unstyled;
         li:not(:last-child) {
             margin-bottom: 0.25em;
         }
@@ -58,5 +48,28 @@
 .widget_tag_cloud {
     .tag-cloud-link, a {  
         @extend .tag-cloud-link; 
+    }
+}
+
+// widget recent comments
+ol.wp-block-latest-comments {
+    @extend .list-unstyled;
+}
+
+//widget block search
+.widget_search {
+    .wp-block-search__button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+    .wp-block-search__button-outside {
+        .wp-block-search__input {
+            @extend .form-control;
+        }
+    }
+    .wp-block-search__button-inside {
+        .wp-block-search__inside-wrapper {
+            @extend .rounded;
+        }
     }
 }
