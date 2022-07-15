@@ -17,7 +17,7 @@ $container_one	    = $container=='container-fixed' ? 'container' : '';
 $container_two	    = $container=='container-fixed' ? 'container-fluid' : $container;
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-white <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-light <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'wpzaro' ); ?>

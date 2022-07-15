@@ -8,7 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$navbar_type = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
+$navbar_type        = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
+$navbar_aligment    = get_theme_mod( 'wpzaro_menu_header_aligment', 'collapse' );
 ?>
 
 <?php if ( $navbar_type === 'collapse' ) { ?>
@@ -24,7 +25,7 @@ $navbar_type = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
             'theme_location'  => 'primary',
             'container_class' => 'collapse navbar-collapse',
             'container_id'    => 'navbarNavDropdown',
-            'menu_class'      => 'navbar-nav ms-auto',
+            'menu_class'      => 'navbar-nav '.$navbar_aligment ,
             'fallback_cb'     => '',
             'menu_id'         => 'main-menu',
             'depth'           => 2,

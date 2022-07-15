@@ -364,7 +364,6 @@ new \Kirki\Panel(
                     'letter-spacing'  => '0',
                     'text-transform'  => 'none',
                     'text-decoration' => 'none',
-                    'text-align'      => 'left',
                 ],
                 'output'      => [
                     [
@@ -393,19 +392,34 @@ new \Kirki\Panel(
                 'output'    => [
                     [
                         'choice'    => 'color',
-                        'element'   => '#main-nav .navbar-nav .nav-link',
+                        'element'   => '#main-nav .nav-link',
                         'property'  => 'color',
                     ],
                     [
                         'choice'    => 'hover',
-                        'element'   => '#main-nav .navbar-nav .nav-link:hover',
+                        'element'   => '#main-nav .nav-link:hover',
                         'property'  => 'color',
                     ],
                     [
                         'choice'    => 'active',
-                        'element'   => '#main-nav .navbar-nav .nav-link:active',
+                        'element'   => '#main-nav .nav-link:active',
                         'property'  => 'color',
                     ],
+                ],
+            ]
+        );
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'wpzaro_menu_header_aligment',
+                'label'       => esc_html__( 'Aligment', 'wpzaro' ),
+                'section'     => 'section_menu_navbar',
+                'default'     => 'ms-auto',
+                'placeholder' => esc_html__( 'Choose an option', 'wpzaro' ),
+                'description' => esc_html__( 'Choose Aligment for menu header.', 'wpzaro' ),
+                'choices'     => [
+                    'ms-auto'   => esc_html__( 'Right', 'wpzaro' ),
+                    'me-auto'   => esc_html__( 'Left', 'wpzaro' ),
+                    'mx-auto'   => esc_html__( 'Center', 'wpzaro' ),
                 ],
             ]
         );
