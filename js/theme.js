@@ -1,5 +1,5 @@
 /*!
-  * Understrap v0.0.1 (https://github.com/adityathok/wpzaro#readme)
+  * wpzaro v0.0.1 (https://github.com/adityathok/wpzaro#readme)
   * Copyright 2013-2022 adityathok
   * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
   */

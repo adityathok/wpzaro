@@ -37,7 +37,7 @@ module.exports = {
     file: path.resolve(__dirname, `../../js/${fileDest}`),
     format: 'umd',
     globals,
-    name: 'understrap'
+    name: 'wpzaro'
   },
   external,
   plugins
