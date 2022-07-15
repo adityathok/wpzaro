@@ -423,6 +423,32 @@ new \Kirki\Panel(
                 ],
             ]
         );
+        
+    //Navbar Search Section
+    new \Kirki\Section(
+        'section_search_navbar',
+        [
+            'title'       => esc_html__( 'Search Form', 'wpzaro' ),
+            'description' => esc_html__( 'Header Search Form settings.', 'wpzaro' ),
+            'panel'       => 'header_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Select(
+            [
+                'settings'    => 'wpzaro_searchform_header_type',
+                'label'       => esc_html__( 'Type', 'wpzaro' ),
+                'section'     => 'section_search_navbar',
+                'default'     => 'dropdown',
+                'placeholder' => esc_html__( 'Choose type', 'wpzaro' ),
+                'description' => esc_html__( 'Choose type form search.', 'wpzaro' ),
+                'choices'     => [
+                    'dropdown'  => esc_html__( 'Dropdown with icon', 'wpzaro' ),
+                    'inline'    => esc_html__( 'Inline Form', 'wpzaro' ),
+                    'modal'     => esc_html__( 'Modal with icon', 'wpzaro' ),
+                ],
+            ]
+        );
 
 //Footer Panel
 new \Kirki\Panel(
