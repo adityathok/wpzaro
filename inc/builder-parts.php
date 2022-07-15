@@ -61,13 +61,15 @@ if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
         $maincontainer  = get_theme_mod( 'wpzaro_container_type' );
         $container      = get_theme_mod( 'wpzaro_footersiteinfo_container_type', 'default' );
         $container      = $container=='default' ? $maincontainer : $container;
+        $container_one	= $container=='container-fixed' ? 'container' : 'wrapper';
+        $container_two	= $container=='container-fixed' ? 'p-3' : $container;
         ?>
 
             <?php get_template_part( 'templates-sidebar/sidebar', 'footerfull' ); ?>
 
-            <div class="wrapper" id="wrapper-footer-site-info" role="footer">
+            <div class="<?php echo esc_attr( $container_one ).' type-'.esc_attr( $container ); ?>" id="wrapper-footer-site-info" role="footer">
 
-                <div class="<?php echo esc_attr( $container ); ?>">
+                <div class="<?php echo esc_attr( $container_two ); ?>">
 
                     <div class="site-info">
 

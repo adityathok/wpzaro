@@ -11,16 +11,17 @@ defined( 'ABSPATH' ) || exit;
 $maincontainer	= get_theme_mod( 'wpzaro_container_type' );
 $container		= get_theme_mod( 'wpzaro_footerfull_container_type', 'default' );
 $container		= $container=='default' ? $maincontainer : $container;
-
+$container_one	= $container=='container-fixed' ? 'container' : 'wrapper';
+$container_two	= $container=='container-fixed' ? 'px-3' : $container;
 ?>
 
 <?php if ( is_active_sidebar( 'footerfull' ) ) : ?>
 
 	<!-- ******************* The Footer Full-width Widget Area ******************* -->
 
-	<div class="wrapper py-md-5" id="wrapper-footer-full" role="footer">
+	<div class="<?php echo esc_attr( $container_one ).' type-'.esc_attr( $container ); ?>" id="wrapper-footer-full" role="footer">
 
-		<div class="<?php echo esc_attr( $container ); ?>" id="footer-full-content" tabindex="-1">
+		<div class="<?php echo esc_attr( $container_two ); ?> py-5" id="footer-full-content" tabindex="-1">
 
 			<div class="row">
 

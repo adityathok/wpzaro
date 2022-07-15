@@ -10,18 +10,20 @@ defined( 'ABSPATH' ) || exit;
 
 $maincontainer      = get_theme_mod( 'wpzaro_container_type' );
 $sortable_layout    = get_theme_mod( 'wpzaro_navbar_sortable_layout', array('logo','menu') );
+$shadow_type        = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
 $container          = get_theme_mod( 'wpzaro_navbar_container_type', 'default' );
 $container          = $container=='default' ? $maincontainer : $container;
-$shadow_type        = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
+$container_one	    = $container=='container-fixed' ? 'container' : '';
+$container_two	    = $container=='container-fixed' ? 'container-fluid' : $container;
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-white <?php echo $shadow_type; ?>" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-white <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'wpzaro' ); ?>
 	</h2>
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container_two ); ?>">
 
         <?php if ( $sortable_layout ) { 
             

@@ -231,6 +231,7 @@ new \Kirki\Panel(
                     'default'         => esc_html__( 'Default', 'wpzaro' ),
                     'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
                     'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                    'container-fixed' => esc_html__( 'Fixed width container & content', 'wpzaro' ),
                 ],
             ]
         );
@@ -352,6 +353,7 @@ new \Kirki\Panel(
                     'default'         => esc_html__( 'Default', 'wpzaro' ),
                     'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
                     'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                    'container-fixed' => esc_html__( 'Fixed width container & content', 'wpzaro' ),
                 ],
             ]
         );
@@ -414,6 +416,7 @@ new \Kirki\Panel(
                     'default'         => esc_html__( 'Default', 'wpzaro' ),
                     'container'       => esc_html__( 'Fixed width container', 'wpzaro' ),
                     'container-fluid' => esc_html__( 'Full width container', 'wpzaro' ),
+                    'container-fixed' => esc_html__( 'Fixed width container & content', 'wpzaro' ),
                 ],
             ]
         );
