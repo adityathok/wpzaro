@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $navbar_type        = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
-$navbar_aligment    = get_theme_mod( 'wpzaro_menu_header_aligment', 'collapse' );
+$navbar_aligment    = get_theme_mod( 'wpzaro_menu_header_aligment', 'right' );
 ?>
 
 <?php if ( $navbar_type === 'collapse' ) { ?>
