@@ -26,7 +26,10 @@ $type_form  = get_theme_mod( 'wpzaro_searchform_header_type', 'dropdown' );
         <span class="nav-link pe-0" data-bs-toggle="modal" data-bs-target="#searchNavbarModal">
             <i class="fa fa-search"> </i>
         </span>
-
+    </div>
+    
+    <?php add_action('wp_footer','search_navbar_modal');?>    
+    <?php function search_navbar_modal() { ?>      
         <!-- Modal -->
         <div class="modal fade" id="searchNavbarModal" tabindex="-1" aria-labelledby="searchNavbarModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -40,17 +43,7 @@ $type_form  = get_theme_mod( 'wpzaro_searchform_header_type', 'dropdown' );
                 </div>
             </div>
         </div>
-
-        <script>
-            // Jquery move element to the bottom of the page
-            jQuery(document).ready(function($) {
-                if ( $("#searchNavbarModal").length ) {
-                    $("#searchNavbarModal").appendTo("body");
-                }
-            });
-        </script>
-
-    </div>
+    <?php } ?>
 
 <?php else : ?>
 
