@@ -282,3 +282,6 @@ if ( ! function_exists( 'wpzaro_all_excerpts_get_more_link' ) ) {
 		return $post_excerpt;
 	}
 }
+
+///remove category title prefix
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
