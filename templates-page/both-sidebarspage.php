@@ -21,7 +21,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 		<div class="row">
 
 			<?php
-			get_template_part( 'templates-sidebar/sidebar', 'left' );
+			get_template_part( 'templates-part/sidebar/sidebar', 'left' );
 
 			if ( is_active_sidebar( 'left-sidebar' ) xor is_active_sidebar( 'right-sidebar' ) ) {
 				$class = 'col-md-8';
@@ -52,7 +52,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 
 			</div><!-- #primary -->
 
-			<?php get_template_part( 'templates-sidebar/sidebar', 'right' ); ?>
+			<?php get_template_part( 'templates-part/sidebar/sidebar', 'right' ); ?>
 
 		</div><!-- .row -->
 
