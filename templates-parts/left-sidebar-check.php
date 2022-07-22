@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );
 
 if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) {
-	get_template_part( 'templates-part/sidebar/sidebar', 'left' );
+	get_template_part( 'templates-parts/sidebar/sidebar', 'left' );
 }
 ?>
 

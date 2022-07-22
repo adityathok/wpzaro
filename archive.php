@@ -22,7 +22,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 		<div class="row">
 
 			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'templates-part/left-sidebar-check' ); ?>
+			<?php get_template_part( 'templates-parts/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
 
@@ -58,7 +58,7 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 			// Display the pagination component.
 			wpzaro_pagination();
 			// Do the right sidebar check.
-			get_template_part( 'templates-part/right-sidebar-check' );
+			get_template_part( 'templates-parts/right-sidebar-check' );
 			?>
 
 		</div><!-- .row -->

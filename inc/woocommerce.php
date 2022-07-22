@@ -44,7 +44,7 @@ if ( ! function_exists( 'wpzaro_woocommerce_wrapper_start' ) ) {
 		echo '<div class="wrapper" id="woocommerce-wrapper">';
 		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
 		echo '<div class="row">';
-		get_template_part( 'templates-part/left-sidebar-check' );
+		get_template_part( 'templates-parts/left-sidebar-check' );
 		echo '<main class="site-main" id="main">';
 	}
 }
@@ -55,7 +55,7 @@ if ( ! function_exists( 'wpzaro_woocommerce_wrapper_end' ) ) {
 	 */
 	function wpzaro_woocommerce_wrapper_end() {
 		echo '</main><!-- #main -->';
-		get_template_part( 'templates-part/right-sidebar-check' );
+		get_template_part( 'templates-parts/right-sidebar-check' );
 		echo '</div><!-- .row -->';
 		echo '</div><!-- Container end -->';
 		echo '</div><!-- Wrapper end -->';

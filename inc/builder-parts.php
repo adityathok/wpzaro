@@ -26,7 +26,7 @@ if ( ! function_exists( 'wpzaro_header_layout_content' ) ) {
     function wpzaro_header_layout_content() {
         ?>
         <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'wpzaro' ); ?></a>
-        <?php get_template_part( 'templates-part/navbar'); ?>
+        <?php get_template_part( 'templates-parts/navbar'); ?>
         <?php
     }
 }
@@ -65,7 +65,7 @@ if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
         $container_two	= $container=='container-fixed' ? 'p-3' : $container;
         ?>
 
-            <?php get_template_part( 'templates-part/sidebar/sidebar', 'footerfull' ); ?>
+            <?php get_template_part( 'templates-parts/sidebar/sidebar', 'footerfull' ); ?>
 
             <div class="<?php echo esc_attr( $container_one ).' type-'.esc_attr( $container ); ?>" id="wrapper-footer-site-info" role="footer">
 
