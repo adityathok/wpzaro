@@ -29,7 +29,7 @@ $container_two	    = $container=='container-fixed' ? 'container-fluid' : $contai
             
             foreach( $sortable_layout as $layout): 
             
-                get_template_part( 'templates-part/navbar-'.$layout);
+                get_template_part( 'templates-part/navbar-part/navbar-'.$layout);
             
             endforeach; 
 
