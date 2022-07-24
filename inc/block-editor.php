@@ -21,6 +21,10 @@ if ( ! function_exists( 'wpzaro_block_editor_setup' ) ) {
 		// Add support for wide alignment.
 		add_theme_support( 'align-wide' );
 
+		// add style from theme.css
+		add_editor_style( 'css/theme.min.css' );
+		add_editor_style( 'css/custom-editor-style.min.css' );
+
 		// Register our custom colors as options in the editor.
 		$color_palette = wpzaro_generate_color_palette();
 		if ( $color_palette ) {
