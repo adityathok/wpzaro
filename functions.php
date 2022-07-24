@@ -28,7 +28,7 @@ $wpzaro_includes = array(
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/builder-parts.php',                   // Load builder layout from hooks.
-	'/functions/class-wp-bootstrap-navwalker.php.php',	// Load function custom WordPress nav walker.
+	'/functions/class-wp-bootstrap-navwalker.php',	// Load function custom WordPress nav walker.
 	'/functions/aq-resize.php',							// Load function aqua resize.
 );
 
