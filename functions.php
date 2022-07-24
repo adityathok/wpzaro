@@ -25,11 +25,11 @@ $wpzaro_includes = array(
 	'/customizer.php',                      // Customizer additions.
 	'/kirki.php',                      		// Customizer additions use Kirki.
 	'/custom-comments.php',                 // Custom Comments file.
-	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/builder-parts.php',                   // Load builder layout from hooks.
-	'/aq-resize.php',                   	// Load function aqua resize.
+	'/functions/class-wp-bootstrap-navwalker.php.php',	// Load function custom WordPress nav walker.
+	'/functions/aq-resize.php',							// Load function aqua resize.
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
