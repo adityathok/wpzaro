@@ -594,3 +594,50 @@ new \Kirki\Panel(
                 ],
             ]
         );
+
+//Archive Panel
+new \Kirki\Panel(
+    'archive_id',
+    [
+        'priority'    => 10,
+        'title'       => esc_html__( 'Archive', 'wpzaro' ),
+        'description' => esc_html__( 'Theme Archive layout setting.', 'wpzaro' ),
+    ]
+); 
+    //archive layout
+    new \Kirki\Section(
+        'section_archivelayout',
+        [
+            'title'       => esc_html__( 'Layout', 'wpzaro' ),
+            'description' => esc_html__( 'Layout settings.', 'wpzaro' ),
+            'panel'       => 'archive_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Slider(
+            [
+                'settings'    => 'wpzaro_archive_column',
+                'label'       => esc_html__( 'Column', 'wpzaro' ),
+                'section'     => 'section_archivelayout',
+                'default'     => 1,
+                'transport'   => 'auto',
+                'choices'     => [
+                    'min'  => 1,
+                    'max'  => 6,
+                    'step' => 1,
+                ],
+            ]
+        );
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'wpzaro_archive_column_equalheight',
+                'label'       => esc_html__( 'Equal Height', 'wpzaro' ),
+                'description' => esc_html__( 'Same Height column', 'wpzaro' ),
+                'section'     => 'section_archivelayout',
+                'default'     => '0',
+                'choices'     => [
+                    '0'     => esc_html__( 'Enable', 'wpzaro' ),
+                    '1'     => esc_html__( 'Disable', 'wpzaro' ),
+                ],
+            ]
+        );

@@ -7,9 +7,12 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+$archive_column = (int)get_theme_mod( 'wpzaro_archive_column', '1' );
+$equalheight 	= (int)get_theme_mod( 'wpzaro_archive_column_equalheight', '0' );
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(wpzaro_column_classes($archive_column,$equalheight)); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
