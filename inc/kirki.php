@@ -189,6 +189,38 @@ new \Kirki\Panel(
                 ],
             ]
         );
+    //Background Section
+    new \Kirki\Section(
+        'section_background',
+        [
+            'title'       => esc_html__( 'Background', 'wpzaro' ),
+            'description' => esc_html__( 'Background settings.', 'wpzaro' ),
+            'panel'       => 'general_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Background(
+            [
+                'settings'    => 'wpzaro_background_body',
+                'label'       => esc_html__( 'Background', 'wpzaro' ),
+                'description' => esc_html__( 'Background controls for body website', 'wpzaro' ),
+                'section'     => 'section_background',
+                'default'     => [
+                    'background-color'      => '#ffffff',
+                    'background-image'      => '',
+                    'background-repeat'     => 'repeat',
+                    'background-position'   => 'center center',
+                    'background-size'       => 'cover',
+                    'background-attachment' => 'scroll',
+                ],
+                'transport'   => 'auto',
+                'output'      => [
+                    [
+                        'element' => 'body',
+                    ],
+                ],
+            ]
+        );
 
 //Header Panel
 new \Kirki\Panel(
