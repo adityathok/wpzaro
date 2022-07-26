@@ -638,10 +638,10 @@ new \Kirki\Panel(
 ); 
     //archive layout
     new \Kirki\Section(
-        'section_archivelayout',
+        'section_archivecolumn',
         [
-            'title'       => esc_html__( 'Layout', 'wpzaro' ),
-            'description' => esc_html__( 'Layout settings.', 'wpzaro' ),
+            'title'       => esc_html__( 'Column', 'wpzaro' ),
+            'description' => esc_html__( 'Archive Column settings.', 'wpzaro' ),
             'panel'       => 'archive_id',
             'priority'    => 160,
         ]
@@ -649,8 +649,8 @@ new \Kirki\Panel(
         new \Kirki\Field\Slider(
             [
                 'settings'    => 'wpzaro_archive_column',
-                'label'       => esc_html__( 'Column', 'wpzaro' ),
-                'section'     => 'section_archivelayout',
+                'label'       => esc_html__( 'Number of columns', 'wpzaro' ),
+                'section'     => 'section_archivecolumn',
                 'default'     => 1,
                 'transport'   => 'refresh',
                 'choices'     => [
@@ -665,7 +665,7 @@ new \Kirki\Panel(
                 'settings'    => 'wpzaro_archive_column_equalheight',
                 'label'       => esc_html__( 'Equal Height', 'wpzaro' ),
                 'description' => esc_html__( 'Same Height column', 'wpzaro' ),
-                'section'     => 'section_archivelayout',
+                'section'     => 'section_archivecolumn',
                 'default'     => '0',
                 'choices'     => [
                     '0'     => esc_html__( 'Enable', 'wpzaro' ),
