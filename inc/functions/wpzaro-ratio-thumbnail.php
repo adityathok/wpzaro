@@ -35,11 +35,19 @@ if ( ! function_exists( 'wpzaro_ratio_thumbnail' ) ) {
         $output     = '';
 
         $output .='<div class="wpzaro-ratio-thumbnail">';
+
+            if($linked):
             $output .= '<a class="wpzaro-ratio-thumbnail-link" href="'.get_the_permalink($post->ID).'" title="'.get_the_title($post->ID).'">';
+            endif;
+
                 $output .= '<div class="wpzaro-ratio-thumbnail-box wpzaro-ratio-thumbnail-'.$ratio.'" style="background-image: url('.$urlimg.');">';
                     $output .= '<img src="'.$urlimg.'" loading="lazy" class="wpzaro-ratio-thumbnail-image"/>';
                 $output .= '</div>';
+                
+            if($linked):
             $output .= '</a>';
+            endif;
+
         $output .= '</div>';
 
         return $output;
