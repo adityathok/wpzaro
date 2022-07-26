@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $maincontainer      = get_theme_mod( 'wpzaro_container_type' );
-$sortable_layout    = get_theme_mod( 'wpzaro_navbar_sortable_layout', array('logo','menu') );
+$sortable_layout    = get_theme_mod( 'wpzaro_navbar_sortable_layout', array('logo','menu','search') );
 $shadow_type        = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
 $container          = get_theme_mod( 'wpzaro_navbar_container_type', 'default' );
 $container          = $container=='default' ? $maincontainer : $container;
