@@ -620,7 +620,7 @@ new \Kirki\Panel(
                 'label'       => esc_html__( 'Column', 'wpzaro' ),
                 'section'     => 'section_archivelayout',
                 'default'     => 1,
-                'transport'   => 'auto',
+                'transport'   => 'refresh',
                 'choices'     => [
                     'min'  => 1,
                     'max'  => 6,

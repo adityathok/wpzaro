@@ -10,9 +10,10 @@ defined( 'ABSPATH' ) || exit;
 
 $archive_column = (int)get_theme_mod( 'wpzaro_archive_column', '1' );
 $equalheight 	= (int)get_theme_mod( 'wpzaro_archive_column_equalheight', '0' );
+$clascolumn		= wpzaro_column_classes(['large' => $archive_column, 'equalheight' => $equalheight]);
 ?>
 
-<article <?php post_class(wpzaro_column_classes($archive_column,$equalheight)); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class($clascolumn.' pb-3'); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 

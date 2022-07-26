@@ -33,6 +33,7 @@ blockquote p:last-child {
 body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
     padding-top: 4rem;
 }
+
 @media (min-width: 768px) {    
     .col-md-20 {
         -webkit-flex: 0 0 auto;
@@ -42,5 +43,14 @@ body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
     }
     body.admin-bar .sticky-top {
       top: 32px;
+    }
+}
+
+@media (min-width: 992px) {    
+    .col-lg-20 {
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: 20%;
     }
 }

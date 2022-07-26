@@ -30,6 +30,8 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 
 			<main class="site-main" id="main">
 
+				<div class="row row-archive">
+
 				<?php
 				if ( have_posts() ) {
 					// Start the Loop.
@@ -47,6 +49,8 @@ $container = get_theme_mod( 'wpzaro_container_type' );
 					get_template_part( 'templates-loop/content', 'none' );
 				}
 				?>
+
+				</div>
 
 			</main><!-- #main -->
 

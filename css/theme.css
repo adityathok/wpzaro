@@ -15094,5 +15094,11 @@ body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
     top: 32px;
   }
 }
+@media (min-width: 992px) {
+  .col-lg-20 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
 
 /*# sourceMappingURL=theme.css.map */
