@@ -636,7 +636,7 @@ new \Kirki\Panel(
         'description' => esc_html__( 'Theme Archive layout setting.', 'wpzaro' ),
     ]
 ); 
-    //archive layout
+    //archive layout column
     new \Kirki\Section(
         'section_archivecolumn',
         [
@@ -670,6 +670,32 @@ new \Kirki\Panel(
                 'choices'     => [
                     '0'     => esc_html__( 'Enable', 'wpzaro' ),
                     '1'     => esc_html__( 'Disable', 'wpzaro' ),
+                ],
+            ]
+        );        
+    //archive content
+    new \Kirki\Section(
+        'section_archivecontent',
+        [
+            'title'       => esc_html__( 'Content', 'wpzaro' ),
+            'description' => esc_html__( 'Archive Content settings.', 'wpzaro' ),
+            'panel'       => 'archive_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Sortable(
+            [
+                'settings' => 'wpzaro_archive_content_sortable',
+                'label'    => __( 'Sortable', 'wpzaro' ),
+                'section'  => 'section_archivecontent',
+                'default'  => [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'],
+                'priority' => 10,
+                'choices'  => [
+                    'title'     => esc_html__( 'Title', 'wpzaro' ),
+                    'thumbnail' => esc_html__( 'Thumbnail', 'wpzaro' ),
+                    'meta'      => esc_html__( 'Meta', 'wpzaro' ),
+                    'excerpt'   => esc_html__( 'Excerpt', 'wpzaro' ),
+                    'tag'       => esc_html__( 'Tag', 'wpzaro' ),
                 ],
             ]
         );

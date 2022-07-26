@@ -21,6 +21,39 @@ blockquote p:last-child {
     margin-bottom: 0;
 }
 
+.wpzaro-ratio-thumbnail {
+    .wpzaro-ratio-thumbnail-box {
+        position: relative;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        -o-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+        &.wpzaro-ratio-thumbnail-16-9 {
+            padding-bottom: 56.25%;
+        }
+        &.wpzaro-ratio-thumbnail-8-5 {
+            padding-bottom: 62.5%;
+        }
+        &.wpzaro-ratio-thumbnail-4-3 {
+            padding-bottom: 75%;
+        }
+        &.wpzaro-ratio-thumbnail-3-2 {
+            padding-bottom: 66.66%;
+        }
+    }
+    img {
+        display: none !important;
+    }
+}
+
 @media (max-width: 768px) {
     #primary.content-area {
         -webkit-order: -1;

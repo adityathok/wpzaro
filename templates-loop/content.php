@@ -11,44 +11,63 @@ defined( 'ABSPATH' ) || exit;
 $archive_column = (int)get_theme_mod( 'wpzaro_archive_column', '1' );
 $equalheight 	= (int)get_theme_mod( 'wpzaro_archive_column_equalheight', '0' );
 $clascolumn		= wpzaro_column_classes(['large' => $archive_column, 'equalheight' => $equalheight]);
+$sortcontent	= get_theme_mod( 'wpzaro_archive_content_sortable', [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'] );
 ?>
 
 <article <?php post_class($clascolumn.' pb-3'); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<?php foreach( $sortcontent as $key => $value): ?>
 
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php wpzaro_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
+		<?php if($value === 'title'): ?>
+			<header class="entry-header">
+				<?php
+				the_title(
+					sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+					'</a></h2>'
+				);
+				?>
+			</header><!-- .entry-header -->
 		<?php endif; ?>
 
-	</header><!-- .entry-header -->
+		<?php if($value === 'meta'): ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php wpzaro_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		<?php endif; ?>
+		
+		<?php if($value === 'thumbnail'): ?>
+			<?php
+			echo wpzaro_ratio_thumbnail([
+				'idpost' 	=> $post->ID,
+				'ratio' 	=> '16:9',
+				'size' 		=> 'medium',
+				'linked'	=> true
+			]);
+			?>
+		<?php endif; ?>
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+		<?php if($value === 'excerpt'): ?>
+			<div class="entry-content">
 
-	<div class="entry-content">
+				<?php
+				the_excerpt();
+				wpzaro_link_pages();
+				?>
 
-		<?php
-		the_excerpt();
-		wpzaro_link_pages();
-		?>
+			</div><!-- .entry-content -->
+		<?php endif; ?>
 
-	</div><!-- .entry-content -->
+		<?php if($value === 'tag'): ?>
+			<div class="entry-tag">
 
-	<footer class="entry-footer">
+				<?php wpzaro_entry_footer(); ?>
 
-		<?php wpzaro_entry_footer(); ?>
+			</div><!-- .post-tag -->
+		<?php endif; ?>
 
-	</footer><!-- .entry-footer -->
+	<?php endforeach; ?>
+
 
 </article><!-- #post-## -->

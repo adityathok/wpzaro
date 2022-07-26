@@ -31,6 +31,7 @@ $wpzaro_includes = array(
 	'/functions/class-wp-bootstrap-navwalker.php',		// Load function custom WordPress nav walker.
 	'/functions/aq-resize.php',							// Load function aqua resize.
 	'/functions/wpzaro-bootstrap-classes.php',			// Load function generate classes bootstrap.
+	'/functions/wpzaro-ratio-thumbnail.php',			// Load function generate classes bootstrap.
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
