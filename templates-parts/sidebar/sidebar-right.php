@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 }
 
 // when both sidebars turned on reduce col size to 3 from 4.
-$sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );
+$sidebar_pos = wpzaro_theme_setting( 'wpzaro_sidebar_position' );
 ?>
 
 <?php if ( 'both' === $sidebar_pos ) : ?>

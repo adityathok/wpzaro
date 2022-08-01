@@ -7,7 +7,7 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-$type_form  = get_theme_mod( 'wpzaro_searchform_header_type', 'dropdown' );
+$type_form  = wpzaro_theme_setting( 'wpzaro_searchform_header_type', 'dropdown' );
 
 ?>
 

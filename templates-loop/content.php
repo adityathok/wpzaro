@@ -8,10 +8,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$archive_column = (int)get_theme_mod( 'wpzaro_archive_column', '1' );
-$equalheight 	= (int)get_theme_mod( 'wpzaro_archive_column_equalheight', '0' );
+$archive_column = (int)wpzaro_theme_setting( 'wpzaro_archive_column', '1' );
+$equalheight 	= (int)wpzaro_theme_setting( 'wpzaro_archive_column_equalheight', '0' );
 $clascolumn		= wpzaro_column_classes(['large' => $archive_column, 'equalheight' => $equalheight]);
-$sortcontent	= get_theme_mod( 'wpzaro_archive_content_sortable', [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'] );
+$sortcontent	= wpzaro_theme_setting( 'wpzaro_archive_content_sortable', [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'] );
 ?>
 
 <article <?php post_class($clascolumn.' pb-3'); ?> id="post-<?php the_ID(); ?>">

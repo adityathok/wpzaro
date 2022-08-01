@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$navbar_type       = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
+$navbar_type       = wpzaro_theme_setting( 'wpzaro_navbar_type', 'collapse' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

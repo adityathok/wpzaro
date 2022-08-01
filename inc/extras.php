@@ -31,7 +31,7 @@ if ( ! function_exists( 'wpzaro_body_classes' ) ) {
 		}
 
 		// Adds a body class based on the presence of a sidebar.
-		$sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );
+		$sidebar_pos = wpzaro_theme_setting( 'wpzaro_sidebar_position' );
 		if ( is_page_template( 'templates-page/fullwidthpage.php' ) ) {
 			$classes[] = 'wpzaro-no-sidebar';
 		} elseif (

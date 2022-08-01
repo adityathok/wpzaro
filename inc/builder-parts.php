@@ -9,7 +9,7 @@
 if ( ! function_exists( 'wpzaro_header_layout_open' ) ) {
     add_action('wpzaro_header_open','wpzaro_header_layout_open');
     function wpzaro_header_layout_open() {
-        $sticky_type    = get_theme_mod( 'wpzaro_navbar_sticky', 'sticky-none' );
+        $sticky_type    = wpzaro_theme_setting( 'wpzaro_navbar_sticky', 'sticky-none' );
         $sticky_class   = $sticky_type==='sticky-none'?$sticky_type:$sticky_type.' wrapper-navbar-sticky';
         ?>
 
@@ -58,8 +58,8 @@ if ( ! function_exists( 'wpzaro_footer_layout_open' ) ) {
 if ( ! function_exists( 'wpzaro_footer_layout_content' ) ) {
     add_action('wpzaro_footer','wpzaro_footer_layout_content');
     function wpzaro_footer_layout_content() {
-        $maincontainer  = get_theme_mod( 'wpzaro_container_type' );
-        $container      = get_theme_mod( 'wpzaro_footersiteinfo_container_type', 'default' );
+        $maincontainer  = wpzaro_theme_setting( 'wpzaro_container_type' );
+        $container      = wpzaro_theme_setting( 'wpzaro_footersiteinfo_container_type', 'default' );
         $container      = $container=='default' ? $maincontainer : $container;
         $container_one	= $container=='container-fixed' ? 'container' : 'wrapper';
         $container_two	= $container=='container-fixed' ? 'p-3' : $container;
@@ -130,7 +130,7 @@ if ( ! function_exists( 'wpzaro_header_footer_bbrender' ) && class_exists('FLThe
 if ( ! function_exists( 'wpzaro_sidebar_left_check' ) ) {
     add_action('wpzaro_sidebar_left','wpzaro_sidebar_left_check');
     function wpzaro_sidebar_left_check() {
-        $sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );        
+        $sidebar_pos = wpzaro_theme_setting( 'wpzaro_sidebar_position' );        
 
         if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) {
             get_template_part( 'templates-parts/sidebar/sidebar', 'left' );
@@ -147,7 +147,7 @@ if ( ! function_exists( 'wpzaro_sidebar_left_check' ) ) {
 if ( ! function_exists( 'wpzaro_sidebar_right_check' ) ) {
     add_action('wpzaro_sidebar_right','wpzaro_sidebar_right_check');
     function wpzaro_sidebar_right_check() {
-        $sidebar_pos = get_theme_mod( 'wpzaro_sidebar_position' );
+        $sidebar_pos = wpzaro_theme_setting( 'wpzaro_sidebar_position' );
         ?>   
 
         </div><!-- #closing the primary container from wpzaro_sidebar_left_check() -->

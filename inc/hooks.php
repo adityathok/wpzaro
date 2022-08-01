@@ -47,8 +47,8 @@ if ( ! function_exists( 'wpzaro_add_site_info' ) ) {
 		);
 
 		// Check if customizer site info has value.
-		if ( get_theme_mod( 'wpzaro_site_info_override' ) ) {
-			$site_info	= get_theme_mod( 'wpzaro_site_info_override' );
+		if ( wpzaro_theme_setting( 'wpzaro_site_info_override' ) ) {
+			$site_info	= wpzaro_theme_setting( 'wpzaro_site_info_override' );
 			$site_info	= str_replace( '{year}', date_i18n ('Y'), $site_info );
 			$site_info	= str_replace( '{site_title}', get_bloginfo( 'name' ), $site_info );
 		}

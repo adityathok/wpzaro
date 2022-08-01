@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'wpzaro_container_type' );
+$container = wpzaro_theme_setting( 'wpzaro_container_type' );
 ?>
 
 <div class="wrapper" id="index-wrapper">

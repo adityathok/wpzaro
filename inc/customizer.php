@@ -361,7 +361,7 @@ if ( ! function_exists( 'wpzaro_default_navbar_type' ) ) {
 	 */
 	function wpzaro_default_navbar_type( $current_mod ) {
 
-		if ( 'bootstrap5' !== get_theme_mod( 'wpzaro_bootstrap_version' ) ) {
+		if ( 'bootstrap5' !== wpzaro_theme_setting( 'wpzaro_bootstrap_version' ) ) {
 			$current_mod = 'collapse';
 		}
 
@@ -376,7 +376,7 @@ if ( ! function_exists( 'wpzaro_customize_generate_css' ) ) {
 	* This will generate a line of CSS for use in header output. If the setting
 	* ($mod_name) has no defined value, the CSS will not be output.
 	* 
-	* @uses get_theme_mod()
+	* @uses wpzaro_theme_setting()
 	* @param string $selector CSS selector
 	* @param string $style The name of the CSS *property* to modify
 	* @param string $mod_name The name of the 'theme_mod' option to fetch
@@ -388,7 +388,7 @@ if ( ! function_exists( 'wpzaro_customize_generate_css' ) ) {
 	*/
 	function wpzaro_customize_generate_css( $selector, $style, $mod_name, $prefix='', $postfix='', $echo=true ) {
 		$return = '';
-		$mod = get_theme_mod($mod_name);
+		$mod = wpzaro_theme_setting($mod_name);
 		if ( ! empty( $mod ) ) {
 			$return = sprintf('%s { %s:%s; }',
 			$selector,
@@ -415,8 +415,8 @@ if ( ! function_exists( 'wpzaro_customize_header_output' ) ) {
 		* @since MyTheme 1.0
 		*/
 
-		$gfont_link		= get_theme_mod( 'wpzaro_google_font_link_embed' );
-		$gfont_css_rule	= get_theme_mod( 'wpzaro_google_font_body_css_rule' );
+		$gfont_link		= wpzaro_theme_setting( 'wpzaro_google_font_link_embed' );
+		$gfont_css_rule	= wpzaro_theme_setting( 'wpzaro_google_font_body_css_rule' );
 		if($gfont_link) {
 			echo '
 			<link rel="preconnect" href="https://fonts.googleapis.com">

@@ -8,8 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$navbar_type        = get_theme_mod( 'wpzaro_navbar_type', 'collapse' );
-$navbar_aligment    = get_theme_mod( 'wpzaro_menu_header_aligment', 'right' );
+$navbar_type        = wpzaro_theme_setting( 'wpzaro_navbar_type', 'collapse' );
+$navbar_aligment    = wpzaro_theme_setting( 'wpzaro_menu_header_aligment', 'right' );
 ?>
 
 <?php if ( $navbar_type === 'collapse' ) { ?>

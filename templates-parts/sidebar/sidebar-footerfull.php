@@ -8,8 +8,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$maincontainer	= get_theme_mod( 'wpzaro_container_type' );
-$container		= get_theme_mod( 'wpzaro_footerfull_container_type', 'default' );
+$maincontainer	= wpzaro_theme_setting( 'wpzaro_container_type' );
+$container		= wpzaro_theme_setting( 'wpzaro_footerfull_container_type', 'default' );
 $container		= $container=='default' ? $maincontainer : $container;
 $container_one	= $container=='container-fixed' ? 'container' : 'wrapper';
 $container_two	= $container=='container-fixed' ? 'px-3' : $container;

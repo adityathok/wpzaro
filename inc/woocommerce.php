@@ -40,7 +40,7 @@ if ( ! function_exists( 'wpzaro_woocommerce_wrapper_start' ) ) {
 	 * Display the theme specific start of the page wrapper.
 	 */
 	function wpzaro_woocommerce_wrapper_start() {
-		$container = get_theme_mod( 'wpzaro_container_type' );
+		$container = wpzaro_theme_setting( 'wpzaro_container_type' );
 		echo '<div class="wrapper" id="woocommerce-wrapper">';
 		echo '<div class="' . esc_attr( $container ) . '" id="content" tabindex="-1">';
 		echo '<div class="row">';

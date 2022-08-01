@@ -8,10 +8,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$maincontainer      = get_theme_mod( 'wpzaro_container_type' );
-$sortable_layout    = get_theme_mod( 'wpzaro_navbar_sortable_layout', array('logo','menu','search') );
-$shadow_type        = get_theme_mod( 'wpzaro_navbar_shadow', 'shadow-sm' );
-$container          = get_theme_mod( 'wpzaro_navbar_container_type', 'default' );
+$maincontainer      = wpzaro_theme_setting( 'wpzaro_container_type' );
+$sortable_layout    = wpzaro_theme_setting( 'wpzaro_navbar_sortable_layout', array('logo','menu','search') );
+$shadow_type        = wpzaro_theme_setting( 'wpzaro_navbar_shadow', 'shadow-sm' );
+$container          = wpzaro_theme_setting( 'wpzaro_navbar_container_type', 'default' );
 $container          = $container=='default' ? $maincontainer : $container;
 $container_one	    = $container=='container-fixed' ? 'container' : '';
 $container_two	    = $container=='container-fixed' ? 'container-fluid' : $container;
