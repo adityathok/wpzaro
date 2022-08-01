@@ -45,3 +45,25 @@ if ( ! function_exists( 'wpzaro_get_theme_default_settings' ) ) {
 		return apply_filters( 'wpzaro_theme_default_settings', $defaults );
 	}
 }
+
+if ( ! function_exists( 'wpzaro_theme_setting' ) ) {
+	/**
+	 * Retrieve theme settings.
+	 *
+	 */
+	function wpzaro_theme_setting($option_name=null,$default=null) {
+
+		if(empty($option_name)) {
+            return false;
+        }
+
+        if ( empty($default) && class_exists( 'Kirki' ) && isset( Kirki::$all_fields[ $option_name ] ) && isset( Kirki::$all_fields[ $option_name ]['default'] ) ) {
+            $default = Kirki::$all_fields[ $option_name ]['default'];
+        }
+
+        $option_value = get_theme_mod($option_name,$default);
+
+        return $option_value;
+
+	}
+}

@@ -13,6 +13,7 @@ $wpzaro_inc_dir = 'inc';
 
 // Array of files to include.
 $wpzaro_includes = array(
+	'/kirki.php',                      		// Customizer additions use Kirki.
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
@@ -23,7 +24,6 @@ $wpzaro_includes = array(
 	'/hooks.php',                           // Custom hooks.
 	'/extras.php',                          // Custom functions that act independently of the theme templates.
 	'/customizer.php',                      // Customizer additions.
-	'/kirki.php',                      		// Customizer additions use Kirki.
 	'/custom-comments.php',                 // Custom Comments file.
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
