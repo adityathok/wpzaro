@@ -12,7 +12,7 @@ $archive_column		= (int)wpzaro_theme_setting( 'wpzaro_archive_column', '1' );
 $archive_column_m	= (int)wpzaro_theme_setting( 'wpzaro_archive_column_mobile', '1' );
 $equalheight 		= (int)wpzaro_theme_setting( 'wpzaro_archive_column_equalheight', '0' );
 $clascolumn			= wpzaro_column_classes(['large' => $archive_column, 'small' => $archive_column_m, 'equalheight' => $equalheight]);
-$sortcontent		= wpzaro_theme_setting( 'wpzaro_archive_content_sortable', [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'] );
+$sortcontent		= wpzaro_theme_setting( 'wpzaro_archive_content_sortable', [ 'thumbnail', 'title', 'meta', 'excerpt', 'morelink', 'tag'] );
 ?>
 
 <article <?php post_class($clascolumn.' pb-3'); ?> id="post-<?php the_ID(); ?>">
@@ -58,6 +58,13 @@ $sortcontent		= wpzaro_theme_setting( 'wpzaro_archive_content_sortable', [ 'titl
 				?>
 
 			</div><!-- .entry-content -->
+		<?php endif; ?>
+
+		<?php if($value === 'morelink'): ?>
+			<a class="btn btn-secondary wpzaro-read-more-link" href="<?php echo esc_url( get_permalink( get_the_ID() ) ) ;?>">
+				Read More...
+				<span class="screen-reader-text"> from <?php echo get_the_title( get_the_ID() ) ;?></span>
+			</a><!-- .post-more-link -->
 		<?php endif; ?>
 
 		<?php if($value === 'tag'): ?>

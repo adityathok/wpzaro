@@ -262,26 +262,5 @@ if ( ! function_exists( 'wpzaro_custom_excerpt_more' ) ) {
 	}
 }
 
-add_filter( 'wp_trim_excerpt', 'wpzaro_all_excerpts_get_more_link' );
-
-if ( ! function_exists( 'wpzaro_all_excerpts_get_more_link' ) ) {
-	/**
-	 * Adds a custom read more link to all excerpts, manually or automatically generated
-	 *
-	 * @param string $post_excerpt Posts's excerpt.
-	 *
-	 * @return string
-	 */
-	function wpzaro_all_excerpts_get_more_link( $post_excerpt ) {
-		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary wpzaro-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __(
-				'Read More...',
-				'wpzaro'
-			) . '<span class="screen-reader-text"> from ' . get_the_title( get_the_ID() ) . '</span></a></p>';
-		}
-		return $post_excerpt;
-	}
-}
-
 ///remove category title prefix
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

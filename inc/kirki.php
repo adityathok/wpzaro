@@ -705,10 +705,11 @@ new \Kirki\Panel(
                 'default'  => [ 'title', 'thumbnail', 'meta' ,'excerpt','tag'],
                 'priority' => 10,
                 'choices'  => [
-                    'title'     => esc_html__( 'Title', 'wpzaro' ),
                     'thumbnail' => esc_html__( 'Thumbnail', 'wpzaro' ),
+                    'title'     => esc_html__( 'Title', 'wpzaro' ),
                     'meta'      => esc_html__( 'Meta', 'wpzaro' ),
                     'excerpt'   => esc_html__( 'Excerpt', 'wpzaro' ),
+                    'morelink'  => esc_html__( 'More link', 'wpzaro' ),
                     'tag'       => esc_html__( 'Tag', 'wpzaro' ),
                 ],
             ]
