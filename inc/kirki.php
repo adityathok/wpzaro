@@ -660,6 +660,20 @@ new \Kirki\Panel(
                 ],
             ]
         );
+        new \Kirki\Field\Slider(
+            [
+                'settings'    => 'wpzaro_archive_column_mobile',
+                'label'       => esc_html__( 'Number of columns in Mobile', 'wpzaro' ),
+                'section'     => 'section_archivecolumn',
+                'default'     => 1,
+                'transport'   => 'refresh',
+                'choices'     => [
+                    'min'  => 1,
+                    'max'  => 6,
+                    'step' => 1,
+                ],
+            ]
+        );
         new \Kirki\Field\Checkbox_Switch(
             [
                 'settings'    => 'wpzaro_archive_column_equalheight',

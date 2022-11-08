@@ -16,7 +16,7 @@ if ( ! function_exists( 'wpzaro_column_classes' ) ) {
     function wpzaro_column_classes($args=null) {
 
         $large          = isset($args['large']) ? $args['large'] : 1;
-        $small          = isset($args['small']) ? $args['small'] : '';
+        $small          = isset($args['small']) ? $args['small'] : 1;
         $equalheight    = isset($args['equalheight']) ? $args['equalheight'] : '';
 
         $classes = [];
@@ -39,11 +39,11 @@ if ( ! function_exists( 'wpzaro_column_classes' ) ) {
 
         if($small === 1) {
             $classes[] = 'col-12';
-        } elseif ($large === 2) {
+        } elseif ($small === 2) {
             $classes[] = 'col-6';
-        } elseif ($large === 3) {
+        } elseif ($small === 3) {
             $classes[] = 'col-4';
-        } elseif ($large === 4) {
+        } elseif ($small === 4) {
             $classes[] = 'col-3';
         }
 
