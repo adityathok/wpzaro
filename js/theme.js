@@ -7204,6 +7204,22 @@
 	      }
 	    });
 	  }
+
+	  $(document).on('click', '.scroll-to-top', function () {
+	    window.scrollTo(0, 0);
+	  });
+
+	  if ($(".scroll-to-top").length) {
+	    $(window).bind('scroll', function () {
+	      $(window).height();
+
+	      if ($(window).scrollTop() > WrapperNavbarTop) {
+	        $('.footer-scrolltotop').show(200);
+	      } else {
+	        $('.footer-scrolltotop').hide(200);
+	      }
+	    });
+	  }
 	});
 
 }));

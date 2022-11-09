@@ -627,6 +627,48 @@ new \Kirki\Panel(
             ]
         );
 
+    //Footer scroll to top
+    new \Kirki\Section(
+        'section_scrolltotop',
+        [
+            'title'       => esc_html__( 'Scroll to Top', 'wpzaro' ),
+            'description' => esc_html__( 'Enable button scroll to top', 'wpzaro' ),
+            'panel'       => 'footer_id',
+            'priority'    => 160,
+        ]
+    );
+        new \Kirki\Field\Checkbox_Switch(
+            [
+                'settings'    => 'wpzaro_scrolltotop_enable',
+                'label'       => esc_html__( 'Enable', 'wpzaro' ),
+                'section'     => 'section_scrolltotop',
+                'default'     => 'on',
+                'choices'     => [
+                    'on'        => esc_html__( 'Enable', 'wpzaro' ),
+                    'off'       => esc_html__( 'Disable', 'wpzaro' ),
+                ],
+            ]
+        );
+        new \Kirki\Field\Color(
+            [
+                'settings'    => 'wpzaro_scrolltotop_color',
+                'label'       => esc_html__( 'Color Button', 'wpzaro' ),
+                'section'     => 'section_scrolltotop',
+                'default'     => '#333333',
+                'choices'     => [
+                    'alpha' => true,
+                ],
+                'transport'   => 'auto',
+                'output'      => [
+                    [
+                        'choice'    => 'color',
+                        'element'   => '.footer-scrolltotop .btn',
+                        'property'  => 'background-color',
+                    ],
+                ],
+            ]
+        );
+
 //Archive Panel
 new \Kirki\Panel(
     'archive_id',
