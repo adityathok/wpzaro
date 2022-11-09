@@ -217,10 +217,10 @@ if ( ! function_exists( 'wpzaro_post_nav' ) ) {
 			<div class="d-flex nav-links justify-content-between">
 				<?php
 				if ( get_previous_post_link() ) {
-					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'wpzaro' ) );
+					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>&nbsp;%title', 'Previous post link', 'wpzaro' ) );
 				}
 				if ( get_next_post_link() ) {
-					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'wpzaro' ) );
+					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/> </svg>', 'Next post link', 'wpzaro' ) );
 				}
 				?>
 			</div><!-- .nav-links -->

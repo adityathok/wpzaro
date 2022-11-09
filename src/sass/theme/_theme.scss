@@ -21,6 +21,12 @@ blockquote p:last-child {
     margin-bottom: 0;
 }
 
+svg {
+    &.bi {
+        vertical-align: sub;
+    }
+}
+
 .wpzaro-ratio-thumbnail {
     .wpzaro-ratio-thumbnail-box {
         position: relative;
@@ -36,19 +42,24 @@ blockquote p:last-child {
         -ms-transition: all 0.4s ease-in-out 0s;
         -o-transition: all 0.4s ease-in-out 0s;
         transition: all 0.4s ease-in-out 0s;
+
         &.wpzaro-ratio-thumbnail-16-9 {
             padding-bottom: 56.25%;
         }
+
         &.wpzaro-ratio-thumbnail-8-5 {
             padding-bottom: 62.5%;
         }
+
         &.wpzaro-ratio-thumbnail-4-3 {
             padding-bottom: 75%;
         }
+
         &.wpzaro-ratio-thumbnail-3-2 {
             padding-bottom: 66.66%;
         }
     }
+
     img {
         display: none !important;
     }
@@ -67,19 +78,20 @@ body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
     padding-top: 4rem;
 }
 
-@media (min-width: 768px) {    
+@media (min-width: 768px) {
     .col-md-20 {
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         width: 20%;
     }
+
     body.admin-bar .sticky-top {
-      top: 32px;
+        top: 32px;
     }
 }
 
-@media (min-width: 992px) {    
+@media (min-width: 992px) {
     .col-lg-20 {
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;

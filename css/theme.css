@@ -15576,6 +15576,10 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
+svg.bi {
+  vertical-align: sub;
+}
+
 .wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box {
   position: relative;
   display: block;
