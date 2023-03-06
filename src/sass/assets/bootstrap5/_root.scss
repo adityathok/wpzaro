@@ -1,3 +1,6 @@
+@import "maps";
+@import "variables-dark";
+
 :root,
 [data-bs-theme="light"] {
   // Note: Custom variable values only support SassScript inside `#{}`.
