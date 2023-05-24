@@ -170,3 +170,34 @@ a.skip-link {
 .gallery-caption {
 	display: block;
 }
+
+// Search Block Widget
+.wp-block-search {
+
+	.wp-block-search__button {
+
+		@if variable-exists("bootstrap4") {
+			margin-left: $form-grid-gutter-width;
+		} @else {
+			margin-left: $grid-gutter-width * 0.5;
+		}
+	}
+
+	&.wp-block-search__button-inside {
+
+		.wp-block-search__inside-wrapper {
+			border: none;
+			padding: 0;
+
+			.wp-block-search__input {
+				border-radius: $input-border-radius;
+				border: $input-border-width solid $input-border-color;
+				padding: $input-padding-y $input-padding-x;
+			}
+		}
+
+		.wp-block-search__button {
+			margin-left: 0;
+		}
+	}
+}
