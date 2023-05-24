@@ -8746,7 +8746,7 @@ textarea.form-control-lg {
   width: 75% !important;
 }
 
-.w-100 {
+.w-100, .ratio img {
   width: 100% !important;
 }
 
@@ -8778,7 +8778,7 @@ textarea.form-control-lg {
   height: 75% !important;
 }
 
-.h-100 {
+.h-100, .ratio img {
   height: 100% !important;
 }
 
@@ -16898,6 +16898,11 @@ svg.bi {
 }
 .wpzaro-ratio-thumbnail img {
   display: none !important;
+}
+
+.ratio img {
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {

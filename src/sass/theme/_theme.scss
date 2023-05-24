@@ -65,6 +65,14 @@ svg {
     }
 }
 
+.ratio {
+    img {        
+		@extend .w-100;
+		@extend .h-100;
+        object-fit: cover;
+    }
+}
+
 @media (max-width: 768px) {
     #primary {
         &.content-area {
