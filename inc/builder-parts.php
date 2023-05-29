@@ -179,7 +179,7 @@ if (!function_exists('wpzaro_footer_scrolltotop')) {
         if ($enable) :
         ?>
             <div class="floating-footer position-fixed bottom-0 end-0 me-2 mb-2 footer-scrolltotop" style="display:none;">
-                <div class="btn btn-dark btn-sm border-0 scroll-to-top">
+                <div class="btn btn-dark rounded-0 border-0 scroll-to-top">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
                     </svg>

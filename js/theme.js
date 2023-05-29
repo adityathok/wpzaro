@@ -7218,13 +7218,13 @@
 	        $('.footer-scrolltotop').show(200);
 
 	        if (flowha.length > 0) {
-	          flowha.attr('style', 'margin-right: 3rem !important');
+	          flowha.attr('style', 'margin-right: 4rem !important');
 	        }
 	      } else {
 	        $('.footer-scrolltotop').hide(200);
 
 	        if (flowha.length > 0) {
-	          flowha.css("margin-right", "0");
+	          flowha.attr('style', 'margin-right: 0');
 	        }
 	      }
 	    });
