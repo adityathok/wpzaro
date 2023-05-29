@@ -73,6 +73,10 @@ svg {
     }
 }
 
+.floating-footer {
+    @include transition(all .5s ease);
+}
+
 @media (max-width: 768px) {
     #primary {
         &.content-area {

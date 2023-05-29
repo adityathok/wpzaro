@@ -16881,6 +16881,15 @@ svg.bi {
   object-fit: cover;
 }
 
+.floating-footer {
+  transition: all 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-footer {
+    transition: none;
+  }
+}
+
 @media (max-width: 768px) {
   #primary.content-area {
     order: -1;
