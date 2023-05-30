@@ -9,7 +9,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-if (!class_exists('Kirki'))
+if (!class_exists('Kirki') || class_exists('Kirki') && KIRKI_VERSION < 4)
     return false;
 
 //Layout Panel
