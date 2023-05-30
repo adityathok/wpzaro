@@ -190,6 +190,20 @@ new \Kirki\Field\Slider(
         ],
     ]
 );
+new \Kirki\Field\Checkbox_Switch(
+    [
+        'settings'    => 'wpzaro_widget_classic',
+        'label'       => esc_html__('Widget Classic', 'kirki'),
+        'description' => esc_html__('Use Classic Widget', 'kirki'),
+        'section'     => 'section_sidebar',
+        'default'     => 'off',
+        'choices'     => [
+            'on'  => esc_html__('Enable', 'kirki'),
+            'off' => esc_html__('Disable', 'kirki'),
+        ],
+    ]
+);
+
 //Background Section
 new \Kirki\Section(
     'section_background',
