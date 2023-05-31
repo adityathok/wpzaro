@@ -706,7 +706,7 @@ new \Kirki\Field\Checkbox_Switch(
         ],
     ]
 );
-new \Kirki\Field\Number(
+new \Kirki\Field\Text(
     [
         'settings'    => 'wpzaro_floatwhatsapp_number',
         'label'       => esc_html__('No Whatsapp', 'wpzaro'),
