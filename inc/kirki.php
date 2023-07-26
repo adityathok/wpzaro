@@ -318,9 +318,10 @@ new \Kirki\Field\Sortable(
         'default'  => ['logo', 'menu'],
         'priority' => 10,
         'choices'  => [
-            'logo'      => esc_html__('Logo', 'wpzaro'),
-            'menu'      => esc_html__('Menu', 'wpzaro'),
-            'search'    => esc_html__('Search', 'wpzaro'),
+            'logo'          => esc_html__('Logo', 'wpzaro'),
+            'menu'          => esc_html__('Primary Menu', 'wpzaro'),
+            'search'        => esc_html__('Search', 'wpzaro'),
+            'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
         ],
     ]
 );
@@ -389,7 +390,7 @@ new \Kirki\Field\Background(
 new \Kirki\Section(
     'section_menu_navbar',
     [
-        'title'       => esc_html__('Menu', 'wpzaro'),
+        'title'       => esc_html__('Primary Menu', 'wpzaro'),
         'description' => esc_html__('Header menu settings.', 'wpzaro'),
         'panel'       => 'header_id',
         'priority'    => 160,
@@ -414,7 +415,7 @@ new \Kirki\Field\Typography(
         ],
         'output'      => [
             [
-                'element' => '#main-nav .navbar-nav .nav-link',
+                'element' => '#main-menu .nav-link',
             ],
         ],
     ]
@@ -439,17 +440,17 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => '#main-nav .nav-link',
+                'element'   => '#main-menu .nav-link',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '#main-nav .nav-link:hover',
+                'element'   => '#main-menu .nav-link:hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '#main-nav .nav-link:active',
+                'element'   => '#main-menu .nav-link:active',
                 'property'  => 'color',
             ],
         ],
@@ -493,6 +494,92 @@ new \Kirki\Field\Select(
             'dropdown'  => esc_html__('Dropdown with icon', 'wpzaro'),
             'inline'    => esc_html__('Inline Form', 'wpzaro'),
             'modal'     => esc_html__('Modal with icon', 'wpzaro'),
+        ],
+    ]
+);
+
+//Navbar Secondary Menu Section
+new \Kirki\Section(
+    'section_secondarymenu_navbar',
+    [
+        'title'       => esc_html__('Secondary Menu', 'wpzaro'),
+        'description' => esc_html__('Secondary menu settings.', 'wpzaro'),
+        'panel'       => 'header_id',
+        'priority'    => 160,
+    ]
+);
+new \Kirki\Field\Typography(
+    [
+        'settings'    => 'wpzaro_secondarymenuheader_typography',
+        'label'       => esc_html__('Typography', 'wpzaro'),
+        'description' => esc_html__('', 'wpzaro'),
+        'section'     => 'section_secondarymenu_navbar',
+        'priority'    => 10,
+        'transport'   => 'auto',
+        'default'     => [
+            'variant'         => 'regular',
+            'font-style'      => 'normal',
+            'font-size'       => '14px',
+            'line-height'     => '1.5',
+            'letter-spacing'  => '0',
+            'text-transform'  => 'none',
+            'text-decoration' => 'none',
+        ],
+        'output'      => [
+            [
+                'element' => '.navbar-secondary-menu .nav-link',
+            ],
+        ],
+    ]
+);
+new \Kirki\Field\Multicolor(
+    [
+        'settings'  => 'wpzaro_secondarymenu_header_link_color',
+        'label'     => esc_html__('Link Color', 'wpzaro'),
+        'section'   => 'section_secondarymenu_navbar',
+        'priority'  => 10,
+        'choices'   => [
+            'color'    => esc_html__('Color', 'wpzaro'),
+            'hover'    => esc_html__('Hover', 'wpzaro'),
+            'active'   => esc_html__('Active', 'wpzaro'),
+        ],
+        'alpha'     => true,
+        'default'   => [
+            'color'  => '#333333',
+            'hover'  => '#9d9a9a',
+            'active' => '#333333',
+        ],
+        'output'    => [
+            [
+                'choice'    => 'color',
+                'element'   => '.navbar-secondary-menu .nav-link',
+                'property'  => 'color',
+            ],
+            [
+                'choice'    => 'hover',
+                'element'   => '.navbar-secondary-menu .nav-link:hover',
+                'property'  => 'color',
+            ],
+            [
+                'choice'    => 'active',
+                'element'   => '.navbar-secondary-menu .nav-link:active',
+                'property'  => 'color',
+            ],
+        ],
+    ]
+);
+new \Kirki\Field\Select(
+    [
+        'settings'    => 'wpzaro_secondarymenu_header_aligment',
+        'label'       => esc_html__('Aligment', 'wpzaro'),
+        'section'     => 'section_secondarymenu_navbar',
+        'default'     => 'ms-auto',
+        'placeholder' => esc_html__('Choose an option', 'wpzaro'),
+        'description' => esc_html__('Choose Aligment for menu header.', 'wpzaro'),
+        'choices'     => [
+            'ms-auto'   => esc_html__('Right', 'wpzaro'),
+            'me-auto'   => esc_html__('Left', 'wpzaro'),
+            'mx-auto'   => esc_html__('Center', 'wpzaro'),
         ],
     ]
 );
