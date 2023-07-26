@@ -8103,8 +8103,16 @@ textarea.form-control-lg {
   --bs-aspect-ratio: 100%;
 }
 
+.ratio-3x2 {
+  --bs-aspect-ratio: 66.6666666667%;
+}
+
 .ratio-4x3 {
   --bs-aspect-ratio: 75%;
+}
+
+.ratio-8x5 {
+  --bs-aspect-ratio: 62.5%;
 }
 
 .ratio-16x9 {
@@ -16849,31 +16857,13 @@ svg.bi {
   vertical-align: sub;
 }
 
-.wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box {
-  position: relative;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transition: all 0.4s ease-in-out 0s;
-}
-.wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box.wpzaro-ratio-thumbnail-16-9 {
-  padding-bottom: 56.25%;
-}
-.wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box.wpzaro-ratio-thumbnail-8-5 {
-  padding-bottom: 62.5%;
-}
-.wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box.wpzaro-ratio-thumbnail-4-3 {
-  padding-bottom: 75%;
-}
-.wpzaro-ratio-thumbnail .wpzaro-ratio-thumbnail-box.wpzaro-ratio-thumbnail-3-2 {
-  padding-bottom: 66.66%;
-}
 .wpzaro-ratio-thumbnail img {
-  display: none !important;
+  transition: all 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wpzaro-ratio-thumbnail img {
+    transition: none;
+  }
 }
 
 .ratio img {
