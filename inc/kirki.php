@@ -256,6 +256,7 @@ new \Kirki\Section(
         'priority'    => 160,
     ]
 );
+
 //Navbar layout Section
 new \Kirki\Section(
     'section_layout_navbar',
@@ -266,11 +267,113 @@ new \Kirki\Section(
         'priority'    => 160,
     ]
 );
+new \Kirki\Field\Repeater(
+    [
+        'settings' => 'wpzaro_navbar_parts',
+        'label'    => esc_html__('Part Navbar', 'kirki'),
+        'section'  => 'section_layout_navbar',
+        'priority' => 10,
+        'row_label' => [
+            'type'  => 'field',
+            'value' => esc_html__('Part', 'kirki'),
+            'field' => 'part',
+        ],
+        'fields'   => [
+            'part'   => [
+                'type'          => 'select',
+                'label'         => esc_html__('Part', 'kirki'),
+                'choices'       => [
+                    'logo'          => esc_html__('Logo', 'wpzaro'),
+                    'menu'          => esc_html__('Primary Menu', 'wpzaro'),
+                    'search'        => esc_html__('Search', 'wpzaro'),
+                    'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
+                ],
+            ],
+            'column'   => [
+                'type'          => 'select',
+                'label'         => esc_html__('Column', 'kirki'),
+                'default'       => 'col-md-4',
+                'choices'       => [
+                    'col-md-1'      => esc_html__('1', 'wpzaro'),
+                    'col-md-2'      => esc_html__('2', 'wpzaro'),
+                    'col-md-3'      => esc_html__('3', 'wpzaro'),
+                    'col-md-4'      => esc_html__('4', 'wpzaro'),
+                    'col-md-5'      => esc_html__('5', 'wpzaro'),
+                    'col-md-6'      => esc_html__('6', 'wpzaro'),
+                    'col-md-7'      => esc_html__('7', 'wpzaro'),
+                    'col-md-8'      => esc_html__('8', 'wpzaro'),
+                    'col-md-9'      => esc_html__('9', 'wpzaro'),
+                    'col-md-10'     => esc_html__('10', 'wpzaro'),
+                    'col-md-11'     => esc_html__('11', 'wpzaro'),
+                    'col-md-12'     => esc_html__('12', 'wpzaro'),
+                    'col-md'        => esc_html__('Auto', 'wpzaro'),
+                    'hide'          => esc_html__('Hidden', 'wpzaro'),
+                ],
+            ],
+            'column_small'   => [
+                'type'          => 'select',
+                'label'         => esc_html__('Column Small', 'kirki'),
+                'default'       => 'col-12',
+                'choices'       => [
+                    'col-1'     => esc_html__('1', 'wpzaro'),
+                    'col-2'     => esc_html__('2', 'wpzaro'),
+                    'col-3'     => esc_html__('3', 'wpzaro'),
+                    'col-4'     => esc_html__('4', 'wpzaro'),
+                    'col-5'     => esc_html__('5', 'wpzaro'),
+                    'col-6'     => esc_html__('6', 'wpzaro'),
+                    'col-7'     => esc_html__('7', 'wpzaro'),
+                    'col-8'     => esc_html__('8', 'wpzaro'),
+                    'col-9'     => esc_html__('9', 'wpzaro'),
+                    'col-10'    => esc_html__('10', 'wpzaro'),
+                    'col-11'    => esc_html__('11', 'wpzaro'),
+                    'col-12'    => esc_html__('12', 'wpzaro'),
+                    'col'       => esc_html__('Auto', 'wpzaro'),
+                    'hide'      => esc_html__('Hidden', 'wpzaro'),
+                ],
+            ],
+            'align'   => [
+                'type'          => 'radio',
+                'label'         => esc_html__('Align', 'kirki'),
+                'default'       => 'left',
+                'choices'       => [
+                    'left'      => esc_html__('Left', 'wpzaro'),
+                    'center'    => esc_html__('Center', 'wpzaro'),
+                    'Right'     => esc_html__('Right', 'wpzaro'),
+                ],
+            ],
+        ],
+    ]
+);
+new \Kirki\Field\Select(
+    [
+        'settings'    => 'wpzaro_navbar_parts_alignitems',
+        'label'       => esc_html__('Align Items', 'kirki'),
+        'section'     => 'section_layout_navbar',
+        'default'     => 'align-items-center',
+        'choices'     => [
+            'align-items-center'    => esc_html__('Center', 'kirki'),
+            'align-items-start'     => esc_html__('Start', 'kirki'),
+            'align-items-end'       => esc_html__('End', 'kirki'),
+            'align-items-stretch'   => esc_html__('Stretch', 'kirki'),
+        ],
+    ]
+);
+
+//Navbar Style Section
+new \Kirki\Section(
+    'section_style_navbar',
+    [
+        'title'       => esc_html__('Style', 'wpzaro'),
+        'description' => esc_html__('Header style settings.', 'wpzaro'),
+        'panel'       => 'header_id',
+        'priority'    => 160,
+    ]
+);
 new \Kirki\Field\Select(
     [
         'settings'    => 'wpzaro_navbar_container_type',
         'label'       => esc_html__('Container Type', 'wpzaro'),
-        'section'     => 'section_layout_navbar',
+        'section'     => 'section_style_navbar',
         'default'     => 'default',
         'placeholder' => esc_html__('Choose an option', 'wpzaro'),
         'description' => esc_html__('Choose between Theme container and container-fluid, or default', 'wpzaro'),
@@ -284,23 +387,9 @@ new \Kirki\Field\Select(
 );
 new \Kirki\Field\Select(
     [
-        'settings'    => 'wpzaro_navbar_type',
-        'label'       => esc_html__('Responsive Header Menu Type', 'wpzaro'),
-        'section'     => 'section_layout_navbar',
-        'default'     => 'collapse',
-        'placeholder' => esc_html__('Choose an option', 'wpzaro'),
-        'description' => esc_html__('Choose between an expanding and collapsing navbar or an offcanvas drawer.', 'wpzaro'),
-        'choices'     => [
-            'collapse'  => esc_html__('Collapse', 'wpzaro'),
-            'offcanvas' => esc_html__('Offcanvas', 'wpzaro'),
-        ],
-    ]
-);
-new \Kirki\Field\Select(
-    [
         'settings'    => 'wpzaro_navbar_sticky',
         'label'       => esc_html__('Sticky Navbar', 'wpzaro'),
-        'section'     => 'section_layout_navbar',
+        'section'     => 'section_style_navbar',
         'default'     => 'sticky-none',
         'placeholder' => esc_html__('Choose an option', 'wpzaro'),
         'description' => esc_html__('Choose sticky for header.', 'wpzaro'),
@@ -310,29 +399,18 @@ new \Kirki\Field\Select(
         ],
     ]
 );
-new \Kirki\Field\Sortable(
+new \Kirki\Field\Select(
     [
-        'settings' => 'wpzaro_navbar_sortable_layout',
-        'label'    => __('Sortable Layout', 'wpzaro'),
-        'section'  => 'section_layout_navbar',
-        'default'  => ['logo', 'menu'],
-        'priority' => 10,
-        'choices'  => [
-            'logo'          => esc_html__('Logo', 'wpzaro'),
-            'menu'          => esc_html__('Primary Menu', 'wpzaro'),
-            'search'        => esc_html__('Search', 'wpzaro'),
-            'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
+        'settings'    => 'wpzaro_navbar_type',
+        'label'       => esc_html__('Responsive Header Menu Type', 'wpzaro'),
+        'section'     => 'section_style_navbar',
+        'default'     => 'collapse',
+        'placeholder' => esc_html__('Choose an option', 'wpzaro'),
+        'description' => esc_html__('Choose between an expanding and collapsing navbar or an offcanvas drawer.', 'wpzaro'),
+        'choices'     => [
+            'collapse'  => esc_html__('Collapse', 'wpzaro'),
+            'offcanvas' => esc_html__('Offcanvas', 'wpzaro'),
         ],
-    ]
-);
-//Navbar Style Section
-new \Kirki\Section(
-    'section_style_navbar',
-    [
-        'title'       => esc_html__('Style', 'wpzaro'),
-        'description' => esc_html__('Header style settings.', 'wpzaro'),
-        'panel'       => 'header_id',
-        'priority'    => 160,
     ]
 );
 new \Kirki\Field\Dimension(

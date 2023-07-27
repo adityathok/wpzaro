@@ -14,7 +14,7 @@ $type_form  = wpzaro_theme_setting('wpzaro_searchform_header_type', 'dropdown');
 
 <?php if ($type_form == 'inline') : ?>
 
-    <div class="header-search d-none d-md-inline-block">
+    <div class="header-search">
         <form class="d-flex" role="search" method="GET" action="<?php echo esc_url(home_url('/')); ?>">
             <input class="form-control me-2" name="s" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-dark" type="submit">
@@ -59,7 +59,7 @@ $type_form  = wpzaro_theme_setting('wpzaro_searchform_header_type', 'dropdown');
 
 <?php else : ?>
 
-    <div class="header-search d-none d-md-inline-block">
+    <div class="header-search">
         <div class="nav-item dropdown nav-search dropdown-toggle-icon-none">
             <a class="nav-link pe-0 dropdown-toggle-none" role="button" href="#" id="navbarSearch" data-bs-toggle="dropdown" aria-expanded="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
