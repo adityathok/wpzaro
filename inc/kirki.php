@@ -121,22 +121,22 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => 'body,.is-root-container',
+                'element'   => '[data-bs-theme="light"] body,.is-root-container',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'link',
-                'element'   => 'a',
+                'element'   => '[data-bs-theme="light"] a:not(.btn)',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => 'a:hover',
+                'element'   => '[data-bs-theme="light"] a:not(.btn):hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => 'a:active',
+                'element'   => '[data-bs-theme="light"] a:not(.btn):active',
                 'property'  => 'color',
             ],
         ],
@@ -231,7 +231,7 @@ new \Kirki\Field\Background(
         'transport'   => 'auto',
         'output'      => [
             [
-                'element' => 'body',
+                'element' => '[data-bs-theme="light"] body',
             ],
         ],
     ]
@@ -468,7 +468,7 @@ new \Kirki\Field\Background(
         'transport'   => 'auto',
         'output'      => [
             [
-                'element' => '#main-nav',
+                'element' => 'html[data-bs-theme="light"] #main-nav',
             ],
         ],
     ]
@@ -541,17 +541,17 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => '#main-menu .nav-link',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '#main-menu .nav-link:hover',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '#main-menu .nav-link:active',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:active',
                 'property'  => 'color',
             ],
         ],
@@ -752,7 +752,7 @@ new \Kirki\Field\Background(
         'transport'   => 'auto',
         'output'      => [
             [
-                'element' => '#wrapper-footer-full',
+                'element' => '[data-bs-theme="light"] #wrapper-footer-full',
             ],
         ],
     ]
@@ -824,7 +824,7 @@ new \Kirki\Field\Background(
         'transport'   => 'auto',
         'output'      => [
             [
-                'element' => '#wrapper-footer-site-info',
+                'element' => '[data-bs-theme="light"] #wrapper-footer-site-info',
             ],
         ],
     ]

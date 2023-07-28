@@ -13161,11 +13161,6 @@ body {
   border-bottom: 1px solid #dee2e6;
 }
 
-#wrapper-footer-full,
-#wrapper-static-hero {
-  background-color: #e9ecef;
-}
-
 .wp-caption {
   font-size: inherit;
 }
@@ -13322,6 +13317,11 @@ a.skip-link {
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__button {
   margin-left: 0;
+}
+
+[data-bs-theme=light] #wrapper-footer-full,
+[data-bs-theme=light] #wrapper-static-hero {
+  background-color: #e9ecef;
 }
 
 .has-blue-color,

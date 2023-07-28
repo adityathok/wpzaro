@@ -25,12 +25,6 @@ body {
 	border-bottom: 1px solid $gray-300;
 }
 
-// Adding some contrast background color to footer full widget
-#wrapper-footer-full,
-#wrapper-static-hero {
-	background-color: $gray-200;
-}
-
 // Necessary WP classes
 .wp-caption {
 	font-size: inherit;
@@ -199,5 +193,13 @@ a.skip-link {
 		.wp-block-search__button {
 			margin-left: 0;
 		}
+	}
+}
+
+[data-bs-theme="light"] {
+	// Adding some contrast background color to footer full widget
+	#wrapper-footer-full,
+	#wrapper-static-hero {
+		background-color: $gray-200;
 	}
 }
