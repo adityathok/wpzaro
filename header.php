@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme
  *
@@ -8,38 +9,39 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$navbar_type       = wpzaro_theme_setting( 'wpzaro_navbar_type', 'collapse' );
+$navbar_type       = wpzaro_theme_setting('wpzaro_navbar_type', 'collapse');
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> <?php wpzaro_bs_colormode(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> <?php wpzaro_body_attributes(); ?>>
-<?php do_action( 'wp_body_open' ); ?>
+	<?php do_action('wp_body_open'); ?>
 
-<div class="site" id="page">
-	
-		<?php 
-		wpzaro_header_before(); 
+	<div class="site" id="page">
 
-		wpzaro_header_open(); 
+		<?php
+		wpzaro_header_before();
 
-		wpzaro_header(); 
+		wpzaro_header_open();
+
+		wpzaro_header();
 
 		wpzaro_header_close();
 
 		wpzaro_header_after();
 		?>
 
-			<?php wpzaro_content_before(); ?>
+		<?php wpzaro_content_before(); ?>
 
-				<div class="site-content" id="page-content">
+		<div class="site-content" id="page-content">
 
-					<?php wpzaro_content_top(); ?>
+			<?php wpzaro_content_top(); ?>

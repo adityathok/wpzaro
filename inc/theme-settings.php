@@ -70,3 +70,16 @@ if (!function_exists('wpzaro_theme_setting')) {
 		return $option_value;
 	}
 }
+
+if (!function_exists('wpzaro_bs_colormode')) {
+	/**
+	 * Bootstrap color mode / dark mode
+	 */
+	function wpzaro_bs_colormode()
+	{
+		$cookie_name 	= "colormode";
+		$colormode		= isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : 'light';
+		$colormode		= $colormode == 'dark' ? 'dark' : 'light';
+		echo 'data-bs-theme="' . $colormode . '"';
+	}
+}
