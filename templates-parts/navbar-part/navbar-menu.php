@@ -61,21 +61,6 @@ $navbar_aligment    = wpzaro_theme_setting('wpzaro_menu_header_aligment', 'ms-au
                     'walker'          => new wpzaro_WP_Bootstrap_Navwalker(),
                 )
             );
-            $sortable_layout    = wpzaro_theme_setting('wpzaro_navbar_sortable_layout', []);
-            if (in_array("secondarymenu", $sortable_layout)) {
-                wp_nav_menu(
-                    array(
-                        'theme_location'  => 'secondary',
-                        'container_class' => 'd-md-none border-top',
-                        'container_id'    => '',
-                        'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
-                        'fallback_cb'     => '',
-                        'menu_id'         => 'main-menu',
-                        'depth'           => 2,
-                        'walker'          => new wpzaro_WP_Bootstrap_Navwalker(),
-                    )
-                );
-            }
             ?>
         </div>
     </div><!-- .offcanvas -->
