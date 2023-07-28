@@ -37,8 +37,9 @@ $navbar_alignitems  = wpzaro_theme_setting('wpzaro_navbar_parts_alignitems', 'al
                         $column_l       = $column_l == 'hide' ? 'd-md-none' : $column_l;
                         $column_s       = $part['column_small'] ? $part['column_small'] : 'col-12';
                         $column_s       = $column_s == 'hide' ? 'd-none d-md-block' : $column_s;
+                        $align          = $part['align'] ? $part['align'] : 'start';
                         ?>
-                        <div class="col-navbar <?php echo $column_l . ' ' . $column_s; ?>">
+                        <div class="col-navbar <?php echo $column_l . ' ' . $column_s; ?> text-md-<?php echo $align; ?>">
                             <?php get_template_part('templates-parts/navbar-part/navbar-' . $part['part']); ?>
                         </div>
 
