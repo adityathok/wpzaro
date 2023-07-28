@@ -29,7 +29,7 @@ $navbar_alignitems  = wpzaro_theme_setting('wpzaro_navbar_parts_alignitems', 'al
 
         <?php if ($navbar_parts) : ?>
             <div class="row navbar-parts w-100 justify-content-between <?php echo $navbar_alignitems; ?>">
-                <?php foreach ($navbar_parts as $part) : ?>
+                <?php foreach ($navbar_parts as $key => $part) : ?>
                     <?php if ($part['part']) : ?>
 
                         <?php
@@ -40,7 +40,15 @@ $navbar_alignitems  = wpzaro_theme_setting('wpzaro_navbar_parts_alignitems', 'al
                         $align          = $part['align'] ? $part['align'] : 'start';
                         ?>
                         <div class="col-navbar <?php echo $column_l . ' ' . $column_s; ?> text-md-<?php echo $align; ?>">
-                            <?php get_template_part('templates-parts/navbar-part/navbar-' . $part['part']); ?>
+
+                            <?php if ($part['part'] == 'offcanvas') : ?>
+                                <button class="navbar-toggler d-inline-block border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas<?php echo $key; ?>" aria-controls="navbarOffcanvas<?php echo $key; ?>" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'wpzaro'); ?>">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            <?php else : ?>
+                                <?php get_template_part('templates-parts/navbar-part/navbar-' . $part['part']); ?>
+                            <?php endif; ?>
+
                         </div>
 
                     <?php endif; ?>
@@ -51,3 +59,25 @@ $navbar_alignitems  = wpzaro_theme_setting('wpzaro_navbar_parts_alignitems', 'al
     </div><!-- .container(-fluid) -->
 
 </nav><!-- .site-navigation -->
+
+<?php
+if ($navbar_parts) :
+    foreach ($navbar_parts as $key => $part) :
+        if ($part['part'] == 'offcanvas') : ?>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas<?php echo $key; ?>">
+
+                <div class="offcanvas-header justify-content-end">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <?php if (is_active_sidebar('headeroffcanvas')) :
+                        dynamic_sidebar('headeroffcanvas');
+                    endif; ?>
+                </div>
+
+            </div><!-- #navbarOffcanvas<?php echo $key; ?> -->
+<?php
+        endif;
+    endforeach;
+endif;
+?>

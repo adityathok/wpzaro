@@ -288,6 +288,7 @@ new \Kirki\Field\Repeater(
                     'menu'          => esc_html__('Primary Menu', 'wpzaro'),
                     'search'        => esc_html__('Search', 'wpzaro'),
                     'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
+                    'offcanvas'     => esc_html__('Offcanvas', 'wpzaro'),
                 ],
             ],
             'column'   => [
