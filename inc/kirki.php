@@ -193,13 +193,13 @@ new \Kirki\Field\Slider(
 new \Kirki\Field\Checkbox_Switch(
     [
         'settings'    => 'wpzaro_widget_classic',
-        'label'       => esc_html__('Widget Classic', 'kirki'),
-        'description' => esc_html__('Use Classic Widget', 'kirki'),
+        'label'       => esc_html__('Widget Classic', 'wpzaro'),
+        'description' => esc_html__('Use Classic Widget', 'wpzaro'),
         'section'     => 'section_sidebar',
         'default'     => 'off',
         'choices'     => [
-            'on'  => esc_html__('Enable', 'kirki'),
-            'off' => esc_html__('Disable', 'kirki'),
+            'on'  => esc_html__('Enable', 'wpzaro'),
+            'off' => esc_html__('Disable', 'wpzaro'),
         ],
     ]
 );
@@ -270,18 +270,18 @@ new \Kirki\Section(
 new \Kirki\Field\Repeater(
     [
         'settings' => 'wpzaro_navbar_parts',
-        'label'    => esc_html__('Part Navbar', 'kirki'),
+        'label'    => esc_html__('Part Navbar', 'wpzaro'),
         'section'  => 'section_layout_navbar',
         'priority' => 10,
         'row_label' => [
             'type'  => 'field',
-            'value' => esc_html__('Part', 'kirki'),
+            'value' => esc_html__('Part', 'wpzaro'),
             'field' => 'part',
         ],
         'fields'   => [
             'part'   => [
                 'type'          => 'select',
-                'label'         => esc_html__('Part', 'kirki'),
+                'label'         => esc_html__('Part', 'wpzaro'),
                 'default'       => 'logo',
                 'choices'       => [
                     'logo'          => esc_html__('Logo', 'wpzaro'),
@@ -294,7 +294,7 @@ new \Kirki\Field\Repeater(
             ],
             'column'   => [
                 'type'          => 'radio',
-                'label'         => esc_html__('Column', 'kirki'),
+                'label'         => esc_html__('Column', 'wpzaro'),
                 'default'       => 'col-md-4',
                 'choices'       => [
                     'col-md-1'      => esc_html__('1', 'wpzaro'),
@@ -315,7 +315,7 @@ new \Kirki\Field\Repeater(
             ],
             'column_small'   => [
                 'type'          => 'radio',
-                'label'         => esc_html__('Column Small', 'kirki'),
+                'label'         => esc_html__('Column Small', 'wpzaro'),
                 'default'       => 'col-12',
                 'choices'       => [
                     'col-1'     => esc_html__('1', 'wpzaro'),
@@ -336,7 +336,7 @@ new \Kirki\Field\Repeater(
             ],
             'align'   => [
                 'type'          => 'radio',
-                'label'         => esc_html__('Align', 'kirki'),
+                'label'         => esc_html__('Align', 'wpzaro'),
                 'default'       => 'start',
                 'choices'       => [
                     'start'     => esc_html__('Left', 'wpzaro'),
@@ -370,15 +370,15 @@ new \Kirki\Field\Repeater(
 new \Kirki\Field\Select(
     [
         'settings'    => 'wpzaro_navbar_parts_alignitems',
-        'label'       => esc_html__('Align Items', 'kirki'),
+        'label'       => esc_html__('Align Items', 'wpzaro'),
         'section'     => 'section_layout_navbar',
         'default'     => 'align-items-center',
         'priority'    => 10,
         'choices'     => [
-            'align-items-center'    => esc_html__('Center', 'kirki'),
-            'align-items-start'     => esc_html__('Start', 'kirki'),
-            'align-items-end'       => esc_html__('End', 'kirki'),
-            'align-items-stretch'   => esc_html__('Stretch', 'kirki'),
+            'align-items-center'    => esc_html__('Center', 'wpzaro'),
+            'align-items-start'     => esc_html__('Start', 'wpzaro'),
+            'align-items-end'       => esc_html__('End', 'wpzaro'),
+            'align-items-stretch'   => esc_html__('Stretch', 'wpzaro'),
         ],
     ]
 );
