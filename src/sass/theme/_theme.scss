@@ -12,7 +12,6 @@ pre {
 
 blockquote {
     padding: 1rem;
-    background: var(--bs-gray-100);
     border-left: 5px solid var(--bs-gray-300);
     font-style: italic;
 }
@@ -79,5 +78,11 @@ body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         width: 20%;
+    }
+}
+
+[data-bs-theme="light"] {
+    blockquote {
+        background: var(--bs-gray-100);
     }
 }

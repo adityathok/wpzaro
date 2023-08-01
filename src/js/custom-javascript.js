@@ -37,4 +37,12 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	}
+	$(document).on('click', '.btn-darkmode', function () {
+		let cm = $('html').attr('data-bs-theme');
+		cm = (cm == 'dark') ? 'light' : 'dark';
+		$('html').attr('data-bs-theme',cm);
+		let svg = (cm == 'dark') ? '#moon-stars-fill' : '#sun-fill';
+		$('.btn-darkmode svg use').attr('href',svg);
+		document.cookie = "colormode="+cm;
+	});
 });

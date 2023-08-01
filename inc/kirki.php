@@ -289,6 +289,7 @@ new \Kirki\Field\Repeater(
                     'search'        => esc_html__('Search', 'wpzaro'),
                     'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
                     'offcanvas'     => esc_html__('Offcanvas', 'wpzaro'),
+                    'darkmode'      => esc_html__('Darkmode', 'wpzaro'),
                 ],
             ],
             'column'   => [
@@ -541,17 +542,17 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link,[data-bs-theme="light"] #main-menu .dropdown-item',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:hover',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:hover,[data-bs-theme="light"] #main-menu .dropdown-item:hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:active',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:active,[data-bs-theme="light"] #main-menu .dropdown-item:active',
                 'property'  => 'color',
             ],
         ],
@@ -653,17 +654,17 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => '.navbar-secondary-menu .nav-link',
+                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link,[data-bs-theme="light"] #secondary-menu .dropdown-item',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '.navbar-secondary-menu .nav-link:hover',
+                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link:hover,[data-bs-theme="light"] #secondary-menu .dropdown-item:hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '.navbar-secondary-menu .nav-link:active',
+                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link:active,[data-bs-theme="light"] #secondary-menu .dropdown-item:active',
                 'property'  => 'color',
             ],
         ],
