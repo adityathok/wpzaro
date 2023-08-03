@@ -59,6 +59,38 @@ svg {
     }
 }
 
+body {
+    &.wpzaro-pagetitle-hide {
+        .entry-header {
+            @extend .d-none;
+        }
+        .site-content {
+            .wrapper {
+                @extend .pt-0;
+            }
+        }
+    }
+    &.admin-bar {
+        .wrapper-navbar-sticky {
+            @media screen and (max-width: 768px) {
+                &:not(.wrapper-navbar-scrolled) {
+                    top: 46px;
+                }
+            }
+        }
+        &:not(.body-navbar-scrolled) {
+            .offcanvas-header {
+                padding-top: 4rem;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .wrapper-navbar-sticky {
+                top: 32px;
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
     #primary {
         &.content-area {
@@ -69,21 +101,12 @@ svg {
     }
 }
 
-//modify bootstrap for theme
-body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
-    padding-top: 4rem;
-}
-
 @media (min-width: 768px) {
     .col-md-20 {
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         width: 20%;
-    }
-
-    body.admin-bar .wrapper-navbar-sticky {
-        top: 32px;
     }
 }
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * wpzaro functions and definitions
  *
@@ -6,13 +7,14 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 // wpzaro's includes directory.
 $wpzaro_inc_dir = 'inc';
 
 // Array of files to include.
 $wpzaro_includes = array(
+	'/metabox-page.php',					// Custom Metabox for pages.
 	'/kirki.php',                      		// Customizer additions use Kirki.
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
@@ -35,16 +37,16 @@ $wpzaro_includes = array(
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
-if ( class_exists( 'WooCommerce' ) ) {
+if (class_exists('WooCommerce')) {
 	$wpzaro_includes[] = '/woocommerce.php';
 }
 
 // Load Jetpack compatibility file if Jetpack is activiated.
-if ( class_exists( 'Jetpack' ) ) {
+if (class_exists('Jetpack')) {
 	$wpzaro_includes[] = '/jetpack.php';
 }
 
 // Include files.
-foreach ( $wpzaro_includes as $file ) {
-	require_once get_theme_file_path( $wpzaro_inc_dir . $file );
+foreach ($wpzaro_includes as $file) {
+	require_once get_theme_file_path($wpzaro_inc_dir . $file);
 }

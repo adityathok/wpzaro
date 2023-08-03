@@ -483,7 +483,8 @@ new \Kirki\Field\Background(
         'transport'   => 'auto',
         'output'      => [
             [
-                'element' => 'html[data-bs-theme="light"] #main-nav',
+                'element'   => '[data-bs-theme="light"] #main-nav,[data-bs-theme="light"] #main-nav .dropdown-menu',
+                'suffix'    => ' !important',
             ],
         ],
     ]
@@ -556,7 +557,7 @@ new \Kirki\Field\Multicolor(
         'output'    => [
             [
                 'choice'    => 'color',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link,[data-bs-theme="light"] #main-menu .dropdown-item',
+                'element'   => '[data-bs-theme="light"] #main-menu .nav-link,[data-bs-theme="light"] #main-menu .dropdown-item,[data-bs-theme="light"] #main-nav .btn-darkmode',
                 'property'  => 'color',
             ],
             [

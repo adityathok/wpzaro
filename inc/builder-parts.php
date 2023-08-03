@@ -6,15 +6,30 @@
  * @package wpzaro
  */
 
+//add class to body
+add_filter('body_class', function ($classes) {
+    if (is_page()) {
+        $title_page = get_post_meta(get_the_ID(), 'wpzaro_page_title', true);
+        if ($title_page == 'hide') {
+            $classes[] = 'wpzaro-pagetitle-hide';
+        }
+    }
+    return $classes;
+});
+
 //opened header layout
 if (!function_exists('wpzaro_header_layout_open')) {
     add_action('wpzaro_header_open', 'wpzaro_header_layout_open');
     function wpzaro_header_layout_open()
     {
-        $sticky_type    = wpzaro_theme_setting('wpzaro_navbar_sticky', 'sticky-none');
-        $sticky_class   = $sticky_type === 'sticky-none' ? $sticky_type : $sticky_type . ' wrapper-navbar-sticky';
         $overlay        = wpzaro_theme_setting('wpzaro_navbar_overlay', 'disable');
-        if ($overlay !== 'disable') {
+        $sticky_type    = wpzaro_theme_setting('wpzaro_navbar_sticky', 'sticky-none');
+        if (is_page()) {
+            $overlay_page   = get_post_meta(get_the_ID(), 'wpzaro_navbar_overlay', true);
+            $overlay        = $overlay_page ? $overlay_page : $overlay;
+        }
+        $sticky_class   = $sticky_type == 'sticky-top' ? 'sticky-top wrapper-navbar-sticky' : 'sticky-none';
+        if ($overlay && $overlay == 'enable') {
             $sticky_class = 'fixed-top wrapper-navbar-sticky';
         }
 ?>
@@ -39,7 +54,7 @@ if (!function_exists('wpzaro_header_layout_content')) {
         $container_one      = $container == 'container-fixed' ? 'container' : '';
         $container_two      = $container == 'container-fixed' ? 'container-fluid' : $container;
         ?>
-            <nav id="main-nav" class="navbar navbar-expand-md navbar-light <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
+            <nav id="main-nav" class="navbar navbar-expand-md bg-body-tertiary <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
 
                 <h2 id="main-nav-label" class="screen-reader-text">
                     <?php esc_html_e('Main Navigation', 'wpzaro'); ?>
