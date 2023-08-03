@@ -43,7 +43,8 @@
     margin: 0 0.3rem 0.3rem 0;
     @extend .btn;      
     @extend .btn-sm;
-    @extend .btn-outline-dark;
+    @extend .btn-secondary;
+    @extend .text-light;
 }
 .widget_tag_cloud {
     .tag-cloud-link, a {  

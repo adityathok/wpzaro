@@ -3890,7 +3890,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #184cdb;
 }
 
-.btn-secondary {
+.btn-secondary, .tag-cloud-link, .widget_tag_cloud .tag-cloud-link, .widget_tag_cloud a {
   --bs-btn-color: #fff;
   --bs-btn-bg: #6c757d;
   --bs-btn-border-color: #6c757d;
@@ -4128,7 +4128,7 @@ textarea.form-control-lg {
   --bs-gradient: none;
 }
 
-.btn-outline-dark, .tag-cloud-link, .widget_tag_cloud .tag-cloud-link, .widget_tag_cloud a {
+.btn-outline-dark {
   --bs-btn-color: #212529;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
@@ -9519,7 +9519,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-light {
+.text-light, .tag-cloud-link, .widget_tag_cloud .tag-cloud-link, .widget_tag_cloud a {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
