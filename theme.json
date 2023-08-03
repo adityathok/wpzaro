@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "settings": {
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "layout": {
+      "contentSize": "650px",
+      "wideSize": "1200px"
+    },
+    "blocks": {
+      "core/group": {
+        "spacing": {
+          "margin": true,
+          "padding": true
+        }
+      },
+      "core/site-title": {
+        "spacing": {
+          "margin": true,
+          "padding": true
+        }
+      }
+    }
+  }
+}
