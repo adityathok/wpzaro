@@ -13,24 +13,55 @@ if (!function_exists('wpzaro_header_layout_open')) {
     {
         $sticky_type    = wpzaro_theme_setting('wpzaro_navbar_sticky', 'sticky-none');
         $sticky_class   = $sticky_type === 'sticky-none' ? $sticky_type : $sticky_type . ' wrapper-navbar-sticky';
+        $overlay        = wpzaro_theme_setting('wpzaro_navbar_overlay', 'disable');
+        if ($overlay !== 'disable') {
+            $sticky_class = 'fixed-top wrapper-navbar-sticky';
+        }
 ?>
 
         <!-- ******************* The Navbar Area ******************* -->
         <header id="wrapper-navbar" class="<?php echo $sticky_class; ?>">
+            <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'wpzaro'); ?></a>
 
         <?php
     }
 }
 
-///closed header layout
+///content header layout
 if (!function_exists('wpzaro_header_layout_content')) {
     add_action('wpzaro_header', 'wpzaro_header_layout_content');
     function wpzaro_header_layout_content()
     {
+        $maincontainer      = wpzaro_theme_setting('wpzaro_container_type');
+        $shadow_type        = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
+        $container          = wpzaro_theme_setting('wpzaro_navbar_container_type', 'default');
+        $container          = $container == 'default' ? $maincontainer : $container;
+        $container_one      = $container == 'container-fixed' ? 'container' : '';
+        $container_two      = $container == 'container-fixed' ? 'container-fluid' : $container;
         ?>
-            <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e('Skip to content', 'wpzaro'); ?></a>
-            <?php get_template_part('templates-parts/navbar'); ?>
+            <nav id="main-nav" class="navbar navbar-expand-md navbar-light <?php echo $shadow_type; ?> <?php echo $container_one; ?>" aria-labelledby="main-nav-label">
+
+                <h2 id="main-nav-label" class="screen-reader-text">
+                    <?php esc_html_e('Main Navigation', 'wpzaro'); ?>
+                </h2>
+
+                <div class="<?php echo esc_attr($container_two); ?>">
+
+                    <?php do_action('wpzaro_header_navbar'); ?>
+
+                </div><!-- .container(-fluid) -->
+
+            </nav><!-- .site-navigation -->
         <?php
+    }
+}
+
+///content header navbar
+if (!function_exists('wpzaro_header_navbar_content')) {
+    add_action('wpzaro_header_navbar', 'wpzaro_header_navbar_content');
+    function wpzaro_header_navbar_content()
+    {
+        get_template_part('templates-parts/navbar');
     }
 }
 

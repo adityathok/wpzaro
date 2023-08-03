@@ -261,8 +261,8 @@ new \Kirki\Section(
 new \Kirki\Section(
     'section_layout_navbar',
     [
-        'title'       => esc_html__('Layout', 'wpzaro'),
-        'description' => esc_html__('Header layout settings.', 'wpzaro'),
+        'title'       => esc_html__('Navbar', 'wpzaro'),
+        'description' => esc_html__('Header Navbar settings.', 'wpzaro'),
         'panel'       => 'header_id',
         'priority'    => 160,
     ]
@@ -420,6 +420,20 @@ new \Kirki\Field\Select(
         'choices'     => [
             'sticky-none'   => esc_html__('No', 'wpzaro'),
             'sticky-top'    => esc_html__('Yes', 'wpzaro'),
+        ],
+    ]
+);
+new \Kirki\Field\Select(
+    [
+        'settings'    => 'wpzaro_navbar_overlay',
+        'label'       => esc_html__('Overlay Navbar', 'wpzaro'),
+        'section'     => 'section_style_navbar',
+        'default'     => 'disable',
+        'placeholder' => esc_html__('Choose an option', 'wpzaro'),
+        'description' => esc_html__('Overlay header with transparent background.', 'wpzaro'),
+        'choices'     => [
+            'disable'   => esc_html__('No', 'wpzaro'),
+            'enable'    => esc_html__('Yes', 'wpzaro'),
         ],
     ]
 );
