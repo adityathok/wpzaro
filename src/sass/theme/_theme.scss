@@ -54,6 +54,9 @@ svg {
             #main-nav {
                 background: transparent !important;
                 @extend .shadow-none;
+                a:not(.dropdown-item) {
+                    color : #ffffff;
+                }
             }
         }
     }
