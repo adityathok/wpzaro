@@ -44,6 +44,13 @@ svg {
     @include transition(all .5s ease);
 }
 
+.adminbar-top {
+    top: 32px !important;    
+    @media (max-width: 768px) {
+        top: 46px !important;
+    }
+}
+
 #wrapper-navbar {
     @include transition(all .5s ease);
     #main-nav {
@@ -58,6 +65,12 @@ svg {
                     color : #ffffff;
                 }
             }
+        }
+    }
+    &.position-absolute {
+        #main-nav {
+            background: transparent !important;
+            @extend .shadow-none;
         }
     }
 }
@@ -89,6 +102,11 @@ body {
         @media screen and (min-width: 768px) {
             .wrapper-navbar-sticky {
                 top: 32px;
+            }
+        }
+        #wrapper-navbar {
+            &.position-absolute {
+                @extend .adminbar-top;
             }
         }
     }

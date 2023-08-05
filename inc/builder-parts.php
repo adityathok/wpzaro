@@ -13,6 +13,9 @@ add_filter('body_class', function ($classes) {
         if ($title_page == 'hide') {
             $classes[] = 'wpzaro-pagetitle-hide';
         }
+        if (get_post_meta(get_the_ID(), 'wpzaro_navbar_overlay', true) == 'enable') {
+            $classes[] = 'wpzaro-page-navbar-overlay';
+        }
     }
     return $classes;
 });
@@ -29,8 +32,11 @@ if (!function_exists('wpzaro_header_layout_open')) {
             $overlay        = $overlay_page ? $overlay_page : $overlay;
         }
         $sticky_class   = $sticky_type == 'sticky-top' ? 'sticky-top wrapper-navbar-sticky' : 'sticky-none';
-        if ($overlay && $overlay == 'enable') {
+
+        if ($overlay == 'enable' && $sticky_type == 'sticky-top') {
             $sticky_class = 'fixed-top wrapper-navbar-sticky';
+        } else if ($overlay == 'enable' && $sticky_type == 'sticky-none') {
+            $sticky_class = 'position-absolute top-0 start-0 w-100 z-3';
         }
 ?>
 

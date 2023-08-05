@@ -8376,7 +8376,7 @@ textarea.form-control-lg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
-.shadow-none, #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav {
+.shadow-none, #wrapper-navbar.position-absolute #main-nav, #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav {
   box-shadow: none !important;
 }
 
@@ -16780,6 +16780,15 @@ svg.bi {
   }
 }
 
+.adminbar-top, body.admin-bar #wrapper-navbar.position-absolute {
+  top: 32px !important;
+}
+@media (max-width: 768px) {
+  .adminbar-top, body.admin-bar #wrapper-navbar.position-absolute {
+    top: 46px !important;
+  }
+}
+
 #wrapper-navbar {
   transition: all 0.5s ease;
 }
@@ -16802,6 +16811,9 @@ svg.bi {
 #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav a:not(.dropdown-item) {
   color: #ffffff;
 }
+#wrapper-navbar.position-absolute #main-nav {
+  background: transparent !important;
+}
 
 @media screen and (max-width: 768px) {
   body.admin-bar .wrapper-navbar-sticky:not(.wrapper-navbar-scrolled) {
@@ -16816,7 +16828,6 @@ body.admin-bar:not(.body-navbar-scrolled) .offcanvas-header {
     top: 32px;
   }
 }
-
 @media (max-width: 768px) {
   #primary.content-area {
     order: -1;
