@@ -1,5 +1,7 @@
 const { promises: fs } = require("fs")
 const path = require("path")
+var zipdir = require('zip-dir')
+var del = require('del')
 
 async function copyDir(src, dest) {
     await fs.mkdir(dest, { recursive: true });
@@ -38,4 +40,6 @@ async function copyDir(src, dest) {
     }
 }
 
-copyDir('./', './dist');
+copyDir("./", "./dist/wpzaro").then(() => {
+	zipdir("./dist/wpzaro", { saveTo: "./dist/wpzaro.zip" });
+});
