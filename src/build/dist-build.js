@@ -40,6 +40,14 @@ async function copyDir(src, dest) {
     }
 }
 
+async function setLineEndings(filePath, newLineEnding) {
+	const fileContent = await fs.readFile(filePath, "utf8");
+	const contentWithNewLineEnding = fileContent.replace(/\r?\n/g, newLineEnding);
+	await fs.writeFile(filePath, contentWithNewLineEnding, "utf8");
+}
+
 copyDir("./", "./dist/wpzaro").then(() => {
+	setLineEndings("./js/theme.js", "\n");
+	setLineEndings("./dist/wpzaro/js/theme.js", "\n");
 	zipdir("./dist/wpzaro", { saveTo: "./dist/wpzaro.zip" });
 });
