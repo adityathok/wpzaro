@@ -31,7 +31,6 @@ $wpzaro_includes = array(
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/builder-parts.php',                   // Load builder layout from hooks.
 	'/functions/class-wp-bootstrap-navwalker.php',		// Load function custom WordPress nav walker.
-	'/functions/aq-resize.php',							// Load function aqua resize.
 	'/functions/wpzaro-bootstrap-classes.php',			// Load function generate classes bootstrap.
 	'/functions/wpzaro-ratio-thumbnail.php',			// Load function generate classes bootstrap.
 );
