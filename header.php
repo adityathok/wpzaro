@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The header for our theme
  *
@@ -10,9 +9,8 @@
 
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
-
-$navbar_type       = wpzaro_theme_setting('wpzaro_navbar_type', 'collapse');
 ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php wpzaro_bs_colormode(); ?>>
 
