@@ -248,3 +248,17 @@ if ( ! function_exists( 'wpzaro_link_pages' ) ) {
 		wp_link_pages( $args );
 	}
 }
+
+//add class to body
+add_filter('body_class', function ($classes) {
+    if (is_page()) {
+        $title_page = get_post_meta(get_the_ID(), 'wpzaro_page_title', true);
+        if ($title_page == 'hide') {
+            $classes[] = 'wpzaro-pagetitle-hide';
+        }
+        if (get_post_meta(get_the_ID(), 'wpzaro_navbar_overlay', true) == 'enable') {
+            $classes[] = 'wpzaro-page-navbar-overlay';
+        }
+    }
+    return $classes;
+});

@@ -20,10 +20,27 @@ defined( 'ABSPATH' ) || exit;
 	<?php 
 	wpzaro_footer_before(); 
 
+	/** 
+	* do_action( 'wpzaro_footer_open' )
+	*
+	* wpzaro_footer_layout_open()
+	*/
 	wpzaro_footer_open();
 
+	/** 
+	* do_action( 'wpzaro_footer' )
+	*
+	* wpzaro_footer_content()
+	* wpzaro_footer_floatwhatsapp()
+	* wpzaro_footer_scrolltotop()
+	*/
 	wpzaro_footer(); 
 
+	/** 
+	* do_action( 'wpzaro_footer_close' )
+	*
+	* wpzaro_footer_layout_close()
+	*/
 	wpzaro_footer_close();
 
 	wpzaro_footer_after();

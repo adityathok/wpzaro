@@ -29,10 +29,27 @@ defined('ABSPATH') || exit;
 		<?php
 		wpzaro_header_before();
 
+		/** 
+		* do_action( 'wpzaro_header_open' )
+		*
+		* wpzaro_header_layout_open()
+		* wpzaro_header_navigation_open()
+		*/
 		wpzaro_header_open();
-
+		
+		/** 
+		* do_action( 'wpzaro_header' )
+		*
+		* wpzaro_header_navbar()
+		*/
 		wpzaro_header();
 
+		/** 
+		* do_action( 'wpzaro_header_close' )
+		*
+		* wpzaro_header_layout_close()
+		* wpzaro_header_navigation_close()
+		*/
 		wpzaro_header_close();
 
 		wpzaro_header_after();
