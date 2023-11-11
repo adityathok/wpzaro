@@ -150,58 +150,6 @@ if (!function_exists('wpzaro_footer_content')) {
     }
 }
 
-///scroll to top
-if (!function_exists('wpzaro_footer_scrolltotop')) {
-    add_action('wpzaro_footer', 'wpzaro_footer_scrolltotop');
-    function wpzaro_footer_scrolltotop()
-    {
-        $enable = wpzaro_theme_setting('wpzaro_scrolltotop_enable', 'on');
-        if ($enable) :
-        ?>
-            <div class="floating-footer z-1 position-fixed bottom-0 end-0 me-2 mb-2 footer-scrolltotop" style="display:none;">
-                <div class="btn btn-dark rounded-0 border-0 scroll-to-top">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                    </svg>
-                </div>
-            </div>
-        <?php
-        endif;
-    }
-}
-
-///floating whatsapp
-if (!function_exists('wpzaro_footer_floatwhatsapp')) {
-    add_action('wpzaro_footer', 'wpzaro_footer_floatwhatsapp');
-    function wpzaro_footer_floatwhatsapp()
-    {
-        $whatsapp_number        = wpzaro_theme_setting('wpzaro_floatwhatsapp_number', '');
-        $whatsapp_text          = wpzaro_theme_setting('wpzaro_floatwhatsapp_text', 'Whatsapp Us');
-        $whatsapp_message       = wpzaro_theme_setting('wpzaro_floatwhatsapp_message', 'Halo..');
-        $whatsapp_enable        = wpzaro_theme_setting('wpzaro_floatwhatsapp_enable', false);
-        // replace all except numbers
-        $whatsapp_number        = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_number) : $whatsapp_number;
-        // replace 0 with 62 if first digit is 0
-        if (substr($whatsapp_number, 0, 1) == 0) {
-            $whatsapp_number    = substr_replace($whatsapp_number, '62', 0, 1);
-        }
-        if ($whatsapp_enable) {
-        ?>
-            <div class="floating-footer z-1 footer-floatwhatsapp position-fixed bottom-0 end-0 me-2 mb-2">
-                <a href="https://wa.me/<?php echo $whatsapp_number; ?>?text=<?php echo $whatsapp_message; ?>" class="btn btn-success shadow rounded-pill px-md-3" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-                    </svg>
-                    <?php if ($whatsapp_text) : ?>
-                        <span class="d-none d-md-inline-block"><?php echo $whatsapp_text; ?></span>
-                    <?php endif; ?>
-                </a>
-            </div>
-        <?php
-        }
-    }
-}
-
 if (!function_exists('wpzaro_header_footer_bbrender') && class_exists('FLThemeBuilderLayoutData')) {
     /**
      * Render Header or Footer Beaver Builder Themer
@@ -230,6 +178,58 @@ if (!function_exists('wpzaro_header_footer_bbrender') && class_exists('FLThemeBu
             remove_action('wpzaro_footer', 'wpzaro_footer_content');
             remove_action('wpzaro_footer_close', 'wpzaro_footer_layout_close');
             add_action('wpzaro_footer', 'FLThemeBuilderLayoutRenderer::render_footer');
+        }
+    }
+}
+
+///scroll to top
+if (!function_exists('wpzaro_footer_scrolltotop')) {
+    add_action('wpzaro_footer_after', 'wpzaro_footer_scrolltotop');
+    function wpzaro_footer_scrolltotop()
+    {
+        $enable = wpzaro_theme_setting('wpzaro_scrolltotop_enable', 'on');
+        if ($enable) :
+        ?>
+            <div class="floating-footer z-1 position-fixed bottom-0 end-0 me-2 mb-2 footer-scrolltotop" style="display:none;">
+                <div class="btn btn-dark rounded-0 border-0 scroll-to-top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg>
+                </div>
+            </div>
+        <?php
+        endif;
+    }
+}
+
+///floating whatsapp
+if (!function_exists('wpzaro_footer_floatwhatsapp')) {
+    add_action('wpzaro_footer_after', 'wpzaro_footer_floatwhatsapp');
+    function wpzaro_footer_floatwhatsapp()
+    {
+        $whatsapp_number        = wpzaro_theme_setting('wpzaro_floatwhatsapp_number', '');
+        $whatsapp_text          = wpzaro_theme_setting('wpzaro_floatwhatsapp_text', 'Whatsapp Us');
+        $whatsapp_message       = wpzaro_theme_setting('wpzaro_floatwhatsapp_message', 'Halo..');
+        $whatsapp_enable        = wpzaro_theme_setting('wpzaro_floatwhatsapp_enable', false);
+        // replace all except numbers
+        $whatsapp_number        = $whatsapp_number ? preg_replace('/[^0-9]/', '', $whatsapp_number) : $whatsapp_number;
+        // replace 0 with 62 if first digit is 0
+        if (substr($whatsapp_number, 0, 1) == 0) {
+            $whatsapp_number    = substr_replace($whatsapp_number, '62', 0, 1);
+        }
+        if ($whatsapp_enable) {
+        ?>
+            <div class="floating-footer z-1 footer-floatwhatsapp position-fixed bottom-0 end-0 me-2 mb-2">
+                <a href="https://wa.me/<?php echo $whatsapp_number; ?>?text=<?php echo $whatsapp_message; ?>" class="btn btn-success shadow rounded-pill px-md-3" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                    <?php if ($whatsapp_text) : ?>
+                        <span class="d-none d-md-inline-block"><?php echo $whatsapp_text; ?></span>
+                    <?php endif; ?>
+                </a>
+            </div>
+        <?php
         }
     }
 }

@@ -43,6 +43,12 @@ defined( 'ABSPATH' ) || exit;
 	*/
 	wpzaro_footer_close();
 
+	/** 
+	* do_action( 'wpzaro_footer_after' )
+	*
+	* wpzaro_footer_scrolltotop()
+	* wpzaro_footer_floatwhatsapp()
+	*/
 	wpzaro_footer_after();
 	?>
 	
