@@ -45,14 +45,10 @@ if (!function_exists('wpzaro_header_navigation_open')) {
     add_action('wpzaro_header_open', 'wpzaro_header_navigation_open');
     function wpzaro_header_navigation_open()
     {        
-        $maincontainer      = wpzaro_theme_setting('wpzaro_container_type');
-        $container          = wpzaro_theme_setting('wpzaro_navbar_container_type', 'default');
-        $container          = $container == 'default' ? $maincontainer : $container;
-        $container_one      = $container == 'container-fixed' ? 'container' : 'container-xxl';
-        $container_two      = $container == 'container-fixed' ? 'container-fluid' : $container;
+        $container  = wpzaro_theme_setting('wpzaro_navbar_container_type', 'default');
+        $container  = $container == 'default' ? wpzaro_theme_setting('wpzaro_container_type') : $container;
         ?>
-        <nav id="main-nav" class="bd-gutter flex-wrap flex-lg-nowrap <?php echo $container_one; ?>" aria-label="Main navigation">
-            <div class="<?php echo esc_attr($container_two); ?>">
+        <nav id="main-nav" class="bd-gutter flex-wrap flex-lg-nowrap <?php echo $container; ?>" aria-label="Main navigation">
     <?php
     }
 }
@@ -72,7 +68,6 @@ if (!function_exists('wpzaro_header_navigation_close')) {
     function wpzaro_header_navigation_close()
     {
         ?>
-            </div>
         </nav>
         <!-- #main-nav -->
     <?php

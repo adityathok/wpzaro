@@ -404,8 +404,8 @@ new \Kirki\Field\Select(
         'choices'     => [
             'default'         => esc_html__('Default', 'wpzaro'),
             'container'       => esc_html__('Fixed width container', 'wpzaro'),
+            'container-xxl'   => esc_html__('Fixed width extra large container', 'wpzaro'),
             'container-fluid' => esc_html__('Full width container', 'wpzaro'),
-            'container-fixed' => esc_html__('Fixed width container & content', 'wpzaro'),
         ],
     ]
 );
