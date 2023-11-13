@@ -27,8 +27,8 @@ $colormode        = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : 'li
 $colormode        = $colormode == 'dark' ? 'dark' : 'light';
 ?>
 
-<span class="btn btn-sm btn-link btn-darkmode">
+<button class="btn btn-sm btn-link btn-darkmode mx-1">
     <svg class="bi my-1 theme-icon-active" fill="currentColor" width="20" height="20">
         <use href="#<?php echo $colormode == 'light' ? 'sun-fill' : 'moon-stars-fill'; ?>"></use>
     </svg>
-</span>
+</button>

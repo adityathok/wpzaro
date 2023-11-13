@@ -24,8 +24,10 @@ if (!function_exists('wpzaro_header_layout_open')) {
         } else if ($overlay == 'enable' && $sticky_type == 'sticky-none') {
             $sticky_class = 'position-absolute top-0 start-0 w-100 z-3';
         }
-        $shadow_type    = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
-
+        $shadow = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
+        if($shadow) {
+            $sticky_class .= ' '.$shadow;
+        }
         ?>
 
         <div class="skippy visually-hidden-focusable overflow-hidden">
@@ -35,21 +37,19 @@ if (!function_exists('wpzaro_header_layout_open')) {
         </div>
 
         <!-- ******************* The Navbar Area ******************* -->
-        <header id="wrapper-navbar" class="<?php echo $shadow_type; ?> <?php echo $sticky_class; ?> navbar navbar-expand-lg">
+        <header id="wrapper-navbar" class="<?php echo $sticky_class; ?> p-0 navbar navbar-expand-lg">
         <?php
     }
 }
 
-///open header navigation layout
+///open navigation header
 if (!function_exists('wpzaro_header_navigation_open')) {
     add_action('wpzaro_header_open', 'wpzaro_header_navigation_open');
     function wpzaro_header_navigation_open()
-    {        
-        $container  = wpzaro_theme_setting('wpzaro_navbar_container_type', 'default');
-        $container  = $container == 'default' ? wpzaro_theme_setting('wpzaro_container_type') : $container;
+    {
         ?>
-        <nav id="main-nav" class="bd-gutter flex-wrap flex-lg-nowrap <?php echo $container; ?>" aria-label="Main navigation">
-    <?php
+        <nav id="main-nav" class="bd-gutter py-2 flex-wrap flex-lg-nowrap container-xxl" aria-label="Main navigation">
+        <?php
     }
 }
 
@@ -62,14 +62,13 @@ if (!function_exists('wpzaro_header_navbar')) {
     }
 }
 
-///closed header navigation layout
+///closed header layout
 if (!function_exists('wpzaro_header_navigation_close')) {
     add_action('wpzaro_header_close', 'wpzaro_header_navigation_close');
     function wpzaro_header_navigation_close()
     {
-        ?>
+    ?>
         </nav>
-        <!-- #main-nav -->
     <?php
     }
 }
@@ -79,7 +78,7 @@ if (!function_exists('wpzaro_header_layout_close')) {
     add_action('wpzaro_header_close', 'wpzaro_header_layout_close');
     function wpzaro_header_layout_close()
     {
-        ?>
+    ?>
         </header>
         <!-- #wrapper-navbar end -->
     <?php
