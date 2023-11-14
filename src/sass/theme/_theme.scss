@@ -61,7 +61,7 @@ svg {
             #main-nav {
                 background: transparent !important;
                 @extend .shadow-none;
-                a:not(.dropdown-item) {
+                .nav-link {
                     color : #ffffff;
                 }
             }
@@ -71,6 +71,22 @@ svg {
         #main-nav {
             background: transparent !important;
             @extend .shadow-none;
+        }
+    }
+    &.wrapper-navbar-overlay {
+        @extend .shadow-none;
+        background: transparent !important;
+        &:not(.wrapper-navbar-scrolled) {
+            #main-nav {
+                background: transparent !important;
+                @extend .shadow-none;
+                .nav-link {
+                    color : #ffffff;
+                }
+                a {
+                    color : #ffffff;
+                }
+            }
         }
     }
 }

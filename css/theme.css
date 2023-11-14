@@ -8363,7 +8363,7 @@ textarea.form-control-lg {
   box-shadow: var(--bs-box-shadow-lg) !important;
 }
 
-.shadow-none, #wrapper-navbar.position-absolute #main-nav, #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav {
+.shadow-none, #wrapper-navbar.wrapper-navbar-overlay:not(.wrapper-navbar-scrolled) #main-nav, #wrapper-navbar.wrapper-navbar-overlay, #wrapper-navbar.position-absolute #main-nav, #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav {
   box-shadow: none !important;
 }
 
@@ -16795,11 +16795,23 @@ svg.bi {
 #wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav {
   background: transparent !important;
 }
-#wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav a:not(.dropdown-item) {
+#wrapper-navbar.fixed-top:not(.wrapper-navbar-scrolled) #main-nav .nav-link {
   color: #ffffff;
 }
 #wrapper-navbar.position-absolute #main-nav {
   background: transparent !important;
+}
+#wrapper-navbar.wrapper-navbar-overlay {
+  background: transparent !important;
+}
+#wrapper-navbar.wrapper-navbar-overlay:not(.wrapper-navbar-scrolled) #main-nav {
+  background: transparent !important;
+}
+#wrapper-navbar.wrapper-navbar-overlay:not(.wrapper-navbar-scrolled) #main-nav .nav-link {
+  color: #ffffff;
+}
+#wrapper-navbar.wrapper-navbar-overlay:not(.wrapper-navbar-scrolled) #main-nav a {
+  color: #ffffff;
 }
 
 @media screen and (max-width: 768px) {

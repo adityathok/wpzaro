@@ -59,6 +59,7 @@ new \Kirki\Field\Select(
         'description' => esc_html__('Choose between Theme container and container-fluid', 'wpzaro'),
         'choices'     => [
             'container'       => esc_html__('Fixed width container', 'wpzaro'),
+            'container-xxl'   => esc_html__('Fixed width extra large container', 'wpzaro'),
             'container-fluid' => esc_html__('Full width container', 'wpzaro'),
         ],
     ]
@@ -126,17 +127,17 @@ new \Kirki\Field\Multicolor(
             ],
             [
                 'choice'    => 'link',
-                'element'   => '[data-bs-theme="light"] a:not(.btn)',
+                'element'   => '[data-bs-theme="light"] a:not(.btn),[data-bs-theme="light"] .nav-link',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '[data-bs-theme="light"] a:not(.btn):hover',
+                'element'   => '[data-bs-theme="light"] a:not(.btn):hover,[data-bs-theme="light"] .nav-link:hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '[data-bs-theme="light"] a:not(.btn):active',
+                'element'   => '[data-bs-theme="light"] a:not(.btn):active,[data-bs-theme="light"] .nav-link:active',
                 'property'  => 'color',
             ],
         ],
@@ -457,42 +458,6 @@ new \Kirki\Field\Typography(
         'output'      => [
             [
                 'element' => '#main-menu .nav-link',
-            ],
-        ],
-    ]
-);
-new \Kirki\Field\Multicolor(
-    [
-        'settings'  => 'wpzaro_menu_header_link_color',
-        'label'     => esc_html__('Link Color', 'wpzaro'),
-        'section'   => 'section_menu_navbar',
-        'priority'  => 10,
-        'choices'   => [
-            'color'    => esc_html__('Color', 'wpzaro'),
-            'hover'    => esc_html__('Hover', 'wpzaro'),
-            'active'   => esc_html__('Active', 'wpzaro'),
-        ],
-        'alpha'     => true,
-        'default'   => [
-            'color'  => '#333333',
-            'hover'  => '#9d9a9a',
-            'active' => '#333333',
-        ],
-        'output'    => [
-            [
-                'choice'    => 'color',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link,[data-bs-theme="light"] #main-menu .dropdown-item,[data-bs-theme="light"] #main-nav .btn-darkmode',
-                'property'  => 'color',
-            ],
-            [
-                'choice'    => 'hover',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:hover,[data-bs-theme="light"] #main-menu .dropdown-item:hover',
-                'property'  => 'color',
-            ],
-            [
-                'choice'    => 'active',
-                'element'   => '[data-bs-theme="light"] #main-menu .nav-link:active,[data-bs-theme="light"] #main-menu .dropdown-item:active',
-                'property'  => 'color',
             ],
         ],
     ]

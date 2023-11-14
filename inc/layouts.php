@@ -20,13 +20,9 @@ if (!function_exists('wpzaro_header_layout_open')) {
         $sticky_class   = $sticky_type == 'sticky-top' ? 'sticky-top wrapper-navbar-sticky' : 'sticky-none';
 
         if ($overlay == 'enable' && $sticky_type == 'sticky-top') {
-            $sticky_class = 'fixed-top wrapper-navbar-sticky';
+            $sticky_class = 'wrapper-navbar-overlay fixed-top wrapper-navbar-sticky';
         } else if ($overlay == 'enable' && $sticky_type == 'sticky-none') {
-            $sticky_class = 'position-absolute top-0 start-0 w-100 z-3';
-        }
-        $shadow = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
-        if($shadow) {
-            $sticky_class .= ' '.$shadow;
+            $sticky_class = 'wrapper-navbar-overlay position-absolute top-0 start-0 w-100 z-3';
         }
         ?>
 
@@ -37,7 +33,7 @@ if (!function_exists('wpzaro_header_layout_open')) {
         </div>
 
         <!-- ******************* The Navbar Area ******************* -->
-        <header id="wrapper-navbar" class="<?php echo $sticky_class; ?> p-0 navbar navbar-expand-lg">
+        <header id="wrapper-navbar" class="<?php echo $sticky_class; ?>">
         <?php
     }
 }
@@ -46,9 +42,19 @@ if (!function_exists('wpzaro_header_layout_open')) {
 if (!function_exists('wpzaro_header_navigation_open')) {
     add_action('wpzaro_header_open', 'wpzaro_header_navigation_open');
     function wpzaro_header_navigation_open()
-    {
+    {        
+        $class = 'bg-body-tertiary';
+        $shadow     = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
+        if($shadow) {
+            $class .= ' '.$shadow;
+        }
+        $container  = wpzaro_theme_setting('wpzaro_navbar_container_type', 'default');
+        if($container == 'default'){
+            $container = wpzaro_theme_setting('wpzaro_container_type', 'container');
+        }
         ?>
-        <nav id="main-nav" class="bd-gutter py-2 flex-wrap flex-lg-nowrap container-xxl" aria-label="Main navigation">
+        <nav id="main-nav" class="navbar navbar-expand-lg <?php echo $class; ?>" aria-label="Main navigation">
+            <div class="flex-wrap flex-lg-nowrap <?php echo $container; ?>">
         <?php
     }
 }
@@ -68,6 +74,7 @@ if (!function_exists('wpzaro_header_navigation_close')) {
     function wpzaro_header_navigation_close()
     {
     ?>
+            </div>
         </nav>
     <?php
     }
