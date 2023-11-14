@@ -43,6 +43,6 @@ jQuery(document).ready(function ($) {
 		$('html').attr('data-bs-theme',cm);
 		let svg = (cm == 'dark') ? '#moon-stars-fill' : '#sun-fill';
 		$('.btn-darkmode svg use').attr('href',svg);
-		document.cookie = "colormode="+cm;
+		document.cookie = "colormode="+cm+";path=/";
 	});
 });
