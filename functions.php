@@ -29,7 +29,7 @@ $wpzaro_includes = array(
 	'/custom-comments.php',                 // Custom Comments file.
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
-	'/layouts.php',                   		// Load builder layout from hooks.
+	'/template-parts.php',                   			// Load builder layout from hooks.
 	'/functions/class-wp-bootstrap-navwalker.php',		// Load function custom WordPress nav walker.
 	'/functions/wpzaro-ratio-thumbnail.php',			// Load function generate classes bootstrap.
 );
