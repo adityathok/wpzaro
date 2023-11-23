@@ -41,7 +41,7 @@ $container = wpzaro_theme_setting( 'wpzaro_container_type' );
 
 			</div><!-- #primary -->
 
-			<?php get_template_part( 'templates-parts/sidebar/sidebar', 'right' ); ?>
+			<?php get_template_part( 'template-parts/sidebar/sidebar', 'right' ); ?>
 
 		</div><!-- .row -->
 

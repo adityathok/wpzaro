@@ -64,7 +64,7 @@ if (!function_exists('wpzaro_header_navbar')) {
     add_action('wpzaro_header', 'wpzaro_header_navbar');
     function wpzaro_header_navbar()
     {
-        get_template_part('templates-parts/navbar');
+        get_template_part('template-parts/navbar');
     }
 }
 
@@ -131,7 +131,7 @@ if (!function_exists('wpzaro_footer_content')) {
         $container_two  = $container == 'container-fixed' ? 'p-3' : $container;
         ?>
 
-            <?php get_template_part('templates-parts/sidebar/sidebar', 'footerfull'); ?>
+            <?php get_template_part('template-parts/sidebar/sidebar', 'footerfull'); ?>
 
             <div class="<?php echo esc_attr($container_one) . ' type-' . esc_attr($container); ?>" id="wrapper-footer-site-info" role="footer">
 
@@ -191,7 +191,7 @@ if (!function_exists('wpzaro_sidebar_left_check')) {
         $sidebar_pos = wpzaro_theme_setting('wpzaro_sidebar_position');
 
         if ('left' === $sidebar_pos || 'both' === $sidebar_pos) {
-            get_template_part('templates-parts/sidebar/sidebar', 'left');
+            get_template_part('template-parts/sidebar/sidebar', 'left');
         }
     ?>
 
@@ -214,7 +214,7 @@ if (!function_exists('wpzaro_sidebar_right_check')) {
         <?php
 
         if ('right' === $sidebar_pos || 'both' === $sidebar_pos) {
-            get_template_part('templates-parts/sidebar/sidebar', 'right');
+            get_template_part('template-parts/sidebar/sidebar', 'right');
         }
     }
 }

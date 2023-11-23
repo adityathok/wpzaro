@@ -10,6 +10,6 @@ defined('ABSPATH') || exit;
 $navbar_parts = wpzaro_theme_setting('wpzaro_navbar_parts', []);
 if($navbar_parts):
     foreach ($navbar_parts as $part) :
-        get_template_part('templates-parts/navbar-' . $part);
+        get_template_part('template-parts/navbar-' . $part);
     endforeach;
 endif;
