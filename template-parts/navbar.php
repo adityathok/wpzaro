@@ -36,9 +36,11 @@ switch ($navbar_layout) {
                 <div class="offcanvas-body">
 
                     <?php get_template_part('template-parts/navbar-menu'); ?>
-                    <?php get_template_part('template-parts/navbar-search'); ?>
-                    <?php get_template_part('template-parts/navbar-darkmode'); ?>
-                    <?php get_template_part('template-parts/navbar-cart'); ?>
+                    <div class="d-flex justify-content-center justify-content-md-end">
+                        <?php get_template_part('template-parts/navbar-search'); ?>
+                        <?php get_template_part('template-parts/navbar-darkmode'); ?>
+                        <?php get_template_part('template-parts/navbar-cart'); ?>
+                    </div>
 
                 </div>
             </div><!-- .offcanvas -->

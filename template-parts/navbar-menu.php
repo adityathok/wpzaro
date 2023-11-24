@@ -9,7 +9,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-$navbar_aligment    = wpzaro_theme_setting('wpzaro_menu_header_aligment', 'ms-auto');
+$navbar_aligment    = wpzaro_theme_setting('wpzaro_menu_header_aligment', 'ms-md-auto');
 
 wp_nav_menu(
     array(

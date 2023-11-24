@@ -258,88 +258,6 @@ new \Kirki\Section(
     ]
 );
 
-//Navbar layout Section
-new \Kirki\Section(
-    'section_layout_navbar',
-    [
-        'title'       => esc_html__('Navbar', 'wpzaro'),
-        'description' => esc_html__('Header Navbar settings.', 'wpzaro'),
-        'panel'       => 'header_id',
-        'priority'    => 160,
-    ]
-);
-// new \Kirki\Field\Repeater(
-//     [
-//         'settings' => 'wpzaro_navbar_parts',
-//         'label'    => esc_html__('Part Navbar', 'wpzaro'),
-//         'section'  => 'section_layout_navbar',
-//         'priority' => 10,
-//         'row_label' => [
-//             'type'  => 'field',
-//             'value' => esc_html__('Part', 'wpzaro'),
-//             'field' => 'part',
-//         ],
-//         'fields'   => [
-//             'part'   => [
-//                 'type'          => 'select',
-//                 'label'         => esc_html__('Part', 'wpzaro'),
-//                 'default'       => 'logo',
-//                 'choices'       => [
-//                     'logo'          => esc_html__('Logo', 'wpzaro'),
-//                     'menu'          => esc_html__('Primary Menu', 'wpzaro'),
-//                     'search'        => esc_html__('Search', 'wpzaro'),
-//                     'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
-//                     'offcanvas'     => esc_html__('Offcanvas', 'wpzaro'),
-//                     'darkmode'      => esc_html__('Darkmode', 'wpzaro'),
-//                 ],
-//             ],
-//         ],
-//         'default'  => [
-//             [
-//                 'part' => 'logo',
-//             ],
-//             [
-//                 'part' => 'menu',
-//             ],
-//             [
-//                 'part' => 'search',
-//             ],
-//         ],
-//     ]
-// );
-new \Kirki\Field\Sortable(
-	[
-		'settings' => 'wpzaro_navbar_parts',
-		'label'    => __( 'Part Navbar', 'wpzaro' ),
-		'section'  => 'section_layout_navbar',
-		'default'  => [ 'logo', 'menu', 'search', 'darkmode' ],
-		'priority' => 10,
-		'choices'  => [
-            'logo'          => esc_html__('Logo', 'wpzaro'),
-            'menu'          => esc_html__('Primary Menu', 'wpzaro'),
-            'search'        => esc_html__('Search', 'wpzaro'),
-            'secondarymenu' => esc_html__('Secondary Menu', 'wpzaro'),
-            'offcanvas'     => esc_html__('Offcanvas', 'wpzaro'),
-            'darkmode'      => esc_html__('Darkmode', 'wpzaro'),
-		],
-	]
-);
-
-new \Kirki\Field\Select(
-	[
-		'settings'    => 'wpzaro_navbar_layout',
-		'label'       => esc_html__( 'Navbar Layout', 'wpzaro' ),
-		'section'     => 'section_layout_navbar',
-		'default'     => '1',
-		'priority'    => 10,
-		'choices'     => [
-			'1' => esc_html__( 'Layout 1', 'wpzaro' ),
-			'2' => esc_html__( 'Layout 2', 'wpzaro' ),
-			'3' => esc_html__( 'Layout 3', 'wpzaro' ),
-		],
-	]
-);
-
 //Navbar Style Section
 new \Kirki\Section(
     'section_style_navbar',
@@ -349,6 +267,18 @@ new \Kirki\Section(
         'panel'       => 'header_id',
         'priority'    => 160,
     ]
+);
+new \Kirki\Field\Select(
+	[
+		'settings'    => 'wpzaro_navbar_layout',
+		'label'       => esc_html__( 'Navbar Layout', 'wpzaro' ),
+		'section'     => 'section_style_navbar',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => [
+			'1' => esc_html__( 'Layout 1', 'wpzaro' ),
+		],
+	]
 );
 new \Kirki\Field\Select(
     [
@@ -429,46 +359,21 @@ new \Kirki\Field\Select(
     ]
 );
 
-//Navbar Menu Section
+//Navbar Parts Section
 new \Kirki\Section(
-    'section_menu_navbar',
+    'section_parts_navbar',
     [
-        'title'       => esc_html__('Primary Menu', 'wpzaro'),
-        'description' => esc_html__('Header menu settings.', 'wpzaro'),
+        'title'       => esc_html__('Parts', 'wpzaro'),
+        'description' => esc_html__('Navbar Parts settings.', 'wpzaro'),
         'panel'       => 'header_id',
         'priority'    => 160,
-    ]
-);
-
-new \Kirki\Field\Typography(
-    [
-        'settings'    => 'wpzaro_menu_header_typography',
-        'label'       => esc_html__('Typography', 'wpzaro'),
-        'description' => esc_html__('', 'wpzaro'),
-        'section'     => 'section_menu_navbar',
-        'priority'    => 10,
-        'transport'   => 'auto',
-        'default'     => [
-            'variant'         => 'regular',
-            'font-style'      => 'normal',
-            'font-size'       => '14px',
-            'line-height'     => '1.5',
-            'letter-spacing'  => '0',
-            'text-transform'  => 'none',
-            'text-decoration' => 'none',
-        ],
-        'output'      => [
-            [
-                'element' => '#main-menu .nav-link,#main-menu .dropdown-menu a',
-            ],
-        ],
     ]
 );
 new \Kirki\Field\Select(
     [
         'settings'    => 'wpzaro_menu_header_aligment',
-        'label'       => esc_html__('Aligment', 'wpzaro'),
-        'section'     => 'section_menu_navbar',
+        'label'       => esc_html__('Primary Menu Aligment', 'wpzaro'),
+        'section'     => 'section_parts_navbar',
         'default'     => 'ms-md-auto',
         'placeholder' => esc_html__('Choose an option', 'wpzaro'),
         'description' => esc_html__('Choose Aligment for menu header.', 'wpzaro'),
@@ -479,115 +384,19 @@ new \Kirki\Field\Select(
         ],
     ]
 );
-
-//Navbar Search Section
-new \Kirki\Section(
-    'section_search_navbar',
-    [
-        'title'       => esc_html__('Search Form', 'wpzaro'),
-        'description' => esc_html__('Header Search Form settings.', 'wpzaro'),
-        'panel'       => 'header_id',
-        'priority'    => 160,
-    ]
-);
 new \Kirki\Field\Select(
     [
         'settings'    => 'wpzaro_searchform_header_type',
-        'label'       => esc_html__('Type', 'wpzaro'),
-        'section'     => 'section_search_navbar',
+        'label'       => esc_html__('Search Form', 'wpzaro'),
+        'section'     => 'section_parts_navbar',
         'default'     => 'dropdown',
         'placeholder' => esc_html__('Choose type', 'wpzaro'),
         'description' => esc_html__('Choose type form search.', 'wpzaro'),
         'choices'     => [
+            'disable'   => esc_html__('Disable', 'wpzaro'),
             'dropdown'  => esc_html__('Dropdown with icon', 'wpzaro'),
             'inline'    => esc_html__('Inline Form', 'wpzaro'),
             'modal'     => esc_html__('Modal with icon', 'wpzaro'),
-        ],
-    ]
-);
-
-//Navbar Secondary Menu Section
-new \Kirki\Section(
-    'section_secondarymenu_navbar',
-    [
-        'title'       => esc_html__('Secondary Menu', 'wpzaro'),
-        'description' => esc_html__('Secondary menu settings.', 'wpzaro'),
-        'panel'       => 'header_id',
-        'priority'    => 160,
-    ]
-);
-new \Kirki\Field\Typography(
-    [
-        'settings'    => 'wpzaro_secondarymenuheader_typography',
-        'label'       => esc_html__('Typography', 'wpzaro'),
-        'description' => esc_html__('', 'wpzaro'),
-        'section'     => 'section_secondarymenu_navbar',
-        'priority'    => 10,
-        'transport'   => 'auto',
-        'default'     => [
-            'variant'         => 'regular',
-            'font-style'      => 'normal',
-            'font-size'       => '14px',
-            'line-height'     => '1.5',
-            'letter-spacing'  => '0',
-            'text-transform'  => 'none',
-            'text-decoration' => 'none',
-        ],
-        'output'      => [
-            [
-                'element' => '.navbar-secondary-menu .nav-link',
-            ],
-        ],
-    ]
-);
-new \Kirki\Field\Multicolor(
-    [
-        'settings'  => 'wpzaro_secondarymenu_header_link_color',
-        'label'     => esc_html__('Link Color', 'wpzaro'),
-        'section'   => 'section_secondarymenu_navbar',
-        'priority'  => 10,
-        'choices'   => [
-            'color'    => esc_html__('Color', 'wpzaro'),
-            'hover'    => esc_html__('Hover', 'wpzaro'),
-            'active'   => esc_html__('Active', 'wpzaro'),
-        ],
-        'alpha'     => true,
-        'default'   => [
-            'color'  => '#333333',
-            'hover'  => '#9d9a9a',
-            'active' => '#333333',
-        ],
-        'output'    => [
-            [
-                'choice'    => 'color',
-                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link,[data-bs-theme="light"] #secondary-menu .dropdown-item',
-                'property'  => 'color',
-            ],
-            [
-                'choice'    => 'hover',
-                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link:hover,[data-bs-theme="light"] #secondary-menu .dropdown-item:hover',
-                'property'  => 'color',
-            ],
-            [
-                'choice'    => 'active',
-                'element'   => '[data-bs-theme="light"] #secondary-menu .nav-link:active,[data-bs-theme="light"] #secondary-menu .dropdown-item:active',
-                'property'  => 'color',
-            ],
-        ],
-    ]
-);
-new \Kirki\Field\Select(
-    [
-        'settings'    => 'wpzaro_secondarymenu_header_aligment',
-        'label'       => esc_html__('Aligment', 'wpzaro'),
-        'section'     => 'section_secondarymenu_navbar',
-        'default'     => 'ms-auto',
-        'placeholder' => esc_html__('Choose an option', 'wpzaro'),
-        'description' => esc_html__('Choose Aligment for secondary menu header.', 'wpzaro'),
-        'choices'     => [
-            'ms-auto'   => esc_html__('Right', 'wpzaro'),
-            'me-auto'   => esc_html__('Left', 'wpzaro'),
-            'mx-auto'   => esc_html__('Center', 'wpzaro'),
         ],
     ]
 );

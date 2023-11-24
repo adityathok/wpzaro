@@ -49,7 +49,6 @@ if (!function_exists('wpzaro_setup')) {
 		register_nav_menus(
 			array(
 				'primary' 	=> __('Primary Menu', 'wpzaro'),
-				'secondary' => __('Secondary Menu', 'wpzaro'),
 			)
 		);
 

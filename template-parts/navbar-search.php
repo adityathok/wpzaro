@@ -10,6 +10,9 @@
 defined('ABSPATH') || exit;
 $type_form  = wpzaro_theme_setting('wpzaro_searchform_header_type', 'dropdown');
 
+if($type_form == 'disable')
+    return false;
+
 ?>
 
 <?php if ($type_form == 'inline') : ?>
@@ -33,10 +36,12 @@ $type_form  = wpzaro_theme_setting('wpzaro_searchform_header_type', 'dropdown');
     { ?>
         <!-- Modal -->
         <div class="modal fade" id="searchNavbarModal" tabindex="-1" aria-labelledby="searchNavbarModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content mt-5">
-                    <div class="modal-body">
-                        <?php echo get_search_form(); ?>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content border-0 bg-transparent rounded-0 mt-5">
+                    <div class="modal-body">                        
+                        <form action="<?php echo get_site_url(); ?>" method="get">
+                            <input type="text" name="s" class="form-control fs-4 text-center bg-transparent rounded-0 border-bottom text-white border-light border-0" value="" placeholder="Search.." data-bs-theme="dark">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -47,7 +52,7 @@ $type_form  = wpzaro_theme_setting('wpzaro_searchform_header_type', 'dropdown');
 
     <div class="header-search navbar-nav">
         <div class="nav-item dropdown nav-search dropdown-toggle-icon-none">
-            <a class="nav-link pe-0 dropdown-toggle-none" role="button" href="#" id="navbarSearch" data-bs-toggle="dropdown" aria-expanded="true">
+            <a class="nav-link dropdown-toggle-none" role="button" href="#" id="navbarSearch" data-bs-toggle="dropdown" aria-expanded="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
