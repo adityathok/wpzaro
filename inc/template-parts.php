@@ -43,7 +43,7 @@ if (!function_exists('wpzaro_header_navigation_open')) {
     add_action('wpzaro_header_open', 'wpzaro_header_navigation_open');
     function wpzaro_header_navigation_open()
     {        
-        $class = 'bg-body-tertiary';
+        $class = 'bg-body';
         $shadow     = wpzaro_theme_setting('wpzaro_navbar_shadow', 'shadow-sm');
         if($shadow) {
             $class .= ' '.$shadow;

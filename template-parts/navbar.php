@@ -17,8 +17,30 @@ defined('ABSPATH') || exit;
 
 $navbar_layout = wpzaro_theme_setting('wpzaro_navbar_layout', 1);
 switch ($navbar_layout) {
-    case 2:
-        # code...
+    case 2:       
+        ?>
+        <div class="row w-100">
+            <div class="col-12 text-center">
+                <?php get_template_part('template-parts/navbar-logo'); ?>
+            </div>
+            <div class="col-6 col-md-9">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+                <?php get_template_part('template-parts/navbar-menu'); ?>
+            </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="d-flex justify-content-end flex-nowrap">
+                    <?php get_template_part('template-parts/navbar-search'); ?>
+                    <?php get_template_part('template-parts/navbar-cart'); ?>
+                    <?php get_template_part('template-parts/navbar-darkmode'); ?>
+                    <?php get_template_part('template-parts/navbar-html'); ?>
+                </div>
+            </div>
+        </div>
+        <?php
         break;
     
     default:        
@@ -38,8 +60,9 @@ switch ($navbar_layout) {
                     <?php get_template_part('template-parts/navbar-menu'); ?>
                     <div class="d-flex justify-content-center justify-content-md-end">
                         <?php get_template_part('template-parts/navbar-search'); ?>
-                        <?php get_template_part('template-parts/navbar-darkmode'); ?>
                         <?php get_template_part('template-parts/navbar-cart'); ?>
+                        <?php get_template_part('template-parts/navbar-darkmode'); ?>
+                        <?php get_template_part('template-parts/navbar-html'); ?>
                     </div>
 
                 </div>

@@ -9,6 +9,9 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+if(wpzaro_theme_setting('wpzaro_darkmode_header', 'on') === 'off')
+    return false;
+
 $cookie_name     = "colormode";
 $colormode        = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : 'light';
 $colormode        = $colormode == 'dark' ? 'dark' : 'light';
@@ -26,7 +29,7 @@ $colormode        = $colormode == 'dark' ? 'dark' : 'light';
     </svg>
 
     <div class="nav-item">
-        <button class="nav-link btn-darkmode mx-1">
+        <button class="nav-link p-2 btn-darkmode mx-1">
             <svg class="bi theme-icon-active" fill="currentColor" width="20" height="20">
                 <use href="#<?php echo $colormode == 'light' ? 'sun-fill' : 'moon-stars-fill'; ?>"></use>
             </svg>

@@ -127,17 +127,17 @@ new \Kirki\Field\Multicolor(
             ],
             [
                 'choice'    => 'link',
-                'element'   => '[data-bs-theme="light"] a:not(.btn),[data-bs-theme="light"] .nav-link',
+                'element'   => '[data-bs-theme="light"] .site-content a:not(.btn)',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'hover',
-                'element'   => '[data-bs-theme="light"] a:not(.btn):hover,[data-bs-theme="light"] .nav-link:hover',
+                'element'   => '[data-bs-theme="light"] .site-content  a:not(.btn):hover',
                 'property'  => 'color',
             ],
             [
                 'choice'    => 'active',
-                'element'   => '[data-bs-theme="light"] a:not(.btn):active,[data-bs-theme="light"] .nav-link:active',
+                'element'   => '[data-bs-theme="light"] .site-content  a:not(.btn):active',
                 'property'  => 'color',
             ],
         ],
@@ -277,6 +277,7 @@ new \Kirki\Field\Select(
 		'priority'    => 10,
 		'choices'     => [
 			'1' => esc_html__( 'Layout 1', 'wpzaro' ),
+			'2' => esc_html__( 'Layout 2', 'wpzaro' ),
 		],
 	]
 );
@@ -400,6 +401,30 @@ new \Kirki\Field\Select(
         ],
     ]
 );
+new \Kirki\Field\Select(
+    [
+        'settings'    => 'wpzaro_darkmode_header',
+        'label'       => esc_html__('Darkmode', 'wpzaro'),
+        'section'     => 'section_parts_navbar',
+        'default'     => 'on',
+        'choices'     => [
+            'off'       => esc_html__('Disable', 'wpzaro'),
+            'on'        => esc_html__('Enable', 'wpzaro'),
+        ],
+    ]
+);
+new \Kirki\Field\Code(
+    [
+        'settings'    => 'wpzaro_html_header',
+        'label'       => esc_html__('HTML Code', 'wpzaro'),
+        'section'     => 'section_parts_navbar',
+        'default'     => '',
+		'choices'     => [
+			'language' => 'html',
+		],
+    ]
+);
+
 
 //Footer Panel
 new \Kirki\Panel(
